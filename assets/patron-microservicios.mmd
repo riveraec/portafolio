@@ -1,0 +1,35 @@
+%% Patrón genérico — Microservicio con arquitectura hexagonal
+%% Referencia educativa. No representa ningún sistema real.
+flowchart TB
+    subgraph CLIENTS["Consumidores"]
+        WEB["Interfaz web / PWA"]
+        MS2["Otro microservicio"]
+    end
+
+    subgraph API["Capa de entrada"]
+        GW["Puerta de enlace de APIs / Balanceador"]
+        REST["Controlador REST"]
+    end
+
+    subgraph DOMAIN["Dominio"]
+        SVC["Servicio de negocio"]
+        PORT["Puerto / Interfaz"]
+    end
+
+    subgraph ADAPTERS["Adaptadores"]
+        DB[("Repositorio<br/>SQL / NoSQL")]
+        EXT["Cliente HTTP<br/>servicio externo"]
+        MSG["Cola de mensajes"]
+    end
+
+    WEB --> GW
+    MS2 --> GW
+    GW --> REST
+    REST --> SVC
+    SVC --> PORT
+    PORT --> DB
+    PORT --> EXT
+    PORT --> MSG
+
+    classDef domain fill:#DCFCE7,stroke:#16A34A,stroke-width:2px
+    class DOMAIN domain

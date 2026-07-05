@@ -1,0 +1,34 @@
+%% Patrón genérico — Capas de una API REST
+%% Referencia educativa. No representa ningún sistema real.
+flowchart TB
+    subgraph CLIENTES["Clientes"]
+        WEB["Aplicación web / móvil"]
+        SVC["Otro servicio"]
+    end
+
+    subgraph API["Capa de exposición"]
+        CTRL["Controlador REST<br/>validación de entrada"]
+    end
+
+    subgraph NEGOCIO["Capa de negocio"]
+        SRV["Servicio<br/>reglas de negocio"]
+    end
+
+    subgraph DATOS["Capa de datos"]
+        REPO["Repositorio<br/>acceso a datos"]
+        DB[("Base de datos<br/>SQL Server / Oracle")]
+    end
+
+    subgraph EXTERNOS["Servicios externos"]
+        EXT["API externa<br/>REST / SOAP"]
+    end
+
+    WEB -->|"HTTP JSON"| CTRL
+    SVC -->|"HTTP JSON"| CTRL
+    CTRL --> SRV
+    SRV --> REPO
+    REPO --> DB
+    SRV --> EXT
+
+    classDef capa fill:#F1F5F9,stroke:#475569,stroke-width:2px
+    class API,NEGOCIO,DATOS capa
