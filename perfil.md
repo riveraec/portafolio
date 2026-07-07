@@ -14,6 +14,12 @@ Mi trayectoria combina años de desarrollo en **.NET** con trabajo reciente en *
 
 ---
 
+## Proyecto demo publicado
+
+- **[productos-api](https://github.com/riveraec/productos-api)** — API REST con Java 21, Spring Boot, JPA, H2 y Swagger UI. CRUD completo, validaciones y arquitectura por capas.
+
+---
+
 ## Lenguajes
 
 | Lenguaje | Nivel | Contexto |

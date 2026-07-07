@@ -41,6 +41,18 @@ Ver detalle en [experiencia.md](experiencia.md)
 
 ---
 
+## Proyecto demo
+
+| Proyecto | Descripción |
+|----------|-------------|
+| [**productos-api**](https://github.com/riveraec/productos-api) | API REST de gestión de productos |
+
+**Stack:** Java 21 · Spring Boot 3 · JPA · H2 · Gradle · Swagger UI
+
+**Incluye:** CRUD completo, validaciones, manejo de errores (400/404), respuestas estandarizadas y documentación OpenAPI.
+
+---
+
 ## Patrones de referencia
 
 Diagramas educativos de enfoques backend — **no representan sistemas reales**.
