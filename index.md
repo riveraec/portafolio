@@ -4,8 +4,7 @@
 
 **LinkedIn:** [linkedin.com/in/riveraec](https://www.linkedin.com/in/riveraec/)
 
-> Portafolio orientado a **desarrollo backend**. Describe capacidades, lenguajes y competencias técnicas.
-> No incluye documentación ni entregables de empleadores actuales o anteriores.
+Desarrollador backend con más de 6 años de experiencia en APIs, integración de servicios y microservicios.
 
 ---
 
@@ -49,20 +48,16 @@ Ver detalle en [experiencia.md](experiencia.md)
 
 **Stack:** Java 21 · Spring Boot 3 · JPA · H2 · Gradle · Swagger UI
 
-**Incluye:** CRUD completo, validaciones, manejo de errores (400/404), respuestas estandarizadas y documentación OpenAPI.
+CRUD completo, validaciones, manejo de errores y documentación OpenAPI.
 
 ---
 
-## Patrones de referencia
-
-Diagramas educativos de enfoques backend — **no representan sistemas reales**.
+## Patrones de arquitectura
 
 | Patrón | Descripción |
 |--------|-------------|
 | [Capas de una API REST](assets/patron-api-rest.mmd) | Controlador → servicio → repositorio → base de datos |
 | [Microservicio hexagonal](assets/patron-microservicios.mmd) | Dominio, adaptadores, APIs y persistencia |
-
-Exportar a imagen PNG desde [mermaid.live](https://mermaid.live).
 
 ---
 
@@ -73,15 +68,5 @@ Exportar a imagen PNG desde [mermaid.live](https://mermaid.live).
 **Datos:** SQL Server, Oracle, Entity Framework, LINQ, SSIS  
 **Integración:** REST, SOAP, JWT, OpenAPI/Swagger  
 **Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker
-
----
-
-## Confidencialidad
-
-- No se publican entregables corporativos ni código de empleadores.
-- La experiencia se describe a nivel de rol, lenguajes y responsabilidades.
-- Ante duda, consulta las políticas internas de tu empleador.
-
----
 
 *Última actualización: julio 2026*

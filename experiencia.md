@@ -1,7 +1,6 @@
-# Áreas de experiencia — Desarrollo Backend
+# Áreas de experiencia
 
-Responsabilidades y competencias orientadas a **desarrollo de servidor**.
-Sin detalle de clientes, sistemas internos ni entregables corporativos.
+Competencias en desarrollo de servidor: APIs, integración, bases de datos y microservicios.
 
 ---
 
