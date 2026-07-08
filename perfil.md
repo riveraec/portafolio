@@ -14,9 +14,10 @@ Mi trayectoria combina años de desarrollo en **.NET** con trabajo reciente en *
 
 ---
 
-## Proyecto en GitHub
+## Proyectos en GitHub
 
 - **[productos-api](https://github.com/riveraec/productos-api)** — API REST con Java 21, Spring Boot, JPA, H2 y Swagger. CRUD, validaciones y arquitectura por capas.
+- **[auth-api](https://github.com/riveraec/auth-api)** — API REST de autenticación con Java 21, Spring Boot, Spring Security y JWT. Registro, login, BCrypt, filtro Bearer y endpoint protegido `/me`.
 
 ---
 

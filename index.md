@@ -40,15 +40,16 @@ Ver detalle en [experiencia.md](experiencia.md)
 
 ---
 
-## Proyecto demo
+## Proyectos demo
 
 | Proyecto | Descripción |
 |----------|-------------|
 | [**productos-api**](https://github.com/riveraec/productos-api) | API REST de gestión de productos |
+| [**auth-api**](https://github.com/riveraec/auth-api) | API REST de autenticación con JWT |
 
-**Stack:** Java 21 · Spring Boot 3 · JPA · H2 · Gradle · Swagger UI
+**productos-api** — Java 21 · Spring Boot · JPA · H2 · Gradle · Swagger. CRUD completo, validaciones, manejo de errores y documentación OpenAPI.
 
-CRUD completo, validaciones, manejo de errores y documentación OpenAPI.
+**auth-api** — Java 21 · Spring Boot · Spring Security · JWT · BCrypt · H2 · Gradle. Registro, login, token Bearer y endpoint protegido `/me`.
 
 ---
 
