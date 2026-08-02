@@ -46,10 +46,13 @@ Ver detalle en [experiencia.md](experiencia.md)
 |----------|-------------|
 | [**productos-api**](https://github.com/riveraec/productos-api) | API REST de gestión de productos |
 | [**auth-api**](https://github.com/riveraec/auth-api) | API REST de autenticación con JWT |
+| [**cliente-servicios-remotos**](https://github.com/riveraec/cliente-servicios-remotos) | Biblioteca OpenFeign + demo de integración |
 
 **productos-api** — Java 21 · Spring Boot · JPA · H2 · Gradle · Swagger. CRUD completo, validaciones, manejo de errores y documentación OpenAPI.
 
 **auth-api** — Java 21 · Spring Boot · Spring Security · JWT · BCrypt · H2 · Gradle. Registro, login, token Bearer y endpoint protegido `/me`.
+
+**cliente-servicios-remotos** — Java 21 · Spring Boot · OpenFeign · Apache HC5 · Gradle multi-módulo · WireMock. Cliente HTTP reutilizable (retry, pool, logging) y demo que integra auth-api y productos-api.
 
 ---
 
