@@ -47,6 +47,7 @@ Ver detalle en [experiencia.md](experiencia.md)
 | [**productos-api**](https://github.com/riveraec/productos-api) | API REST de gestión de productos |
 | [**auth-api**](https://github.com/riveraec/auth-api) | API REST de autenticación con JWT |
 | [**indicadores-api**](https://github.com/riveraec/indicadores-api) | API REST de indicadores de desempeño |
+| [**etl-reportes**](https://github.com/riveraec/etl-reportes) | Pipeline ETL CSV → SQLite en Python |
 | [**cliente-servicios-remotos**](https://github.com/riveraec/cliente-servicios-remotos) | Biblioteca OpenFeign + demo de integración |
 
 **productos-api** — Java 21 · Spring Boot · JPA · H2 · Gradle · Swagger. CRUD completo, validaciones, manejo de errores y documentación OpenAPI.
@@ -54,6 +55,8 @@ Ver detalle en [experiencia.md](experiencia.md)
 **auth-api** — Java 21 · Spring Boot · Spring Security · JWT · BCrypt · H2 · Gradle. Registro, login, token Bearer y endpoint protegido `/me`.
 
 **indicadores-api** — .NET 8 · ASP.NET Core · EF Core · SQLite · Swagger · xUnit. CRUD, filtros, resumen por categoría, ProblemDetails y health check.
+
+**etl-reportes** — Python · pandas · SQLite · pytest. Extract → Transform → Load, idempotencia por lote, resumen diario y logging.
 
 **cliente-servicios-remotos** — Java 21 · Spring Boot · OpenFeign · Apache HC5 · Gradle multi-módulo · WireMock. Cliente HTTP reutilizable (retry, pool, logging) y demo que integra auth-api y productos-api.
 
