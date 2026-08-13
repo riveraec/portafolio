@@ -14,17 +14,17 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 
 | Rol | Período | Stack |
 |-----|---------|-------|
-| Arquitecto de software | 2025 – presente | Java 21, Spring Boot, Gradle, AWS |
+| Arquitecto de software | 2025 – presente | Java 21, Spring Boot, Gradle, AWS, Terraform |
 | Jefe de desarrollo | 2024 – 2025 | C#, .NET Core, IIS, microservicios |
 | Desarrollador .NET senior | 2021 – 2024 | ASP.NET Web API, SQL Server, SSIS, Tableau |
 
 **Rol actual**
 
-- Desarrollo e integración de servicios Java/Spring en AWS (EC2, Lambda, RDS, secretos).
-- Contratos REST/OpenAPI e integración entre servicios internos y externos.
+- Servicios Java/Spring en AWS: ECS Fargate, Lambda, RDS (y EC2 cuando aplica).
+- Integración REST/OpenAPI entre sistemas internos; infraestructura con Terraform.
 - Estándares de capas, revisión de código y seguimiento de APIs en producción.
 
-**Antes:** liderazgo de 3–5 personas; APIs .NET, SQL Server (SP, CTE, MERGE), ETL/SSIS y tableros Tableau. Detalle: [perfil.md](perfil.md).
+**Antes:** equipo de 5 en APIs .NET; SQL Server (SP, CTE, MERGE), ETL/SSIS y Tableau. Detalle: [perfil.md](perfil.md).
 
 ---
 
@@ -107,7 +107,7 @@ El pipeline carga datos; la API orquesta y consulta. [etl-reportes](https://gith
 **Frameworks:** Spring Boot, .NET / ASP.NET Web API, FastAPI, Express  
 **Datos:** SQL Server, Oracle, SQLite, EF Core, LINQ, SSIS, Tableau, pandas · CTE, MERGE, window functions, SP, índices  
 **Integración:** REST, SOAP, JWT, OpenAPI, OpenFeign  
-**Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker, AWS (EC2, Lambda, RDS)
+**Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker, AWS (EC2, ECS Fargate, Lambda, RDS), Terraform
 
 ---
 

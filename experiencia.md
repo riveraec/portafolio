@@ -54,7 +54,7 @@ Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md)
 
 ## Liderazgo técnico y calidad
 
-- Equipos de 3 a 5 desarrolladores en APIs y servicios críticos.
+- Equipos de 5 desarrolladores en APIs y servicios críticos.
 - Revisión de código, convenciones e incidencias de producción.
 - Mejora de tiempos de respuesta en servicios web e IIS.
 - Reutilización, logging/observabilidad y documentación de APIs.
@@ -63,11 +63,11 @@ Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md)
 
 ## Nube
 
-- Servicios en **AWS** (EC2, Lambda, RDS).
-- Variables, secretos y conectividad.
-- Evaluación técnica de soluciones backend en cloud.
+- Servicios en AWS: EC2, ECS Fargate, Lambda, RDS, Secrets Manager.
+- Infraestructura con Terraform.
+- Variables, secretos y conectividad para servicios en la nube.
 
-**Tecnologías:** AWS EC2, Lambda, RDS, Secrets Manager
+**Tecnologías:** AWS EC2, ECS Fargate, Lambda, RDS, Secrets Manager, Terraform
 
 ---
 

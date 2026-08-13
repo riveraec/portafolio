@@ -18,18 +18,18 @@ Más de 6 años en APIs, servicios e integración. Trabajo con **Java, C#, Pytho
 
 ### Arquitecto de software — 2025 – presente
 
-Java 21 · Spring Boot · Gradle · AWS
+Java 21 · Spring Boot · Gradle · AWS · Terraform
 
-- Desarrollo e integración de servicios Java/Spring en AWS (EC2, Lambda, RDS, secretos).
-- Contratos REST/OpenAPI e integración entre servicios internos y externos.
+- Servicios Java/Spring en AWS: ECS Fargate, Lambda, RDS (y EC2 cuando aplica).
+- Integración REST/OpenAPI entre sistemas internos; infraestructura con Terraform.
 - Estándares de capas, revisión de código y seguimiento de APIs en producción.
 
 ### Jefe de desarrollo — 2024 – 2025
 
 C# · .NET Core · IIS · microservicios
 
-- Coordinación de un equipo de 3 a 5 desarrolladores en APIs y servicios críticos.
-- Revisión de código, convenciones de capas y seguimiento de incidencias en producción.
+- Coordinación de un equipo de 5 desarrolladores en APIs .NET y servicios críticos.
+- Revisión de código, convenciones de capas e incidencias en producción.
 - Microservicios .NET y mejora de tiempos de respuesta en IIS.
 
 ### Desarrollador .NET senior — 2021 – 2024
