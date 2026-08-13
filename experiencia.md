@@ -30,12 +30,13 @@ Trayectoria con bullets por rol: [perfil.md](perfil.md). Inicio del portafolio: 
 
 ## Bases de datos y datos
 
-- Desarrollar y optimizar consultas, procedimientos almacenados y modelos de datos.
-- Trabajar con **SQL Server** y **Oracle** en operaciones de lectura/escritura intensiva.
-- Implementar flujos **ETL** para alimentar reportes y tableros.
-- Afinar rendimiento de acceso a datos en servicios backend.
+- Consultas avanzadas: **CTE** (incl. cadenas de transformaciones), **MERGE**/upsert, **window functions** (`ROW_NUMBER`, `RANK`, agregados `OVER`).
+- Objetos de servidor: procedimientos almacenados, funciones, vistas; transacciones y restricciones.
+- Rendimiento: **índices**, lectura de **planes de ejecución**, afinado de consultas en lecturas/escrituras intensivas.
+- Motores: **SQL Server** y **Oracle**; flujos **ETL** (SSIS y pipelines) para reportes y staging idempotente.
+- Desde backend: Entity Framework / LINQ y acceso SQL explícito cuando el plan lo requiere.
 
-**Tecnologías:** SQL Server, Oracle, SSIS, Entity Framework, LINQ
+**Tecnologías:** SQL Server, Oracle, SSIS, Entity Framework, LINQ, CTE, MERGE, window functions
 
 ---
 

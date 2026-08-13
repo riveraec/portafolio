@@ -8,9 +8,9 @@ CDMX, México
 
 ## Perfil
 
-Desarrollador backend con más de 6 años construyendo APIs, servicios e integración. Me muevo entre **Java, C#, Python y Node.js** según el stack del proyecto.
+**Backend senior** enfocado en integración de APIs, con SQL y ETL: hands-on en código aunque el título diga arquitecto.
 
-Trayectoria: base larga en **.NET**, foco reciente en **Java / Spring Boot**, más datos (SQL, ETL) y sector financiero.
+Más de 6 años en APIs, servicios e integración. Me muevo entre **Java, C#, Python y Node.js** según el stack. Base larga en **.NET**, foco reciente en **Java / Spring Boot**, datos (SQL Server/Oracle, ETL) y sector financiero.
 
 ---
 
@@ -22,9 +22,9 @@ Trayectoria: base larga en **.NET**, foco reciente en **Java / Spring Boot**, m�
 
 Java 21 · Spring Boot · Gradle · AWS
 
-- Diseño e implementación de servicios backend en Java/Spring, con desarrollo hands-on (no solo documentos).
-- Integración entre APIs (REST/OpenAPI) y consumo de servicios; despliegue y configuración en AWS (EC2, Lambda, RDS, secretos).
-- Criterios técnicos de solución: límites de servicio, contratos y viabilidad en nube.
+- Servicios Java/Spring en AWS (EC2, Lambda, RDS, secretos) con desarrollo diario, no solo diseño en papel.
+- Contratos REST/OpenAPI e integración entre servicios internos y externos.
+- Criterios de solución (límites de servicio, viabilidad en nube) y continuidad de estándares / revisiones de APIs críticas.
 
 ### Jefe de desarrollo — 2024 – 2025
 
@@ -38,8 +38,8 @@ C# · .NET Core · IIS · microservicios
 
 C# · ASP.NET Web API · SQL Server · SSIS
 
-- APIs REST e integración con bases SQL Server (consultas, procedimientos, modelos).
-- Flujos ETL (SSIS) para alimentar reportes y operaciones de lectura/escritura intensiva.
+- APIs REST sobre SQL Server: SP, CTE, MERGE/upsert, window functions e índices según carga.
+- Flujos ETL (SSIS) para reportes y operaciones de lectura/escritura intensiva.
 - Entrega y soporte de servicios backend en entorno financiero de alto uso.
 
 **Roles anteriores (2019–2021):** desarrollo .NET en Olefin, Embotelladora Las Margaritas y Madisa.
@@ -75,13 +75,13 @@ Competencias por tema (APIs, datos, nube, etc.): [experiencia.md](experiencia.md
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, Gradle, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
 | **Node.js** | Intermedio | APIs con Express |
-| **SQL** | Avanzado | SP, optimización, ETL |
+| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL |
 
 ---
 
 ## Qué busco
 
-Rol de **desarrollador backend** con integración de APIs, multi-lenguaje y bases de datos, en equipos que cuidan código y entrega continua.
+Rol de **desarrollador backend** (Java y/o .NET), con integración de APIs, SQL sólido y datos/ETL, en equipos con código limpio y entrega continua. CDMX / remoto según el rol.
 
 ---
 

@@ -1,11 +1,11 @@
 # Portafolio — Efrain Rivera Cadena
 
-**Desarrollador Backend** · Java · C# · Python · Node.js · CDMX  
-[LinkedIn](https://www.linkedin.com/in/riveraec/) · [GitHub](https://github.com/riveraec)
+**Backend senior** · integración de APIs · Java / .NET · SQL y ETL · CDMX  
+Hands-on aunque el título diga arquitecto: código, contratos y entregas.
 
-Backend con más de 6 años en APIs, integración y microservicios. Base fuerte en **.NET**; trabajo reciente en **Java / Spring Boot** y **Python** (ETL + FastAPI). Sector financiero.
+[LinkedIn](https://www.linkedin.com/in/riveraec/) · [GitHub](https://github.com/riveraec) · [Perfil](perfil.md) · [Experiencia](experiencia.md)
 
-CV extendido: [perfil.md](perfil.md) · Competencias por área: [experiencia.md](experiencia.md)
+Backend con más de 6 años en APIs, microservicios e integración. Base fuerte en **.NET**; foco reciente en **Java / Spring Boot** y **Python** (ETL + FastAPI). Sector financiero.
 
 ---
 
@@ -19,13 +19,13 @@ CV extendido: [perfil.md](perfil.md) · Competencias por área: [experiencia.md]
 | Jefe de desarrollo | 2024 – 2025 | C#, .NET Core, IIS, microservicios |
 | Desarrollador .NET senior | 2021 – 2024 | ASP.NET Web API, SQL Server, SSIS |
 
-**Rol actual — aporte típico**
+**Rol actual**
 
-- Diseño e implementación de servicios Java/Spring en nube (AWS), con código en el día a día.
-- Contratos REST/OpenAPI e integración entre servicios; evaluación técnica de soluciones backend.
-- Continuidad de estándares de capas, revisiones y entregas de APIs críticas.
+- Servicios Java/Spring en AWS (EC2, Lambda, RDS, secretos) con desarrollo diario, no solo diseño en papel.
+- Contratos REST/OpenAPI e integración entre servicios internos y externos.
+- Criterios de solución (límites de servicio, viabilidad en nube) y continuidad de estándares / revisiones de APIs críticas.
 
-**Antes:** liderazgo de 3–5 personas (jefe); APIs .NET, SQL Server y ETL/SSIS (senior). Detalle con bullets por rol en [perfil.md](perfil.md).
+**Antes:** liderazgo de 3–5 personas; APIs .NET, SQL Server (SP, CTE, MERGE) y ETL/SSIS. Detalle por rol: [perfil.md](perfil.md).
 
 ---
 
@@ -36,14 +36,14 @@ CV extendido: [perfil.md](perfil.md) · Competencias por área: [experiencia.md]
 | **C# / .NET** | Avanzado | 6+ años — APIs, microservicios, SQL Server |
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
+| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL |
 | **Node.js** | Intermedio | APIs con Express |
-| **SQL** | Avanzado | Consultas, SP, ETL |
 
 ---
 
 ## Caso destacado — datos → pipeline → API
 
-Sistema demo en dos repos: el ETL carga y resume; la API dispara corridas y consulta el resultado.
+Un sistema en dos repos: el batch carga y resume; la API dispara corridas y consulta el resultado.
 
 ![ETL + API de orquestación](assets/patron-etl-api.png)
 
@@ -52,29 +52,27 @@ Sistema demo en dos repos: el ETL carga y resume; la API dispara corridas y cons
 | Pipeline | [etl-reportes](https://github.com/riveraec/etl-reportes) | CSV → pandas → SQLite, idempotencia por lote, resumen diario, pytest |
 | API fina | [reportes-api](https://github.com/riveraec/reportes-api) | FastAPI: `POST /runs`, `GET /resumen`, health, OpenAPI, tests |
 
----
-
-## Otros proyectos demo
-
-**Integración (Java)**
-
-- [**auth-api**](https://github.com/riveraec/auth-api) — JWT, Spring Security, BCrypt, endpoint `/me`.
-- [**productos-api**](https://github.com/riveraec/productos-api) — CRUD Spring Boot, JPA, validaciones, OpenAPI.
-- [**cliente-servicios-remotos**](https://github.com/riveraec/cliente-servicios-remotos) — OpenFeign reutilizable (retry, pool, WireMock); demo contra auth + productos.
-
-**.NET**
-
-- [**indicadores-api**](https://github.com/riveraec/indicadores-api) — .NET 8, EF Core, filtros, resumen, ProblemDetails, health, xUnit.
+**Probar en local:** venv + `pip install -e .` en cada repo → `uvicorn reportes_api.main:app --reload` → `/docs` y `GET /resumen`.
 
 ---
 
-## Patrones (cómo pienso el backend)
+## Otros demos (selección)
 
-Diagramas en PNG (compatible con GitHub Pages). Fuentes Mermaid en `assets/*.mmd`.
+**Integración Java** — auth JWT + productos + cliente HTTP resiliente:
+
+- [auth-api](https://github.com/riveraec/auth-api) · [productos-api](https://github.com/riveraec/productos-api) · [cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos) (OpenFeign, retry, pool, WireMock)
+
+**.NET** — [indicadores-api](https://github.com/riveraec/indicadores-api): .NET 8, EF Core, filtros, resumen, ProblemDetails, health, xUnit.
+
+Lista completa y contexto: [perfil.md](perfil.md).
+
+---
+
+## Patrones
 
 ### Capas de una API REST
 
-Controlador → servicio → repositorio → BD. Separar exposición, reglas y datos.
+Controlador → servicio → repositorio → BD.
 
 ![Capas API REST](assets/patron-api-rest.png)
 
@@ -86,27 +84,31 @@ Dominio en el centro; adaptadores para HTTP, persistencia y externos.
 
 ### Flujo JWT
 
-Login → token → llamada con Bearer → validación en la API protegida. Demo: [auth-api](https://github.com/riveraec/auth-api).
+Login → Bearer → recurso protegido. Demo: [auth-api](https://github.com/riveraec/auth-api).
 
 ![Flujo JWT](assets/patron-jwt-flujo.png)
 
 ### ETL + API de orquestación
 
-El batch no es la API: la API dispara y consulta. Demo: [etl-reportes](https://github.com/riveraec/etl-reportes) + [reportes-api](https://github.com/riveraec/reportes-api).
+El batch no es la API: la API dispara y consulta.
+
+![ETL + API](assets/patron-etl-api.png)
 
 ---
 
-## Stack principal
+## Stack
 
 **Lenguajes:** Java 21, C#, Python, JavaScript, SQL  
-**Frameworks:** Spring Boot, .NET Core / ASP.NET Web API, FastAPI, Express  
-**Datos:** SQL Server, Oracle, SQLite, EF Core, LINQ, SSIS, pandas  
-**Integración:** REST, SOAP, JWT, OpenAPI/Swagger, OpenFeign  
+**Frameworks:** Spring Boot, .NET / ASP.NET Web API, FastAPI, Express  
+**Datos:** SQL Server, Oracle, SQLite, EF Core, LINQ, SSIS, pandas · CTE, MERGE, window functions, SP, índices  
+**Integración:** REST, SOAP, JWT, OpenAPI, OpenFeign  
 **Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker, AWS (EC2, Lambda, RDS)
 
 ---
 
-## Contacto
+## Qué busco
+
+Rol de **desarrollador backend** (Java y/o .NET), con integración de APIs, SQL sólido y datos/ETL, en equipos con código limpio y entrega continua. CDMX / remoto según el rol.
 
 [linkedin.com/in/riveraec](https://www.linkedin.com/in/riveraec/) · [github.com/riveraec](https://github.com/riveraec)
 
