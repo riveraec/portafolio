@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-label="Capas de una API REST">
+  <rect width="720" height="420" fill="#f8fafc"/>
+  <text x="360" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Capas de una API REST</text>
+
+  <rect x="40" y="60" width="200" height="70" rx="8" fill="#e2e8f0" stroke="#475569"/>
+  <text x="140" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">Clientes</text>
+  <text x="140" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Web / móvil / otro servicio</text>
+
+  <rect x="300" y="60" width="200" height="70" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="400" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">Controlador REST</text>
+  <text x="400" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Validación de entrada</text>
+
+  <rect x="300" y="170" width="200" height="70" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">Servicio</text>
+  <text x="400" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Reglas de negocio</text>
+
+  <rect x="300" y="280" width="200" height="70" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="400" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">Repositorio</text>
+  <text x="400" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Acceso a datos</text>
+
+  <ellipse cx="600" cy="315" rx="90" ry="40" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="600" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Base de datos</text>
+  <text x="600" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#1e40af">SQL Server / Oracle</text>
+
+  <rect x="520" y="170" width="160" height="70" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="600" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">API externa</text>
+  <text x="600" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#92400e">REST / SOAP</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <line x1="240" y1="95" x2="300" y2="95" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="400" y1="130" x2="400" y2="170" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="400" y1="240" x2="400" y2="280" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="500" y1="315" x2="510" y2="315" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="500" y1="205" x2="520" y2="205" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="250" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">HTTP JSON</text>
+</svg>

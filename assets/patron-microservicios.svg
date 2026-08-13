@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="Microservicio hexagonal">
+  <rect width="720" height="400" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Microservicio hexagonal</text>
+
+  <rect x="30" y="70" width="150" height="100" rx="8" fill="#e2e8f0" stroke="#475569"/>
+  <text x="105" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Consumidores</text>
+  <text x="105" y="132" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Web / otro MS</text>
+
+  <rect x="220" y="60" width="160" height="120" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="300" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Entrada</text>
+  <text x="300" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Gateway / balanceador</text>
+  <text x="300" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">Controlador REST</text>
+
+  <rect x="420" y="70" width="160" height="100" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="500" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#14532d">Dominio</text>
+  <text x="500" y="132" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#166534">Servicio + puertos</text>
+
+  <rect x="120" y="260" width="140" height="70" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="190" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Repositorio</text>
+  <text x="190" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#1e40af">SQL / NoSQL</text>
+
+  <rect x="300" y="260" width="140" height="70" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="370" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Cliente HTTP</text>
+  <text x="370" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#92400e">Servicio externo</text>
+
+  <rect x="480" y="260" width="140" height="70" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="550" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Cola</text>
+  <text x="550" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5b21b6">Mensajería</text>
+
+  <text x="360" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#64748b">Adaptadores (salida)</text>
+
+  <defs>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <line x1="180" y1="120" x2="220" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="380" y1="120" x2="420" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="480" y1="170" x2="190" y2="260" stroke="#64748b" stroke-width="1.5" marker-end="url(#a2)"/>
+  <line x1="500" y1="170" x2="370" y2="260" stroke="#64748b" stroke-width="1.5" marker-end="url(#a2)"/>
+  <line x1="520" y1="170" x2="550" y2="260" stroke="#64748b" stroke-width="1.5" marker-end="url(#a2)"/>
+</svg>

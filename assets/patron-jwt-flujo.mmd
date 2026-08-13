@@ -1,0 +1,12 @@
+%% Flujo JWT — autenticación y recurso protegido
+sequenceDiagram
+    participant C as Cliente
+    participant A as auth-api
+    participant P as API protegida
+
+    C->>A: POST /login (usuario, password)
+    A->>A: Validar + firmar JWT
+    A-->>C: access_token
+    C->>P: GET /recurso + Authorization Bearer
+    P->>P: Validar firma y claims
+    P-->>C: 200 recurso / 401 no autorizado

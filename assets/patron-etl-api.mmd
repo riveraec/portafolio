@@ -1,0 +1,7 @@
+%% Pipeline ETL + API de orquestación
+flowchart LR
+    CSV["CSV / origen"] --> ETL["etl-reportes<br/>Extract → Transform → Load"]
+    ETL --> DB[("SQLite<br/>resumen_diario")]
+    API["reportes-api<br/>FastAPI"] -->|"POST /runs"| ETL
+    API -->|"GET /resumen"| DB
+    CLI["Cliente / ops"] -->|"HTTP"| API

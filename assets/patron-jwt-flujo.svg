@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-label="Flujo JWT">
+  <rect width="720" height="360" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Flujo JWT  login y recurso protegido</text>
+
+  <rect x="40" y="80" width="140" height="60" rx="8" fill="#e2e8f0" stroke="#475569"/>
+  <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">Cliente</text>
+
+  <rect x="290" y="80" width="140" height="60" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">auth-api</text>
+
+  <rect x="540" y="80" width="140" height="60" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="610" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">API protegida</text>
+
+  <defs>
+    <marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <path d="M180 100 H290" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+  <text x="235" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">POST /login</text>
+
+  <path d="M290 130 H180" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+  <text x="235" y="152" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">access_token</text>
+
+  <path d="M180 200 H540" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+  <text x="360" y="192" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">GET + Authorization: Bearer</text>
+
+  <path d="M540 230 H180" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+  <text x="360" y="252" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">200 recurso / 401</text>
+
+  <text x="360" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#64748b">Demo: auth-api (Spring Security + JWT + BCrypt)</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" role="img" aria-label="ETL y API de orquestación">
+  <rect width="720" height="320" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">ETL + API de orquestación</text>
+
+  <rect x="40" y="100" width="120" height="60" rx="8" fill="#e2e8f0" stroke="#475569"/>
+  <text x="100" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">CSV / origen</text>
+
+  <rect x="220" y="90" width="160" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="300" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">etl-reportes</text>
+  <text x="300" y="142" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#92400e">E ’ T ’ L</text>
+
+  <ellipse cx="500" cy="130" rx="90" ry="40" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="500" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">SQLite</text>
+  <text x="500" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#1e40af">resumen_diario</text>
+
+  <rect x="220" y="220" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="300" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">reportes-api</text>
+  <text x="300" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#166534">FastAPI</text>
+
+  <rect x="40" y="220" width="120" height="60" rx="8" fill="#e2e8f0" stroke="#475569"/>
+  <text x="100" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Cliente / ops</text>
+
+  <defs>
+    <marker id="a4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <line x1="160" y1="130" x2="220" y2="130" stroke="#64748b" stroke-width="2" marker-end="url(#a4)"/>
+  <line x1="380" y1="130" x2="410" y2="130" stroke="#64748b" stroke-width="2" marker-end="url(#a4)"/>
+  <line x1="160" y1="250" x2="220" y2="250" stroke="#64748b" stroke-width="2" marker-end="url(#a4)"/>
+  <line x1="300" y1="220" x2="300" y2="170" stroke="#64748b" stroke-width="2" marker-end="url(#a4)"/>
+  <text x="320" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">POST /runs</text>
+  <path d="M380 250 H500" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#a4)"/>
+  <text x="440" y="242" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#334155">GET /resumen</text>
+</svg>

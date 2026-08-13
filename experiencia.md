@@ -2,6 +2,8 @@
 
 Competencias en desarrollo de servidor: APIs, integración, bases de datos y microservicios.
 
+Trayectoria con bullets por rol: [perfil.md](perfil.md). Inicio del portafolio: [README.md](README.md).
+
 ---
 
 ## Desarrollo multi-lenguaje
