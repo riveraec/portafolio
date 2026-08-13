@@ -39,6 +39,8 @@ Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md)
 
 **Tecnologías:** SQL Server, Oracle, SSIS, Tableau, Entity Framework, LINQ, CTE, MERGE, window functions
 
+Ejemplos: [etl-reportes/sql](https://github.com/riveraec/etl-reportes/tree/main/sql).
+
 ---
 
 ## Microservicios

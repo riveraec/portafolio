@@ -72,7 +72,7 @@ Competencias por tema: [experiencia.md](experiencia.md).
 | **C# / .NET** | Avanzado | 6+ años — APIs REST, microservicios, SQL Server |
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, Gradle, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
-| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL |
+| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL · [ejemplos](https://github.com/riveraec/etl-reportes/tree/main/sql) |
 | **Node.js** | Intermedio | APIs con Express |
 
 ---

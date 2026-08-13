@@ -35,7 +35,7 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 | **C# / .NET** | Avanzado | 6+ años — APIs, microservicios, SQL Server |
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
-| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL |
+| **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL · [ejemplos](https://github.com/riveraec/etl-reportes/tree/main/sql) |
 | **Node.js** | Intermedio | APIs con Express |
 
 ---
@@ -48,7 +48,7 @@ Pipeline que carga y resume datos; API que dispara corridas y consulta el result
 
 | Pieza | Repo | Descripción |
 |-------|------|-------------|
-| Pipeline | [etl-reportes](https://github.com/riveraec/etl-reportes) | CSV → pandas → SQLite, idempotencia por lote, resumen diario, pytest |
+| Pipeline | [etl-reportes](https://github.com/riveraec/etl-reportes) | CSV → pandas → SQLite, idempotencia por lote, resumen diario, pytest · [sql/](https://github.com/riveraec/etl-reportes/tree/main/sql) |
 | API | [reportes-api](https://github.com/riveraec/reportes-api) | FastAPI: `POST /runs`, `GET /resumen`, health, OpenAPI, tests |
 
 OpenAPI (`/docs`) y respuesta real de `GET /resumen` (total 17):
