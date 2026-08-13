@@ -45,7 +45,7 @@ CV extendido: [perfil.md](perfil.md) · Competencias por área: [experiencia.md]
 
 Sistema demo en dos repos: el ETL carga y resume; la API dispara corridas y consulta el resultado.
 
-![ETL + API de orquestación](assets/patron-etl-api.svg)
+![ETL + API de orquestación](assets/patron-etl-api.png)
 
 | Pieza | Repo | Qué demuestra |
 |-------|------|----------------|
@@ -70,25 +70,25 @@ Sistema demo en dos repos: el ETL carga y resume; la API dispara corridas y cons
 
 ## Patrones (cómo pienso el backend)
 
-Diagramas en SVG (se ven en el sitio). Fuentes Mermaid en `assets/*.mmd`.
+Diagramas en PNG (compatible con GitHub Pages). Fuentes Mermaid en `assets/*.mmd`.
 
 ### Capas de una API REST
 
 Controlador → servicio → repositorio → BD. Separar exposición, reglas y datos.
 
-![Capas API REST](assets/patron-api-rest.svg)
+![Capas API REST](assets/patron-api-rest.png)
 
 ### Microservicio hexagonal
 
 Dominio en el centro; adaptadores para HTTP, persistencia y externos.
 
-![Microservicio hexagonal](assets/patron-microservicios.svg)
+![Microservicio hexagonal](assets/patron-microservicios.png)
 
 ### Flujo JWT
 
 Login → token → llamada con Bearer → validación en la API protegida. Demo: [auth-api](https://github.com/riveraec/auth-api).
 
-![Flujo JWT](assets/patron-jwt-flujo.svg)
+![Flujo JWT](assets/patron-jwt-flujo.png)
 
 ### ETL + API de orquestación
 
