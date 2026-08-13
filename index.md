@@ -51,6 +51,12 @@ Pipeline que carga y resume datos; API que dispara corridas y consulta el result
 | Pipeline | [etl-reportes](https://github.com/riveraec/etl-reportes) | CSV → pandas → SQLite, idempotencia por lote, resumen diario, pytest |
 | API | [reportes-api](https://github.com/riveraec/reportes-api) | FastAPI: `POST /runs`, `GET /resumen`, health, OpenAPI, tests |
 
+OpenAPI (`/docs`) y respuesta real de `GET /resumen` (total 17):
+
+![OpenAPI reportes-api](assets/demo-reportes-api-docs.png)
+
+![GET /resumen](assets/demo-reportes-api-resumen.png)
+
 Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` → `/docs` y `GET /resumen`.
 
 ---
