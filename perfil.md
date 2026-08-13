@@ -20,6 +20,7 @@ Mi trayectoria combina años de desarrollo en **.NET** con trabajo reciente en *
 - **[auth-api](https://github.com/riveraec/auth-api)** — API REST de autenticación con Java 21, Spring Boot, Spring Security y JWT. Registro, login, BCrypt, filtro Bearer y endpoint protegido `/me`.
 - **[indicadores-api](https://github.com/riveraec/indicadores-api)** — API REST de indicadores de desempeño con .NET 8, EF Core, SQLite y Swagger. CRUD, filtros, resumen por categoría, ProblemDetails y health check.
 - **[etl-reportes](https://github.com/riveraec/etl-reportes)** — Pipeline ETL en Python (pandas, SQLite, pytest): CSV → transform → SQLite, idempotencia por lote y resumen diario.
+- **[reportes-api](https://github.com/riveraec/reportes-api)** — API FastAPI sobre el ETL: `POST /runs`, `GET /resumen`, health, OpenAPI y tests.
 - **[cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos)** — Biblioteca OpenFeign reutilizable para consumir APIs REST (retry, pool HTTP, WireMock) y demo que integra auth-api y productos-api.
 
 ---
@@ -30,7 +31,7 @@ Mi trayectoria combina años de desarrollo en **.NET** con trabajo reciente en *
 |----------|-------|----------|
 | **C# / .NET** | Avanzado | 6+ años — APIs REST, microservicios, SQL Server |
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, Gradle, clientes REST/SOAP |
-| **Python** | Intermedio | Scripts, automatización, servicios |
+| **Python** | Intermedio | ETL, FastAPI, automatización, servicios |
 | **Node.js** | Intermedio | APIs con Express |
 | **SQL** | Avanzado | Procedimientos almacenados, optimización, ETL |
 
