@@ -8,7 +8,7 @@ CDMX, México
 
 ## Perfil
 
-Más de 6 años en APIs, servicios e integración. Trabajo con **Java, C#, Python y Node.js**. Experiencia principal en **.NET**; en los últimos años también **Java / Spring Boot**, SQL (SQL Server / Oracle), ETL y sector financiero.
+Más de 6 años en APIs, servicios e integración. Trabajo con **Java, C#, Python y Node.js**. Experiencia principal en **.NET**; en los últimos años también **Java / Spring Boot**, SQL (SQL Server / Oracle), ETL, Tableau y sector financiero.
 
 ---
 
@@ -34,10 +34,10 @@ C# · .NET Core · IIS · microservicios
 
 ### Desarrollador .NET senior — 2021 – 2024
 
-C# · ASP.NET Web API · SQL Server · SSIS
+C# · ASP.NET Web API · SQL Server · SSIS · Tableau
 
 - APIs REST con SQL Server: SP, CTE, MERGE, window functions e índices.
-- ETL con SSIS para reportes y cargas intensivas.
+- ETL con SSIS para reportes y cargas intensivas; tableros Tableau sobre esos datos.
 - Soporte de servicios backend en entorno financiero.
 
 **Roles anteriores (2019–2021):** desarrollo .NET en Olefin, Embotelladora Las Margaritas y Madisa.

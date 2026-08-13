@@ -34,9 +34,10 @@ Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md)
 - Procedimientos almacenados, funciones, vistas y transacciones.
 - **Índices**, planes de ejecución y ajuste de consultas.
 - **SQL Server** y **Oracle**; ETL con SSIS y pipelines para reportes y staging.
+- Tableros **Tableau** (extracciones / conexiones a SQL) para seguimiento operativo.
 - Entity Framework / LINQ y SQL cuando hace falta control del acceso a datos.
 
-**Tecnologías:** SQL Server, Oracle, SSIS, Entity Framework, LINQ, CTE, MERGE, window functions
+**Tecnologías:** SQL Server, Oracle, SSIS, Tableau, Entity Framework, LINQ, CTE, MERGE, window functions
 
 ---
 
