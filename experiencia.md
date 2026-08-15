@@ -2,7 +2,7 @@
 
 APIs, integración, bases de datos y microservicios.
 
-Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md)
+Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md) · [Patrones](patrones.md)
 
 ---
 

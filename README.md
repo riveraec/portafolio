@@ -2,7 +2,7 @@
 
 **Desarrollador backend** · Java · C# · Python · Node.js · CDMX  
 
-[LinkedIn](https://www.linkedin.com/in/riveraec/) · [GitHub](https://github.com/riveraec) · [Perfil](perfil.md) · [Experiencia](experiencia.md)
+[LinkedIn](https://www.linkedin.com/in/riveraec/) · [GitHub](https://github.com/riveraec) · [Perfil](perfil.md) · [Experiencia](experiencia.md) · [Patrones](patrones.md)
 
 Más de 6 años en APIs, microservicios e integración. Experiencia principal en **.NET**; trabajo reciente con **Java / Spring Boot** y **Python** (ETL, FastAPI). Sector financiero.
 
@@ -81,23 +81,7 @@ Controlador → servicio → repositorio → BD.
 
 ![Capas API REST](assets/patron-api-rest.png)
 
-### Microservicio hexagonal
-
-Dominio, adaptadores, APIs y persistencia.
-
-![Microservicio hexagonal](assets/patron-microservicios.png)
-
-### Flujo JWT
-
-Login → token Bearer → recurso protegido. [auth-api](https://github.com/riveraec/auth-api).
-
-![Flujo JWT](assets/patron-jwt-flujo.png)
-
-### ETL y API
-
-El pipeline carga datos; la API orquesta y consulta. [etl-reportes](https://github.com/riveraec/etl-reportes) · [reportes-api](https://github.com/riveraec/reportes-api).
-
-![ETL + API](assets/patron-etl-api.png)
+Hexagonal, JWT y ETL/API: [patrones.md](patrones.md).
 
 ---
 
