@@ -1,6 +1,6 @@
 # Patrones
 
-[← Volver al portafolio](README.md)
+[← Volver al portafolio](index.md)
 
 ## Capas de una API REST
 
@@ -26,4 +26,4 @@ El pipeline carga datos; la API orquesta y consulta. [etl-reportes](https://gith
 
 ![ETL + API](assets/patron-etl-api.png)
 
-[← Volver al portafolio](README.md)
+[← Volver al portafolio](index.md)

@@ -96,4 +96,4 @@ Desarrollador backend (Java o .NET), APIs, SQL y procesos de datos. CDMX o remot
 
 [LinkedIn](https://www.linkedin.com/in/riveraec/) · [GitHub](https://github.com/riveraec)
 
-[← Volver al portafolio](README.md)
+[← Volver al portafolio](index.md)

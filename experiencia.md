@@ -2,7 +2,7 @@
 
 APIs, integración, bases de datos y microservicios.
 
-Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [README.md](README.md) · [Patrones](patrones.md)
+Trayectoria por rol: [perfil.md](perfil.md) · Inicio: [index.md](index.md) · [Patrones](patrones.md)
 
 ---
 
@@ -73,4 +73,4 @@ Ejemplos: [etl-reportes/sql](https://github.com/riveraec/etl-reportes/tree/main/
 
 ---
 
-[← Volver al portafolio](README.md)
+[← Volver al portafolio](index.md)
