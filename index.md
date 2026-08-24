@@ -36,7 +36,7 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
 | **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL · [ejemplos](https://github.com/riveraec/etl-reportes/tree/main/sql) |
-| **Node.js** | Intermedio | APIs con Express |
+| **Node.js** | Intermedio | APIs Express · [eventos-api](https://github.com/riveraec/eventos-api) |
 
 ---
 
@@ -62,6 +62,8 @@ Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` �
 ---
 
 ## Otros proyectos
+
+**Node.js** — [eventos-api](https://github.com/riveraec/eventos-api): Express, Zod, SQLite, idempotencia por `id`, SuperTest, Docker.
 
 **Integración Java** — JWT, CRUD y cliente HTTP:
 

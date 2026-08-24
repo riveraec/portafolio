@@ -63,6 +63,10 @@ Competencias por tema: [experiencia.md](experiencia.md).
 
 - **[indicadores-api](https://github.com/riveraec/indicadores-api)** — .NET 8, EF Core, filtros, resumen, ProblemDetails, health, xUnit.
 
+**Node.js**
+
+- **[eventos-api](https://github.com/riveraec/eventos-api)** — Express: ingesta de eventos (webhooks), Zod, SQLite, idempotencia por `id`, SuperTest, Docker.
+
 ---
 
 ## Lenguajes
@@ -73,7 +77,7 @@ Competencias por tema: [experiencia.md](experiencia.md).
 | **Java / Spring Boot** | Intermedio-avanzado | Microservicios, bibliotecas, Gradle, REST/SOAP |
 | **Python** | Intermedio | ETL, FastAPI, automatización |
 | **SQL** | Avanzado | CTE, MERGE, window functions, SP, índices, planes, ETL · [ejemplos](https://github.com/riveraec/etl-reportes/tree/main/sql) |
-| **Node.js** | Intermedio | APIs con Express |
+| **Node.js** | Intermedio | APIs Express · [eventos-api](https://github.com/riveraec/eventos-api) |
 
 ---
 
