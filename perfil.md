@@ -57,6 +57,7 @@ Competencias por tema: [experiencia.md](experiencia.md).
 
 - **[auth-api](https://github.com/riveraec/auth-api)** — JWT, Spring Security, BCrypt, `/me`.
 - **[productos-api](https://github.com/riveraec/productos-api)** — CRUD Spring Boot, JPA, OpenAPI.
+- **[catalogo-mongo-api](https://github.com/riveraec/catalogo-mongo-api)** — CRUD Spring Boot + MongoDB, Validation, OpenAPI, Testcontainers, Docker Compose.
 - **[cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos)** — OpenFeign (retry, pool, WireMock) + demo auth/productos.
 
 **.NET**

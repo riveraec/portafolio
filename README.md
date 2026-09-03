@@ -65,9 +65,9 @@ Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` �
 
 **Node.js** — [eventos-api](https://github.com/riveraec/eventos-api): Express, Zod, SQLite, idempotencia por `id`, SuperTest, Docker.
 
-**Integración Java** — JWT, CRUD y cliente HTTP:
+**Integración Java** — JWT, CRUD (SQL y Mongo) y cliente HTTP:
 
-- [auth-api](https://github.com/riveraec/auth-api) · [productos-api](https://github.com/riveraec/productos-api) · [cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos) (OpenFeign, retry, pool, WireMock)
+- [auth-api](https://github.com/riveraec/auth-api) · [productos-api](https://github.com/riveraec/productos-api) · [catalogo-mongo-api](https://github.com/riveraec/catalogo-mongo-api) (MongoDB) · [cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos) (OpenFeign, retry, pool, WireMock)
 
 **.NET** — [indicadores-api](https://github.com/riveraec/indicadores-api): .NET 8, EF Core, filtros, resumen, ProblemDetails, health, xUnit.
 
@@ -91,7 +91,7 @@ Hexagonal, JWT y ETL/API: [patrones.md](patrones.md).
 
 **Lenguajes:** Java 21, C#, Python, JavaScript, SQL  
 **Frameworks:** Spring Boot, .NET / ASP.NET Web API, FastAPI, Express  
-**Datos:** SQL Server, Oracle, SQLite, EF Core, LINQ, SSIS, Tableau, pandas · CTE, MERGE, window functions, SP, índices  
+**Datos:** SQL Server, Oracle, SQLite, MongoDB, EF Core, LINQ, SSIS, Tableau, pandas · CTE, MERGE, window functions, SP, índices  
 **Integración:** REST, SOAP, JWT, OpenAPI, OpenFeign  
 **Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker, AWS (EC2, ECS Fargate, Lambda, RDS), Terraform
 
@@ -103,4 +103,4 @@ Desarrollador backend (Java o .NET), APIs, SQL y procesos de datos. CDMX o remot
 
 [linkedin.com/in/riveraec](https://www.linkedin.com/in/riveraec/) · [github.com/riveraec](https://github.com/riveraec)
 
-*Última actualización: agosto 2026*
+*Última actualización: septiembre 2026*
