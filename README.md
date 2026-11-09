@@ -11,7 +11,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN).
 Abre `index.html` en el navegador, o:
 
 ```powershell
-cd "C:\Users\river\Documentos\Base de Conocimiento\3-Codigo\Personal\portafolio"
+cd "C:\Users\river\Documentos\Base de Conocimiento\3-Codigo\Personal\frontend\portafolio"
 start index.html
 ```
 
@@ -27,5 +27,5 @@ GitHub Pages tarda 1–2 minutos. Recarga con Ctrl+F5.
 
 ## Ubicación en la base
 
-`3-Codigo/Personal/portafolio` (proyecto de código).  
+`3-Codigo/Personal/frontend/portafolio` (proyecto de código).  
 Notas de carrera: `2-Personal/cerebro/20-areas/Carrera/`.
