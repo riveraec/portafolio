@@ -4,7 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portafolio de Efrain Rivera Cadena — desarrollador backend (Java, C#, Python, Node.js). APIs, SQL e integración. CDMX o remoto.">
+  <meta name="theme-color" content="#0c8fc4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b121c" media="(prefers-color-scheme: dark)">
+  <meta name="author" content="Efrain Rivera Cadena">
   <title>Efrain Rivera Cadena — Portafolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.jpg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://riveraec.github.io/portafolio/">
+  <meta property="og:title" content="Efrain Rivera Cadena — Portafolio">
+  <meta property="og:description" content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración. CDMX o remoto.">
+  <meta property="og:image" content="https://riveraec.github.io/portafolio/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Efrain Rivera Cadena — Portafolio">
+  <meta name="twitter:description" content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración.">
+  <meta name="twitter:image" content="https://riveraec.github.io/portafolio/assets/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -100,13 +116,15 @@
       width: 108px;
       height: 108px;
       border-radius: 30px;
-      background: linear-gradient(135deg, #0c8fc4, #5dd6ff);
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 800;
-      font-size: 2rem;
+      overflow: hidden;
+      padding: 0;
       box-shadow: 0 16px 40px rgba(12, 143, 196, .3);
+    }
+    .fo-av img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .fo-h1 {
       font-weight: 800;
@@ -266,6 +284,28 @@
     }
     html:not([data-theme="dark"]) .fo-theme-btn .icon-sun { display: none; }
     html[data-theme="dark"] .fo-theme-btn .icon-moon { display: none; }
+    .fo-brand {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      text-decoration: none;
+      color: var(--fo-ink);
+      font-weight: 700;
+      font-size: .92rem;
+      letter-spacing: -.02em;
+    }
+    .fo-brand:hover { color: var(--fo-cyan); }
+    .fo-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: block;
+    }
+    .fo-brand-name { display: none; }
+    @media (min-width: 576px) {
+      .fo-brand-name { display: inline; }
+    }
     section[id] { scroll-margin-top: 4.5rem; }
     .fo-stack-item {
       display: flex;
@@ -331,6 +371,10 @@
 
   <nav class="fo-nav" aria-label="Secciones">
     <div class="container fo-nav-inner">
+      <a class="fo-brand" href="#" title="Inicio">
+        <img src="assets/brand-mark.svg" width="32" height="32" alt="">
+        <span class="fo-brand-name">Efrain Rivera</span>
+      </a>
       <div class="fo-nav-scroll">
         <a href="#perfil">Perfil</a>
         <a href="#trayectoria">Trayectoria</a>
@@ -348,7 +392,9 @@
   </nav>
 
   <header class="fo-hero container text-center py-5">
-    <div class="fo-av mx-auto mb-3">ER</div>
+    <div class="fo-av mx-auto mb-3" aria-hidden="true">
+      <img src="assets/brand-mark.svg" width="108" height="108" alt="">
+    </div>
     <span class="fo-chip"><i class="bi bi-geo-alt"></i> CDMX (híbrido) · remoto</span>
     <h1 class="fo-h1 mt-3 mb-2">Efrain Rivera Cadena</h1>
     <p class="text-secondary mx-auto mb-2" style="max-width:560px;font-weight:600">
