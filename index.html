@@ -105,19 +105,39 @@
       background: #fff;
     }
     .fo-shot img { width: 100%; height: auto; display: block; }
-    nav a { color: inherit; }
+    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+    .fo-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 253, 254, .92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--fo-line);
+    }
+    .fo-nav a {
+      color: #5a6a7a;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .fo-nav a:hover { color: var(--fo-cyan); }
+    section[id] { scroll-margin-top: 4.5rem; }
   </style>
 </head>
 <body>
 
-  <nav class="py-3 px-3 container d-flex align-items-center gap-3">
-    <span class="fw-bold fo-mono">riveraec <span style="color:var(--fo-cyan)">~/</span>portafolio</span>
-    <div class="ms-auto d-none d-md-flex gap-4 small">
-      <a class="text-decoration-none text-secondary" href="#trayectoria">Trayectoria</a>
-      <a class="text-decoration-none text-secondary" href="#proyectos">Proyectos</a>
-      <a class="text-decoration-none text-secondary" href="#stack">Stack</a>
-      <a class="text-decoration-none text-secondary" href="#formacion">Formación</a>
-      <a class="text-decoration-none text-secondary" href="#contacto">Contacto</a>
+  <nav class="fo-nav">
+    <div class="container py-2 d-flex align-items-center gap-2 flex-wrap">
+      <a class="fw-bold fo-mono text-decoration-none" href="#" style="color:var(--fo-ink)">
+        riveraec <span style="color:var(--fo-cyan)">~/</span>portafolio
+      </a>
+      <div class="ms-auto d-flex gap-3 small flex-wrap justify-content-end">
+        <a href="#perfil">Perfil</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#demos">Demos</a>
+        <a href="#stack">Stack</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </div>
   </nav>
 
@@ -128,13 +148,18 @@
     <p class="text-secondary mx-auto mb-2" style="max-width:560px;font-weight:600">
       Desarrollador backend · Java · C# · Python · Node.js
     </p>
-    <p class="text-secondary mx-auto mb-4" style="max-width:640px">
+    <p class="text-secondary mx-auto mb-3" style="max-width:640px">
       Más de 6 años en APIs, microservicios e integración (sector financiero).
       Stack mixto .NET y Java desde 2021 (Java 5+ años profesionales); foco reciente
       full-time en Java 21 / Spring Boot, más Python (ETL, FastAPI) y Node.js / Express en demos.
     </p>
+    <p class="small text-secondary mb-4">Elige el camino: perfil laboral o revisión técnica.</p>
+    <div class="d-flex gap-2 justify-content-center mb-3 flex-wrap">
+      <a class="btn btn-fo" href="#perfil">Perfil / trayectoria</a>
+      <a class="btn btn-fo2" href="#proyectos">Proyectos (repos)</a>
+      <a class="btn btn-fo2" href="#demos">Capturas técnicas</a>
+    </div>
     <div class="d-flex gap-2 justify-content-center mb-4 flex-wrap">
-      <a class="btn btn-fo" href="#proyectos">Ver proyectos</a>
       <a class="btn btn-fo2" href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener">
         <i class="bi bi-linkedin me-1"></i>LinkedIn
       </a>
@@ -154,7 +179,7 @@
     </div>
   </header>
 
-  <section class="container pb-2" style="max-width:720px">
+  <section id="perfil" class="container pb-2" style="max-width:720px">
     <h2 class="fw-bold h5 mb-3">Highlights</h2>
     <ul class="text-secondary small mb-0">
       <li>Equipo de 5 como jefe de desarrollo (APIs REST y microservicios).</li>
@@ -212,10 +237,14 @@
   </section>
 
   <section id="proyectos" class="container py-5">
-    <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2">
+    <div class="d-flex justify-content-between align-items-end mb-2 flex-wrap gap-2">
       <h2 class="fw-bold mb-0">Proyectos</h2>
-      <span class="fo-mono small text-secondary">GitHub · demos</span>
+      <span class="fo-mono small text-secondary">repos · GitHub</span>
     </div>
+    <p class="text-secondary small mb-4" style="max-width:720px">
+      Resumen para revisión técnica. Las capturas de pantallas están en
+      <a href="#demos">Demos</a>.
+    </p>
 
     <div class="row g-3 mb-5">
       <div class="col-md-4">
@@ -286,7 +315,29 @@
       <li><a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">catalogo-mongo-api</a> — demo NoSQL (MongoDB + Compose)</li>
     </ul>
 
-    <h3 class="fw-bold h5 mb-3">Demo — ETL y API</h3>
+    <h3 class="fw-bold h5 mb-3">Más repos</h3>
+    <ul class="text-secondary mb-0">
+      <li><strong>.NET</strong> —
+        <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">indicadores-api</a>
+      </li>
+      <li><strong>Python</strong> —
+        <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a> ·
+        <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
+      </li>
+      <li><strong>Node.js</strong> —
+        <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="demos" class="container py-5">
+    <h2 class="fw-bold mb-2">Demos técnicas</h2>
+    <p class="text-secondary small mb-4" style="max-width:720px">
+      Capturas para tech lead / code review rápido. Si solo te interesa el perfil, vuelve a
+      <a href="#perfil">Perfil</a> o <a href="#contacto">Contacto</a>.
+    </p>
+
+    <h3 class="fw-bold h5 mb-3">ETL y API</h3>
     <p class="text-secondary small mb-3">
       <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
       ·
@@ -306,12 +357,12 @@
       </div>
     </div>
 
-    <h3 class="fw-bold h5 mb-3">Demo — eventos-api (idempotencia)</h3>
+    <h3 class="fw-bold h5 mb-3">eventos-api (idempotencia)</h3>
     <p class="text-secondary small mb-3">
       <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
       — <code>GET /health</code>, <code>POST</code> 201 y el mismo <code>POST</code> 200
     </p>
-    <div class="row g-3 mb-5">
+    <div class="row g-3">
       <div class="col-md-4">
         <figure class="fo-shot mb-0">
           <img src="assets/demo-eventos-api-health.png" alt="GET /health 200">
@@ -328,20 +379,6 @@
         </figure>
       </div>
     </div>
-
-    <h3 class="fw-bold h5 mb-3">Más repos</h3>
-    <ul class="text-secondary">
-      <li><strong>.NET</strong> —
-        <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">indicadores-api</a>
-      </li>
-      <li><strong>Python</strong> —
-        <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a> ·
-        <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
-      </li>
-      <li><strong>Node.js</strong> —
-        <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
-      </li>
-    </ul>
   </section>
 
   <section id="stack" class="container py-5" style="max-width:800px">
