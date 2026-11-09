@@ -49,8 +49,9 @@ Ejemplos: [etl-reportes/sql](https://github.com/riveraec/etl-reportes/tree/main/
 - Arquitectura hexagonal: dominio, adaptadores, puertos.
 - Estándares de nomenclatura, estructura de proyectos y pruebas.
 - Consumo y exposición de APIs entre servicios.
+- **Kafka** en jefatura: consumo de CECOS y Algorithia; cifras control en un bus de Algorithia.
 
-**Tecnologías:** Java 21, Spring Boot, Gradle, C#, .NET Core, Docker
+**Tecnologías:** Java 21, Spring Boot, Gradle, C#, .NET Core, Kafka, Docker
 
 ---
 

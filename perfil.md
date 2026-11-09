@@ -16,7 +16,7 @@ Más de 6 años en APIs, servicios e integración. Trabajo con **Java, C#, Pytho
 
 **Grupo financiero retail** — sector financiero
 
-### Arquitecto de software — 2025 – presente
+### Arquitecto de soluciones — 2025 – presente
 
 Java 21 · Spring Boot · Gradle · AWS · Terraform
 
@@ -26,19 +26,20 @@ Java 21 · Spring Boot · Gradle · AWS · Terraform
 
 ### Jefe de desarrollo — 2024 – 2025
 
-C# · .NET Core · IIS · microservicios
+C# · .NET Core · Java / Spring Boot · Kafka · IIS · microservicios
 
-- Coordinación de un equipo de 5 desarrolladores en APIs .NET y servicios críticos.
+- Coordinación de un equipo de 5 desarrolladores en APIs REST y microservicios.
+- API de vinculación de afiliación Afore (web y móvil) con Java 21, Spring Boot y Maven.
+- Kafka: consumo de CECOS y de Algorithia; comparación con Afore y cifras control en un bus de Algorithia.
 - Revisión de código, convenciones de capas e incidencias en producción.
-- Microservicios .NET y mejora de tiempos de respuesta en IIS.
 
-### Desarrollador .NET senior — 2021 – 2024
+### Desarrollador Backend — 2021 – 2024
 
-C# · ASP.NET Web API · SQL Server · SSIS · Tableau
+C# · ASP.NET Web API · Java · SQL Server · SSIS · Tableau
 
-- APIs REST con SQL Server: SP, CTE, MERGE, window functions e índices.
-- ETL con SSIS para reportes y cargas intensivas; tableros Tableau sobre esos datos.
-- Soporte de servicios backend en entorno financiero.
+- APIs REST en C# / ASP.NET Web API e integraciones en Java / Spring Boot.
+- SQL Server: SP, CTE, MERGE, window functions e índices.
+- ETL con SSIS y tableros Tableau; integración REST, SOAP y WCF.
 
 **Roles anteriores (2019–2021):** desarrollo .NET en Olefin, Embotelladora Las Margaritas y Madisa.
 
@@ -84,16 +85,15 @@ Competencias por tema: [experiencia.md](experiencia.md).
 
 ## Qué busco
 
-Desarrollador backend (Java o .NET), APIs, SQL y procesos de datos. CDMX o remoto.
+Desarrollador backend, APIs, SQL y procesos de datos. CDMX o remoto.
 
 ---
 
 ## Educación y certificaciones
 
 - **Lic. Ciencias Computacionales** — UAEH (2015–2019)
-- Computación en la nube — EOI
+- Cloud Computing — Escuela de Organización Industrial
 - Desarrollo de aplicaciones móviles — Universidad Complutense de Madrid
-- Transformación digital para el empleo — EOI
 
 ---
 

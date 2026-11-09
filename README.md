@@ -14,9 +14,9 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 
 | Rol | Período | Stack |
 |-----|---------|-------|
-| Arquitecto de software | 2025 – presente | Java 21, Spring Boot, Gradle, AWS, Terraform |
-| Jefe de desarrollo | 2024 – 2025 | C#, .NET Core, IIS, microservicios |
-| Desarrollador .NET senior | 2021 – 2024 | ASP.NET Web API, SQL Server, SSIS, Tableau |
+| Arquitecto de soluciones | 2025 – presente | Java 21, Spring Boot, Gradle, AWS, Terraform |
+| Jefe de desarrollo | 2024 – 2025 | C#, .NET Core, Java / Spring Boot, Kafka, IIS |
+| Desarrollador Backend | 2021 – 2024 | ASP.NET Web API, Java, SQL Server, SSIS, Tableau |
 
 **Rol actual**
 
@@ -24,7 +24,7 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 - Integración REST/OpenAPI entre sistemas internos; infraestructura con Terraform.
 - Estándares de capas, revisión de código y seguimiento de APIs en producción.
 
-**Antes:** equipo de 5 en APIs .NET; SQL Server (SP, CTE, MERGE), ETL/SSIS y Tableau. Detalle: [perfil.md](perfil.md).
+**Antes:** equipo de 5 en APIs .NET y Java (vinculación Afore; Kafka de CECOS y Algorithia); SQL Server (SP, CTE, MERGE), ETL/SSIS y Tableau. Detalle: [perfil.md](perfil.md).
 
 ---
 
@@ -92,15 +92,15 @@ Hexagonal, JWT y ETL/API: [patrones.md](patrones.md).
 **Lenguajes:** Java 21, C#, Python, JavaScript, SQL  
 **Frameworks:** Spring Boot, .NET / ASP.NET Web API, FastAPI, Express  
 **Datos:** SQL Server, Oracle, SQLite, MongoDB, EF Core, LINQ, SSIS, Tableau, pandas · CTE, MERGE, window functions, SP, índices  
-**Integración:** REST, SOAP, JWT, OpenAPI, OpenFeign  
+**Integración:** REST, SOAP, JWT, OpenAPI, OpenFeign, Kafka  
 **Herramientas:** Git, GitLab, Gradle, Maven, NuGet, Postman, Docker, AWS (EC2, ECS Fargate, Lambda, RDS), Terraform
 
 ---
 
 ## Qué busco
 
-Desarrollador backend (Java o .NET), APIs, SQL y procesos de datos. CDMX o remoto.
+Desarrollador backend, APIs, SQL y procesos de datos. CDMX o remoto.
 
 [linkedin.com/in/riveraec](https://www.linkedin.com/in/riveraec/) · [github.com/riveraec](https://github.com/riveraec)
 
-*Última actualización: septiembre 2026*
+*Última actualización: noviembre 2026*
