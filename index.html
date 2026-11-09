@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de Efrain Rivera Cadena — desarrollador backend (Java, C#, Python, Node.js). APIs, SQL e integración. CDMX o remoto.">
+  <title>Efrain Rivera Cadena — Portafolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --fo-ink: #0e1726;
+      --fo-cyan: #0c8fc4;
+      --fo-soft: #eef6fa;
+      --fo-line: #e3ecf2;
+    }
+    body {
+      background: #fbfdfe;
+      color: var(--fo-ink);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .fo-mono { font-family: ui-monospace, "Cascadia Mono", "JetBrains Mono", monospace; }
+    .fo-chip {
+      background: var(--fo-soft);
+      color: var(--fo-cyan);
+      border: 1px solid #d4e9f3;
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+    .fo-av {
+      width: 108px;
+      height: 108px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #0c8fc4, #5dd6ff);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 2rem;
+      box-shadow: 0 16px 40px rgba(12, 143, 196, .3);
+    }
+    .fo-h1 {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: clamp(2rem, 4.6vw, 3rem);
+    }
+    .btn-fo {
+      background: var(--fo-ink);
+      color: #fff;
+      border-radius: 12px;
+      border: 0;
+      padding: .65rem 1.3rem;
+      font-weight: 600;
+    }
+    .btn-fo:hover { background: #1f2c44; color: #fff; }
+    .btn-fo2 {
+      border: 1.5px solid var(--fo-line);
+      border-radius: 12px;
+      padding: .65rem 1.3rem;
+      font-weight: 600;
+      color: var(--fo-ink);
+      background: #fff;
+    }
+    .btn-fo2:hover { border-color: var(--fo-cyan); color: var(--fo-cyan); }
+    .fo-card {
+      background: #fff;
+      border: 1px solid var(--fo-line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .18s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    .fo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 46px rgba(14, 23, 38, .1);
+      color: inherit;
+    }
+    .fo-thumb { height: 150px; }
+    .fo-tl {
+      border-left: 2px solid var(--fo-line);
+      padding-left: 22px;
+      position: relative;
+    }
+    .fo-tl::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--fo-cyan);
+      box-shadow: 0 0 0 4px var(--fo-soft);
+    }
+    .fo-foot { border-top: 1px solid var(--fo-line); }
+    .fo-shot {
+      border: 1px solid var(--fo-line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .fo-shot img { width: 100%; height: auto; display: block; }
+    nav a { color: inherit; }
+  </style>
+</head>
+<body>
+
+  <nav class="py-3 px-3 container d-flex align-items-center gap-3">
+    <span class="fw-bold fo-mono">riveraec <span style="color:var(--fo-cyan)">~/</span>portafolio</span>
+    <div class="ms-auto d-none d-md-flex gap-4 small">
+      <a class="text-decoration-none text-secondary" href="#trayectoria">Trayectoria</a>
+      <a class="text-decoration-none text-secondary" href="#proyectos">Proyectos</a>
+      <a class="text-decoration-none text-secondary" href="#stack">Stack</a>
+      <a class="text-decoration-none text-secondary" href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header class="container text-center py-5">
+    <div class="fo-av mx-auto mb-3">ER</div>
+    <span class="fo-chip">CDMX · abierto a remoto</span>
+    <h1 class="fo-h1 mt-3 mb-2">Efrain Rivera Cadena</h1>
+    <p class="text-secondary mx-auto mb-2" style="max-width:560px;font-weight:600">
+      Desarrollador backend · Java · C# · Python · Node.js
+    </p>
+    <p class="text-secondary mx-auto mb-4" style="max-width:560px">
+      Más de 6 años en APIs, microservicios e integración. Experiencia principal en .NET;
+      trabajo reciente con Java / Spring Boot y Python (ETL, FastAPI). Sector financiero.
+    </p>
+    <div class="d-flex gap-2 justify-content-center mb-4 flex-wrap">
+      <a class="btn btn-fo" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn-fo2" href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener">
+        <i class="bi bi-linkedin me-1"></i>LinkedIn
+      </a>
+      <a class="btn btn-fo2" href="https://github.com/riveraec" target="_blank" rel="noopener">
+        <i class="bi bi-github me-1"></i>GitHub
+      </a>
+    </div>
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <span class="fo-chip">Java 21</span>
+      <span class="fo-chip">Spring Boot</span>
+      <span class="fo-chip">C# / .NET</span>
+      <span class="fo-chip">SQL</span>
+      <span class="fo-chip">Python</span>
+      <span class="fo-chip">Node.js</span>
+      <span class="fo-chip">Kafka</span>
+      <span class="fo-chip">AWS</span>
+    </div>
+  </header>
+
+  <section id="trayectoria" class="container py-5" style="max-width:720px">
+    <h2 class="fw-bold mb-2">Trayectoria</h2>
+    <p class="text-secondary small mb-4">Grupo financiero retail · Ciudad de México</p>
+
+    <div class="fo-tl pb-4">
+      <div class="d-flex justify-content-between flex-wrap gap-2">
+        <h6 class="fw-bold mb-0">Arquitecto de soluciones</h6>
+        <span class="fo-mono small text-secondary">2025 — presente</span>
+      </div>
+      <span class="small" style="color:var(--fo-cyan)">Java 21 · Spring Boot · Gradle · AWS · Terraform</span>
+      <ul class="small text-secondary mt-2 mb-0">
+        <li>Servicios Java/Spring en AWS: ECS Fargate, Lambda, RDS (y EC2 cuando aplica).</li>
+        <li>Integración REST/OpenAPI; infraestructura con Terraform.</li>
+        <li>Estándares de capas, revisión de código y seguimiento de APIs en producción.</li>
+      </ul>
+    </div>
+
+    <div class="fo-tl pb-4">
+      <div class="d-flex justify-content-between flex-wrap gap-2">
+        <h6 class="fw-bold mb-0">Jefe de desarrollo</h6>
+        <span class="fo-mono small text-secondary">2024 — 2025</span>
+      </div>
+      <span class="small" style="color:var(--fo-cyan)">C# · .NET Core · Java / Spring Boot · Kafka · IIS</span>
+      <ul class="small text-secondary mt-2 mb-0">
+        <li>Equipo de 5 en APIs REST y microservicios.</li>
+        <li>API de vinculación de afiliación Afore (Java 21, Spring Boot, Maven).</li>
+        <li>Kafka: consumo de CECOS y Algorithia; comparación con Afore y cifras control en un bus de Algorithia.</li>
+      </ul>
+    </div>
+
+    <div class="fo-tl">
+      <div class="d-flex justify-content-between flex-wrap gap-2">
+        <h6 class="fw-bold mb-0">Desarrollador Backend</h6>
+        <span class="fo-mono small text-secondary">2021 — 2024</span>
+      </div>
+      <span class="small" style="color:var(--fo-cyan)">ASP.NET Web API · Java · SQL Server · SSIS · Tableau</span>
+      <ul class="small text-secondary mt-2 mb-0">
+        <li>APIs REST en C# e integraciones en Java / Spring Boot.</li>
+        <li>SQL Server: SP, CTE, MERGE, window functions e índices; ETL/SSIS y Tableau.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proyectos" class="container py-5">
+    <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2">
+      <h2 class="fw-bold mb-0">Proyectos</h2>
+      <span class="fo-mono small text-secondary">GitHub · demos</span>
+    </div>
+
+    <div class="row g-3 mb-5">
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">
+          <div class="fo-thumb" style="background:linear-gradient(135deg,#0c8fc4,#5dd6ff)"></div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between">
+              <h6 class="fw-bold mb-1">etl-reportes + reportes-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">Pipeline Python (pandas, SQLite, pytest) + API FastAPI que dispara corridas y consulta el resumen.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">Python · FastAPI · SQL</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">
+          <div class="fo-thumb" style="background:linear-gradient(135deg,#0f5132,#52b788)"></div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between">
+              <h6 class="fw-bold mb-1">eventos-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">Ingesta de eventos (webhooks) con Express, Zod, SQLite e idempotencia por <code>id</code>.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">Node.js · Express · Docker</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">
+          <div class="fo-thumb" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"></div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between">
+              <h6 class="fw-bold mb-1">indicadores-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">.NET 8 / ASP.NET Core, EF Core, filtros, resumen, ProblemDetails, health y xUnit.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">.NET 8 · EF Core · xUnit</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <h3 class="fw-bold h5 mb-3">Demo — ETL y API</h3>
+    <p class="text-secondary small mb-3">
+      <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
+      ·
+      <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
+      — OpenAPI y <code>GET /resumen</code>
+    </p>
+    <div class="row g-3 mb-5">
+      <div class="col-md-6">
+        <figure class="fo-shot mb-0">
+          <img src="assets/demo-reportes-api-docs.png" alt="OpenAPI de reportes-api">
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure class="fo-shot mb-0">
+          <img src="assets/demo-reportes-api-resumen.png" alt="GET /resumen de reportes-api">
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="fw-bold h5 mb-3">Demo — eventos-api (idempotencia)</h3>
+    <p class="text-secondary small mb-3">
+      <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
+      — <code>GET /health</code>, <code>POST</code> 201 y el mismo <code>POST</code> 200
+    </p>
+    <div class="row g-3 mb-5">
+      <div class="col-md-4">
+        <figure class="fo-shot mb-0">
+          <img src="assets/demo-eventos-api-health.png" alt="GET /health 200">
+        </figure>
+      </div>
+      <div class="col-md-4">
+        <figure class="fo-shot mb-0">
+          <img src="assets/demo-eventos-api-post-201.png" alt="POST /eventos 201">
+        </figure>
+      </div>
+      <div class="col-md-4">
+        <figure class="fo-shot mb-0">
+          <img src="assets/demo-eventos-api-post-200.png" alt="POST /eventos 200 idempotente">
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="fw-bold h5 mb-3">Más repos</h3>
+    <ul class="text-secondary">
+      <li><strong>Java</strong> —
+        <a href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">auth-api</a> ·
+        <a href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">productos-api</a> ·
+        <a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">catalogo-mongo-api</a> ·
+        <a href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">cliente-servicios-remotos</a>
+      </li>
+      <li><strong>.NET</strong> —
+        <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">indicadores-api</a>
+      </li>
+      <li><strong>Python</strong> —
+        <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a> ·
+        <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
+      </li>
+      <li><strong>Node.js</strong> —
+        <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="stack" class="container py-5" style="max-width:800px">
+    <h2 class="fw-bold mb-3">Stack</h2>
+    <p class="text-secondary mb-2"><strong>Lenguajes:</strong> Java 21, C#, Python, JavaScript, SQL</p>
+    <p class="text-secondary mb-2"><strong>Frameworks:</strong> Spring Boot, .NET / ASP.NET Web API, FastAPI, Express</p>
+    <p class="text-secondary mb-2"><strong>Datos:</strong> SQL Server, Oracle, SQLite, MongoDB, EF Core, LINQ, SSIS, Tableau, pandas</p>
+    <p class="text-secondary mb-2"><strong>Integración:</strong> REST, SOAP, JWT, OpenAPI, OpenFeign, Kafka</p>
+    <p class="text-secondary mb-0"><strong>Herramientas:</strong> Git, GitLab, Gradle, Maven, Docker, AWS (EC2, ECS Fargate, Lambda, RDS), Terraform</p>
+  </section>
+
+  <section id="contacto" class="container py-5 text-center" style="max-width:640px">
+    <div class="p-5 rounded-4" style="background:var(--fo-ink);color:#fff">
+      <h3 class="fw-bold mb-2">Qué busco</h3>
+      <p class="small opacity-75 mb-3">
+        Desarrollador backend, APIs, SQL y procesos de datos. CDMX o remoto.
+      </p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <a class="btn px-4" style="background:#5dd6ff;color:#06121f;font-weight:700;border-radius:12px"
+           href="mailto:river28.er@gmail.com">
+          <i class="bi bi-envelope me-1"></i>river28.er@gmail.com
+        </a>
+        <a class="btn px-4 btn-fo2" style="border-color:#5dd6ff;color:#5dd6ff;background:transparent"
+           href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fo-foot py-4 text-center small text-secondary">
+    <div class="d-flex gap-3 justify-content-center mb-2 fs-5">
+      <a class="text-secondary" href="https://github.com/riveraec" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="bi bi-github"></i>
+      </a>
+      <a class="text-secondary" href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+    <p class="mb-0">Efrain Rivera Cadena · Portafolio · noviembre 2026</p>
+  </footer>
+
+</body>
+</html>
