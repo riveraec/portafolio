@@ -65,6 +65,14 @@ Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` �
 
 **Node.js** — [eventos-api](https://github.com/riveraec/eventos-api): Express, Zod, SQLite, idempotencia por `id`, SuperTest, Docker.
 
+`GET /health` (200), `POST /eventos` alta (201) y el mismo `POST` idempotente (200):
+
+![GET /health](assets/demo-eventos-api-health.png)
+
+![POST /eventos 201](assets/demo-eventos-api-post-201.png)
+
+![POST /eventos 200 idempotente](assets/demo-eventos-api-post-200.png)
+
 **Integración Java** — JWT, CRUD (SQL y Mongo) y cliente HTTP:
 
 - [auth-api](https://github.com/riveraec/auth-api) · [productos-api](https://github.com/riveraec/productos-api) · [catalogo-mongo-api](https://github.com/riveraec/catalogo-mongo-api) (MongoDB) · [cliente-servicios-remotos](https://github.com/riveraec/cliente-servicios-remotos) (OpenFeign, retry, pool, WireMock)
