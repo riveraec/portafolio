@@ -1,0 +1,6 @@
+# GitHub Pages usa Jekyll por defecto (no hay .nojekyll).
+# Carpetas con _ ya se omiten; se lista _archivo por claridad.
+exclude:
+  - _archivo
+  - README.md
+  - .gitignore

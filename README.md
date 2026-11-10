@@ -5,7 +5,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 - **URL:** https://riveraec.github.io/portafolio/
 - **Repo:** https://github.com/riveraec/portafolio
 - **Editar:** `index.html` (textos, links, CSS embebido) y `assets/`
-- **Borradores md:** `_archivo/` (versionados; Jekyll/Pages no los publica como sitio)
+- **Borradores md:** `_archivo/` (en el repo; **no** se publican en Pages — ver `_config.yml`. No añadir `.nojekyll` o sí quedarían visibles.)
 
 ## Stack y versiones
 
@@ -35,7 +35,8 @@ portafolio/
 │   ├── diagrams/   # patrones (png/svg/mmd)
 │   ├── ia/         # logos herramientas IA / docs
 │   └── cv/         # PDF descargable
-└── _archivo/       # md histórico (no es el sitio publicado)
+├── _config.yml     # exclude de Pages (Jekyll)
+└── _archivo/       # md histórico — no publicado
 ```
 
 ## Local
