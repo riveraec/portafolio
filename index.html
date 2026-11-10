@@ -332,6 +332,45 @@
       font-size: .8rem;
       color: var(--fo-muted);
     }
+    .fo-ai-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: flex-start;
+    }
+    .fo-ai-tool {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      border: 1px solid var(--fo-chip-border);
+      background: var(--fo-soft);
+      color: var(--fo-ink);
+      font-size: .8rem;
+      font-weight: 600;
+    }
+    .fo-ai-tool img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+    html[data-theme="dark"] .fo-ai-tool img.fo-ai-mono {
+      filter: invert(1) brightness(1.1);
+    }
+    .fo-ai-glyph {
+      display: inline-grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      background: var(--fo-cyan);
+      color: #fff;
+      font-size: .55rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
     .fo-contact-panel {
       background: var(--fo-contact-bg);
       color: var(--fo-contact-fg);
@@ -381,6 +420,7 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#demos">Demos</a>
         <a href="#stack">Stack</a>
+        <a href="#flujo-ia">IA</a>
         <a href="#formacion">Formación</a>
         <a href="#contacto">Contacto</a>
       </div>
@@ -726,6 +766,27 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="flujo-ia" class="container py-5" style="max-width:720px">
+    <h2 class="fw-bold mb-2">IA en el flujo</h2>
+    <p class="text-secondary small mb-3">
+      Acelerador en el día a día (código, refactor, pruebas, docs y contraste de diseño).
+      Lo que llega a producción lo valido yo: no es piloto automático.
+    </p>
+    <div class="fo-ai-tools mb-3">
+      <span class="fo-ai-tool"><img src="assets/ia/cursor.svg" alt=""> Cursor</span>
+      <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/githubcopilot.svg" alt=""> Copilot</span>
+      <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/claude.svg" alt=""> Claude</span>
+      <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/openai.svg" alt=""> ChatGPT</span>
+      <span class="fo-ai-tool"><span class="fo-ai-glyph" aria-hidden="true">K</span> Kiro</span>
+    </div>
+    <ul class="text-secondary small mb-0">
+      <li><strong>Cursor</strong> — herramienta principal para escribir, depurar, refactorizar, tests y documentación.</li>
+      <li><strong>GitHub Copilot</strong> — autocompletado puntual en VS Code.</li>
+      <li><strong>Claude / ChatGPT</strong> — contrastar un enfoque o diseño antes de implementar.</li>
+      <li><strong>Kiro</strong> — en Grupo Salinas (arquitectura): diseño, documentación y análisis de sistemas.</li>
+    </ul>
   </section>
 
   <section id="formacion" class="container py-5" style="max-width:720px">
