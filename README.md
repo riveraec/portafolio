@@ -27,7 +27,7 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 ```text
 portafolio/
 ├── index.html          # home (reclutador): pitch, trayectoria, proyectos, stack…
-├── demos.html          # evidencia técnica (enlace desde Proyectos; noindex)
+├── demos.html          # case study + serie Java + capturas (desde Proyectos; noindex)
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore

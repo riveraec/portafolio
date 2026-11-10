@@ -170,11 +170,11 @@
       <span class="fo-mono small text-secondary">destacados · GitHub</span>
     </div>
     <p class="text-secondary small mb-4" style="max-width:720px">
-      Repos públicos para revisión técnica. La evidencia (capturas, OpenAPI) está en la
+      Tres repos destacados. Case study, serie Java y capturas viven en la
       <a href="demos.html">página técnica</a>.
     </p>
 
-    <div class="row g-3 mb-5">
+    <div class="row g-3 mb-4">
       <div class="col-md-4">
         <a class="fo-card" href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">
           <div class="fo-thumb" style="background:linear-gradient(135deg,#0c8fc4,#5dd6ff)">
@@ -224,120 +224,11 @@
       </div>
     </div>
 
-    <article id="caso" class="fo-case">
-      <div class="fo-series-kicker">Case study</div>
-      <h3 class="fw-bold mb-3">eventos-api — webhooks sin duplicar</h3>
-      <div class="fo-case-grid">
-        <dl>
-          <div>
-            <dt>Problema</dt>
-            <dd>Un emisor puede reenviar el mismo evento. Si la API inserta otra vez, hay doble efecto (pago/aviso contado dos veces).</dd>
-          </div>
-          <div>
-            <dt>Decisión</dt>
-            <dd>Clave natural <code>id</code> + SQLite: primer <code>POST</code> → <strong>201</strong>; el mismo <code>id</code> → <strong>200</strong> con el registro ya guardado. Validación con Zod y tests HTTP.</dd>
-          </div>
-          <div>
-            <dt>Resultado</dt>
-            <dd>Reprocesar es seguro. Misma idea de idempotencia que en el ETL batch. CI con <code>npm test</code> en cada push.</dd>
-          </div>
-        </dl>
-        <div>
-          <p class="small text-secondary mb-2">
-            Hilo con
-            <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>:
-            webhook y batch, mismo criterio (reprocesar ≠ duplicar).
-          </p>
-          <button type="button" class="fo-diagram mb-0 w-100 border-0 p-0 text-start" data-lightbox data-src="assets/diagrams/patron-etl-api.png" aria-label="Ampliar diagrama ETL + API" style="cursor:zoom-in;background:transparent">
-            <img src="assets/diagrams/patron-etl-api.png" alt="Diagrama ETL más API de orquestación" loading="lazy">
-            <figcaption>etl-reportes + reportes-api · orquestación</figcaption>
-          </button>
-          <div class="fo-case-links">
-            <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">Repo</a>
-            <a class="btn btn-fo2 btn-sm" href="demos.html#demos-eventos">Capturas</a>
-            <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">CI</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <div class="fo-series-kicker">Serie Java</div>
-    <h3 class="fw-bold h5 mb-2">Auth → CRUD → cliente</h3>
-    <p class="text-secondary small mb-3" style="max-width:720px">
-      JWT, catálogo REST y un cliente Feign con WireMock.
-      Capturas en la <a href="demos.html#demos-java">página técnica</a>.
-    </p>
-    <div class="row g-3 mb-3">
-      <div class="col-md-4">
-        <a class="fo-card" href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">
-          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">
-            <i class="devicon-spring-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">1</span>auth-api</h6>
-              <i class="bi bi-arrow-up-right text-secondary"></i>
-            </div>
-            <p class="small text-secondary mb-2">Login y /me con Spring Security y JWT.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">Java · Spring Security · JWT</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="fo-card" href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">
-          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#0c8fc4,#5dd6ff)">
-            <i class="devicon-java-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">2</span>productos-api</h6>
-              <i class="bi bi-arrow-up-right text-secondary"></i>
-            </div>
-            <p class="small text-secondary mb-2">CRUD con validación y OpenAPI.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">Spring Boot · OpenAPI · validación</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="fo-card" href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">
-          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#1b4f72,#2e86ab)">
-            <i class="devicon-spring-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">3</span>cliente-servicios-remotos</h6>
-              <i class="bi bi-arrow-up-right text-secondary"></i>
-            </div>
-            <p class="small text-secondary mb-2">Cliente Feign contra auth y productos; stubs con WireMock.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">OpenFeign · WireMock</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="row g-3 justify-content-center">
-      <div class="col-md-4">
-        <a class="fo-card" href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">
-          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#14532d,#4ade80)">
-            <i class="devicon-mongodb-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <span class="fo-chip-soft">Variante NoSQL</span>
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1">catalogo-mongo-api</h6>
-              <i class="bi bi-arrow-up-right text-secondary"></i>
-            </div>
-            <p class="small text-secondary mb-2">CRUD equivalente usando MongoDB (Compose).</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">MongoDB · Spring · Compose</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  
-    <div class="mt-5 p-4 rounded-3 text-center" style="background:var(--fo-soft);border:1px solid var(--fo-line);max-width:720px;margin-left:auto;margin-right:auto">
+    <div class="p-4 rounded-3 text-center" style="background:var(--fo-soft);border:1px solid var(--fo-line);max-width:720px;margin-left:auto;margin-right:auto">
       <div class="fo-series-kicker mb-1">Para revisión técnica</div>
-      <h3 class="fw-bold h5 mb-2">Demos y capturas</h3>
+      <h3 class="fw-bold h5 mb-2">Case study, serie Java y demos</h3>
       <p class="small text-secondary mb-3" style="max-width:520px;margin-left:auto;margin-right:auto">
-        OpenAPI, Swagger, flujos de idempotencia y la serie Java. Pensado para quien ya quiere mirar evidencia.
+        Idempotencia explicada, auth → CRUD → Feign, OpenAPI/Swagger y capturas. Para quien ya quiere ir al detalle.
       </p>
       <a class="btn btn-fo" href="demos.html">Ver página técnica</a>
     </div>
