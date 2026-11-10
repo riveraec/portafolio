@@ -6,7 +6,6 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 - **Repo:** https://github.com/riveraec/portafolio
 - **Editar:** `index.html` (textos, links, CSS embebido) y `assets/` (capturas, marca, iconos IA)
 - **Borradores md:** `_archivo/` (versionados; Jekyll/Pages no los publica como sitio)
-- **Backlog carrera:** `2-Personal/cerebro/20-areas/Carrera/desarrollo/portafolio-mejoras.md`
 
 ## Stack y versiones
 
@@ -38,7 +37,7 @@ portafolio/
 ## Local
 
 ```powershell
-cd "C:\Users\river\Documentos\Base de Conocimiento\3-Codigo\Personal\frontend\portafolio"
+cd <ruta-del-repo>
 start index.html
 ```
 
@@ -55,9 +54,3 @@ Pages tarda 1–2 minutos. Recarga con Ctrl+F5.
 ## Git ignore
 
 Solo basura de SO/editor (`.DS_Store`, `Thumbs.db`, `.vscode/`, etc.). El contenido del sitio **sí** se versiona.
-
-## Relación con la base
-
-Código: `3-Codigo/Personal/frontend/portafolio` (este repo).  
-Notas de carrera / mejoras: `2-Personal/cerebro/20-areas/Carrera/desarrollo/`.  
-Portada LinkedIn (estilo Folio): `2-Personal/cerebro/.../perfiles/Linkedin/Portada/estilo-y-generacion.md`.
