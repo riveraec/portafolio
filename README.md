@@ -4,7 +4,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 - **URL:** https://riveraec.github.io/portafolio/
 - **Repo:** https://github.com/riveraec/portafolio
-- **Editar:** `index.html` (textos, links, CSS embebido) y `assets/` (capturas, marca, iconos IA)
+- **Editar:** `index.html` (textos, links, CSS embebido) y `assets/`
 - **Borradores md:** `_archivo/` (versionados; Jekyll/Pages no los publica como sitio)
 
 ## Stack y versiones
@@ -16,8 +16,8 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 | Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI |
 | Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en chips |
 | Fuentes | DM Sans · IBM Plex Mono (Google Fonts) | UI / mono |
-| Iconos IA / docs | SVG/PNG en `assets/ia/` | Cursor, Copilot, Claude, ChatGPT, Kiro, Obsidian, draw.io |
-| PWA ligera | `site.webmanifest` + favicon/OG | Identidad / compartir |
+| Iconos IA | `assets/ia/` | Cursor, Copilot, Claude, ChatGPT, Kiro, Obsidian, draw.io |
+| PWA ligera | `site.webmanifest` + `assets/brand/` | Identidad / compartir |
 
 Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 
@@ -25,13 +25,18 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 
 ```text
 portafolio/
-├── index.html          # página única
+├── index.html
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore
-├── assets/             # marca, demos, OG, patrones, ia/, CV PDF
-├── capturas-apis/      # capturas auxiliares
-└── _archivo/           # md histórico (no es el sitio publicado)
+├── assets/
+│   ├── brand/      # favicon, marca, OG, iconos PWA
+│   ├── demos/      # capturas de APIs
+│   ├── diagrams/   # patrones (png/svg/mmd)
+│   ├── ia/         # logos herramientas IA / docs
+│   └── cv/         # PDF descargable
+├── capturas-apis/  # originales / auxiliares
+└── _archivo/       # md histórico (no es el sitio publicado)
 ```
 
 ## Local
