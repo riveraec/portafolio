@@ -4,14 +4,15 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 - **URL:** https://riveraec.github.io/portafolio/
 - **Repo:** https://github.com/riveraec/portafolio
-- **Editar:** `index.html` (textos, links, CSS embebido) y `assets/`
+- **Editar:** `index.html` (home reclutador), `demos.html` (evidencia técnica), `assets/css/site.css`, `assets/js/site.js`
 - **Borradores md:** `_archivo/` (en el repo; **no** se publican en Pages — ver `_config.yml`. No añadir `.nojekyll` o sí quedarían visibles.)
+- **Backup one-page:** rama `backup/one-page` (commit previo al split demos)
 
 ## Stack y versiones
 
 | Pieza | Versión / origen | Uso |
 |-------|------------------|-----|
-| HTML / CSS / JS | estático en `index.html` | Layout Folio, tema claro/oscuro |
+| HTML / CSS / JS | `index.html` + `demos.html` · `assets/css` · `assets/js` | Home + página técnica; tema claro/oscuro |
 | Bootstrap | **5.3.3** (jsDelivr CDN) | Grid, utilidades |
 | Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI |
 | Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en chips |
@@ -25,18 +26,21 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 
 ```text
 portafolio/
-├── index.html
+├── index.html          # home (reclutador): pitch, trayectoria, proyectos, stack…
+├── demos.html          # evidencia técnica (enlace desde Proyectos; noindex)
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore
 ├── assets/
-│   ├── brand/      # favicon, marca, OG, iconos PWA
-│   ├── demos/      # capturas de APIs
-│   ├── diagrams/   # patrones (png/svg/mmd)
-│   ├── ia/         # logos herramientas IA / docs
-│   └── cv/         # PDF descargable
-├── _config.yml     # exclude de Pages (Jekyll)
-└── _archivo/       # md histórico — no publicado
+│   ├── css/site.css    # estilos compartidos
+│   ├── js/site.js      # tema, lightbox, nav activa
+│   ├── brand/          # favicon, marca, OG, iconos PWA
+│   ├── demos/          # capturas de APIs
+│   ├── diagrams/       # patrones (png/svg/mmd)
+│   ├── ia/             # logos herramientas IA / docs
+│   └── cv/             # PDF descargable
+├── _config.yml         # exclude de Pages (Jekyll)
+└── _archivo/           # md histórico — no publicado
 ```
 
 ## Local
