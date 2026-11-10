@@ -251,6 +251,146 @@
       border-top: 1px solid var(--fo-line);
       font-family: "IBM Plex Mono", monospace;
     }
+    button.fo-shot {
+      width: 100%;
+      padding: 0;
+      text-align: left;
+      cursor: zoom-in;
+      font: inherit;
+      color: inherit;
+    }
+    button.fo-shot:focus-visible {
+      outline: 2px solid var(--fo-cyan);
+      outline-offset: 2px;
+    }
+    .fo-case {
+      border: 1px solid var(--fo-line);
+      border-radius: 18px;
+      background: var(--fo-surface);
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 2.5rem;
+    }
+    .fo-case h3 { font-size: 1.05rem; }
+    .fo-case-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .fo-case-grid {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: start;
+      }
+    }
+    .fo-case dl {
+      display: grid;
+      gap: .85rem;
+      margin: 0;
+    }
+    .fo-case dt {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--fo-cyan);
+      margin-bottom: .2rem;
+    }
+    .fo-case dd {
+      margin: 0;
+      font-size: .9rem;
+      color: var(--fo-muted);
+    }
+    .fo-case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+    .fo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--fo-cyan);
+      border: 1px solid var(--fo-chip-border);
+      background: var(--fo-soft);
+      border-radius: 999px;
+      padding: .12rem .45rem;
+      text-decoration: none;
+      vertical-align: middle;
+    }
+    .fo-badge:hover { color: var(--fo-cyan); border-color: var(--fo-cyan); }
+    .fo-diagram {
+      border: 1px solid var(--fo-line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--fo-soft);
+    }
+    .fo-diagram img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fo-diagram figcaption {
+      padding: .55rem .85rem;
+      font-size: .78rem;
+      color: var(--fo-muted);
+      border-top: 1px solid var(--fo-line);
+      font-family: "IBM Plex Mono", monospace;
+      background: var(--fo-surface);
+    }
+    .fo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: rgba(6, 12, 20, .82);
+      backdrop-filter: blur(4px);
+    }
+    .fo-lightbox.is-open { display: flex; }
+    .fo-lightbox img {
+      max-width: min(1100px, 96vw);
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, .45);
+      background: var(--fo-surface);
+    }
+    .fo-lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, .35);
+      background: rgba(11, 18, 28, .65);
+      color: #fff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+    .fo-lightbox-close:hover { border-color: #fff; }
+    .fo-lightbox-caption {
+      position: absolute;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      color: #e8eef4;
+      font-size: .8rem;
+      font-family: "IBM Plex Mono", monospace;
+      text-align: center;
+      opacity: .9;
+    }
     .fo-nav {
       position: sticky;
       top: 0;
@@ -385,9 +525,9 @@
     section[id] { scroll-margin-top: 4.5rem; }
     .fo-stack-item {
       display: flex;
-      gap: .75rem;
+      gap: .65rem;
       align-items: flex-start;
-      padding: .9rem 1rem;
+      padding: .7rem .85rem;
       border: 1px solid var(--fo-line);
       border-radius: 14px;
       background: var(--fo-surface);
@@ -667,12 +807,12 @@
             <i class="devicon-nodejs-plain" aria-hidden="true"></i>
           </div>
           <div class="p-3">
-            <div class="d-flex justify-content-between">
-              <h6 class="fw-bold mb-1">eventos-api</h6>
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h6 class="fw-bold mb-1">eventos-api <span class="fo-badge" title="GitHub Actions">CI</span></h6>
               <i class="bi bi-arrow-up-right text-secondary"></i>
             </div>
             <p class="small text-secondary mb-2">Webhooks con Express: el mismo <code>id</code> no se procesa dos veces.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">Node.js · Express · Docker</span>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">Node.js · Express · Docker · CI</span>
           </div>
         </a>
       </div>
@@ -693,16 +833,42 @@
       </div>
     </div>
 
-    <div class="p-3 mb-5 rounded-3" style="background:var(--fo-soft);border:1px solid #d4e9f3;max-width:720px">
-      <h3 class="fw-bold h6 mb-1">Hilo común</h3>
-      <p class="small text-secondary mb-0">
-        <strong>Idempotencia</strong> en
-        <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
-        (webhook) y
-        <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
-        (batch): reprocesar no duplica efecto.
-      </p>
-    </div>
+    <article id="caso" class="fo-case">
+      <div class="fo-series-kicker">Case study</div>
+      <h3 class="fw-bold mb-3">eventos-api — webhooks sin duplicar</h3>
+      <div class="fo-case-grid">
+        <dl>
+          <div>
+            <dt>Problema</dt>
+            <dd>Un emisor puede reenviar el mismo evento. Si la API inserta otra vez, hay doble efecto (pago/aviso contado dos veces).</dd>
+          </div>
+          <div>
+            <dt>Decisión</dt>
+            <dd>Clave natural <code>id</code> + SQLite: primer <code>POST</code> → <strong>201</strong>; el mismo <code>id</code> → <strong>200</strong> con el registro ya guardado. Validación con Zod y tests HTTP.</dd>
+          </div>
+          <div>
+            <dt>Resultado</dt>
+            <dd>Reprocesar es seguro. Misma idea de idempotencia que en el ETL batch. CI con <code>npm test</code> en cada push.</dd>
+          </div>
+        </dl>
+        <div>
+          <p class="small text-secondary mb-2">
+            Hilo con
+            <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>:
+            webhook y batch, mismo criterio (reprocesar ≠ duplicar).
+          </p>
+          <button type="button" class="fo-diagram mb-0 w-100 border-0 p-0 text-start" data-lightbox data-src="assets/diagrams/patron-etl-api.png" aria-label="Ampliar diagrama ETL + API" style="cursor:zoom-in;background:transparent">
+            <img src="assets/diagrams/patron-etl-api.png" alt="Diagrama ETL más API de orquestación" loading="lazy">
+            <figcaption>etl-reportes + reportes-api · orquestación</figcaption>
+          </button>
+          <div class="fo-case-links">
+            <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">Repo</a>
+            <a class="btn btn-fo2 btn-sm" href="#demos-eventos">Capturas</a>
+            <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">CI</a>
+          </div>
+        </div>
+      </div>
+    </article>
 
     <div class="fo-series-kicker">Serie Java</div>
     <h3 class="fw-bold h5 mb-2">Auth → CRUD → cliente</h3>
@@ -788,44 +954,47 @@
       <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
       ·
       <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
+      — OpenAPI local en <code>/docs</code> al levantar la API
     </p>
     <div class="row g-3 mb-5">
       <div class="col-md-6">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-reportes-api-docs.png" alt="OpenAPI de reportes-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-reportes-api-docs.png" aria-label="Ampliar OpenAPI de reportes-api">
+          <img src="assets/demos/demo-reportes-api-docs.png" alt="OpenAPI de reportes-api" loading="lazy">
           <figcaption>OpenAPI · reportes-api</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-6">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-reportes-api-resumen.png" alt="GET /resumen de reportes-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-reportes-api-resumen.png" aria-label="Ampliar GET /resumen">
+          <img src="assets/demos/demo-reportes-api-resumen.png" alt="GET /resumen de reportes-api" loading="lazy">
           <figcaption>GET /resumen</figcaption>
-        </figure>
+        </button>
       </div>
     </div>
 
-    <h3 class="fw-bold h5 mb-3">eventos-api (idempotencia)</h3>
+    <h3 id="demos-eventos" class="fw-bold h5 mb-3">eventos-api (idempotencia)</h3>
     <p class="text-secondary small mb-3">
       <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
+      ·
+      <a href="#caso">Case study</a>
     </p>
     <div class="row g-3 mb-5">
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-eventos-api-health.png" alt="GET /health 200">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-health.png" aria-label="Ampliar GET /health">
+          <img src="assets/demos/demo-eventos-api-health.png" alt="GET /health 200" loading="lazy">
           <figcaption>GET /health · 200</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-eventos-api-post-201.png" alt="POST /eventos 201">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-post-201.png" aria-label="Ampliar POST /eventos 201">
+          <img src="assets/demos/demo-eventos-api-post-201.png" alt="POST /eventos 201" loading="lazy">
           <figcaption>POST /eventos · 201</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-eventos-api-post-200.png" alt="POST /eventos 200 idempotente">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-post-200.png" aria-label="Ampliar POST idempotente 200">
+          <img src="assets/demos/demo-eventos-api-post-200.png" alt="POST /eventos 200 idempotente" loading="lazy">
           <figcaption>mismo id · 200</figcaption>
-        </figure>
+        </button>
       </div>
     </div>
 
@@ -836,16 +1005,16 @@
     </p>
     <div class="row g-3">
       <div class="col-md-6">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-indicadores-api-swagger.png" alt="Swagger UI de indicadores-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-indicadores-api-swagger.png" aria-label="Ampliar Swagger de indicadores-api">
+          <img src="assets/demos/demo-indicadores-api-swagger.png" alt="Swagger UI de indicadores-api" loading="lazy">
           <figcaption>Swagger / OpenAPI</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-6">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-indicadores-api-resumen.png" alt="GET resumen de indicadores-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-indicadores-api-resumen.png" aria-label="Ampliar GET resumen">
+          <img src="assets/demos/demo-indicadores-api-resumen.png" alt="GET resumen de indicadores-api" loading="lazy">
           <figcaption>GET /api/indicadores/resumen · 200</figcaption>
-        </figure>
+        </button>
       </div>
     </div>
 
@@ -859,22 +1028,22 @@
     </p>
     <div class="row g-3">
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-auth-api.png" alt="Captura de auth-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-auth-api.png" aria-label="Ampliar captura de auth-api">
+          <img src="assets/demos/demo-auth-api.png" alt="Captura de auth-api" loading="lazy">
           <figcaption>auth-api · JWT / Security</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-productos-api.png" alt="Captura de productos-api">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-productos-api.png" aria-label="Ampliar captura de productos-api">
+          <img src="assets/demos/demo-productos-api.png" alt="Captura de productos-api" loading="lazy">
           <figcaption>productos-api · CRUD / OpenAPI</figcaption>
-        </figure>
+        </button>
       </div>
       <div class="col-md-4">
-        <figure class="fo-shot mb-0">
-          <img src="assets/demos/demo-cliente-servicios.png" alt="Captura de cliente-servicios-remotos">
+        <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-cliente-servicios.png" aria-label="Ampliar captura de cliente-servicios">
+          <img src="assets/demos/demo-cliente-servicios.png" alt="Captura de cliente-servicios-remotos" loading="lazy">
           <figcaption>cliente · Feign / WireMock</figcaption>
-        </figure>
+        </button>
       </div>
     </div>
   </section>
@@ -1046,6 +1215,14 @@
     <p class="mb-0">Efrain Rivera Cadena · Portafolio</p>
   </footer>
 
+  <div class="fo-lightbox" id="fo-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <button type="button" class="fo-lightbox-close" id="fo-lightbox-close" aria-label="Cerrar">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+    <img id="fo-lightbox-img" src="" alt="">
+    <div class="fo-lightbox-caption" id="fo-lightbox-caption"></div>
+  </div>
+
   <script>
     (function () {
       const key = "fo-theme";
@@ -1124,6 +1301,60 @@
         window.addEventListener("scroll", setActiveFallback, { passive: true });
         setActiveFallback();
       }
+
+      const lightbox = document.getElementById("fo-lightbox");
+      const lightboxImg = document.getElementById("fo-lightbox-img");
+      const lightboxCaption = document.getElementById("fo-lightbox-caption");
+      const lightboxClose = document.getElementById("fo-lightbox-close");
+      let lastFocus = null;
+
+      function openLightbox(src, caption, alt) {
+        if (!lightbox || !lightboxImg || !src) return;
+        lastFocus = document.activeElement;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "";
+        if (lightboxCaption) lightboxCaption.textContent = caption || "";
+        lightbox.hidden = false;
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        if (lightboxClose) lightboxClose.focus();
+      }
+
+      function closeLightbox() {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.classList.remove("is-open");
+        lightbox.hidden = true;
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.removeAttribute("src");
+        document.body.style.overflow = "";
+        if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }
+
+      document.querySelectorAll("[data-lightbox]").forEach((el) => {
+        el.addEventListener("click", function () {
+          const src = el.getAttribute("data-src");
+          const img = el.querySelector("img");
+          const cap = el.querySelector("figcaption");
+          openLightbox(
+            src || (img && img.getAttribute("src")),
+            cap ? cap.textContent.trim() : "",
+            img ? img.getAttribute("alt") : ""
+          );
+        });
+      });
+
+      if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox) closeLightbox();
+        });
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lightbox && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
     })();
   </script>
 </body>
