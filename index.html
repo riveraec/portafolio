@@ -277,8 +277,21 @@
       min-width: 0;
     }
     .fo-nav-scroll::-webkit-scrollbar { display: none; }
-    @media (min-width: 768px) {
-      .fo-nav-scroll { justify-content: flex-end; }
+    @media (min-width: 992px) {
+      .fo-nav-inner {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        align-items: center;
+      }
+      .fo-nav-scroll {
+        flex: initial;
+        justify-content: center;
+        overflow: visible;
+      }
+      .fo-nav-actions {
+        justify-self: end;
+      }
     }
     .fo-nav-scroll a {
       color: var(--fo-muted);
@@ -322,6 +335,11 @@
       color: var(--fo-cyan);
     }
     .fo-cv-btn i { font-size: .95rem; }
+    .fo-cv-btn .fo-cv-long { display: none; }
+    @media (min-width: 576px) {
+      .fo-cv-btn .fo-cv-short { display: none; }
+      .fo-cv-btn .fo-cv-long { display: inline; }
+    }
     .fo-theme-btn {
       flex-shrink: 0;
       width: 38px;
@@ -508,7 +526,8 @@
       <div class="fo-nav-actions">
         <a class="fo-cv-btn" href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf" title="Descargar CV (PDF)">
           <i class="bi bi-download" aria-hidden="true"></i>
-          CV
+          <span class="fo-cv-short">CV</span>
+          <span class="fo-cv-long">Descargar CV</span>
         </a>
         <button type="button" class="fo-theme-btn" id="fo-theme-toggle" aria-label="Cambiar tema claro u oscuro" title="Tema">
           <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
