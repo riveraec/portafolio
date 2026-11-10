@@ -29,7 +29,7 @@ portafolio/
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore
-├── assets/             # marca, demos, OG, patrones, ia/
+├── assets/             # marca, demos, OG, patrones, ia/, CV PDF
 ├── capturas-apis/      # capturas auxiliares
 └── _archivo/           # md histórico (no es el sitio publicado)
 ```

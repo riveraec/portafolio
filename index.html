@@ -294,6 +294,34 @@
       color: var(--fo-cyan);
       border-bottom-color: var(--fo-cyan);
     }
+    .fo-nav-actions {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+    }
+    .fo-cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      height: 38px;
+      padding: 0 .85rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--fo-chip-border);
+      background: var(--fo-soft);
+      color: var(--fo-ink);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+      transition: .15s;
+    }
+    .fo-cv-btn:hover {
+      border-color: var(--fo-cyan);
+      color: var(--fo-cyan);
+    }
+    .fo-cv-btn i { font-size: .95rem; }
     .fo-theme-btn {
       flex-shrink: 0;
       width: 38px;
@@ -477,10 +505,16 @@
         <a href="#formacion">Formación</a>
         <a href="#contacto">Contacto</a>
       </div>
-      <button type="button" class="fo-theme-btn" id="fo-theme-toggle" aria-label="Cambiar tema claro u oscuro" title="Tema">
-        <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
-        <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
-      </button>
+      <div class="fo-nav-actions">
+        <a class="fo-cv-btn" href="assets/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf" title="Descargar CV (PDF)">
+          <i class="bi bi-download" aria-hidden="true"></i>
+          CV
+        </a>
+        <button type="button" class="fo-theme-btn" id="fo-theme-toggle" aria-label="Cambiar tema claro u oscuro" title="Tema">
+          <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
+          <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </nav>
 
