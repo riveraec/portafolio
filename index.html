@@ -189,6 +189,36 @@
       color: #fff;
       font-size: 3rem;
     }
+    .fo-thumb-sm {
+      height: 72px;
+      font-size: 1.75rem;
+    }
+    .fo-series-kicker {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--fo-cyan);
+      margin-bottom: .35rem;
+    }
+    .fo-step {
+      display: inline-grid;
+      place-items: center;
+      min-width: 1.35rem;
+      height: 1.35rem;
+      padding: 0 .3rem;
+      border-radius: 6px;
+      background: var(--fo-cyan);
+      color: #fff;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .65rem;
+      font-weight: 700;
+      margin-right: .35rem;
+    }
+    html[data-theme="dark"] .fo-step {
+      color: #06121f;
+    }
     .fo-tl {
       border-left: 2px solid var(--fo-line);
       padding-left: 22px;
@@ -539,11 +569,11 @@
   <section id="proyectos" class="container py-5">
     <div class="d-flex justify-content-between align-items-end mb-2 flex-wrap gap-2">
       <h2 class="fw-bold mb-0">Proyectos</h2>
-      <span class="fo-mono small text-secondary">repos · GitHub</span>
+      <span class="fo-mono small text-secondary">destacados · GitHub</span>
     </div>
     <p class="text-secondary small mb-4" style="max-width:720px">
-      Resumen para revisión técnica. Las capturas están en
-      <a href="#demos">Demos</a>.
+      Tres shows principales (Python, Node, .NET). Abajo, la serie Java.
+      Capturas en <a href="#demos">Demos</a>.
     </p>
 
     <div class="row g-3 mb-5">
@@ -607,32 +637,76 @@
       </p>
     </div>
 
-    <h3 class="fw-bold h5 mb-3">Java — auth → CRUD → cliente</h3>
+    <div class="fo-series-kicker">Serie Java</div>
+    <h3 class="fw-bold h5 mb-2">Auth → CRUD → cliente</h3>
     <p class="text-secondary small mb-3" style="max-width:720px">
-      Tres demos encadenadas: JWT, catálogo REST y cliente OpenFeign contra esos servicios.
-      <a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">catalogo-mongo-api</a>
-      es el mismo estilo de CRUD con <strong>MongoDB (solo demo / portafolio)</strong>.
+      Flujo encadenado: JWT, catálogo REST y consumo con OpenFeign (WireMock).
+      No son tres shows sueltos: es una sola historia de integración.
     </p>
-    <ul class="text-secondary small mb-5">
-      <li><a href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">auth-api</a> — register / login /me · Spring Security · JWT</li>
-      <li><a href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">productos-api</a> — CRUD + validación · OpenAPI</li>
-      <li><a href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">cliente-servicios-remotos</a> — OpenFeign + WireMock</li>
-      <li><a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">catalogo-mongo-api</a> — demo NoSQL (MongoDB + Compose)</li>
-    </ul>
-
-    <h3 class="fw-bold h5 mb-3">Más repos</h3>
-    <ul class="text-secondary mb-0">
-      <li><strong>.NET</strong> —
-        <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">indicadores-api</a>
-      </li>
-      <li><strong>Python</strong> —
-        <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a> ·
-        <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
-      </li>
-      <li><strong>Node.js</strong> —
-        <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">eventos-api</a>
-      </li>
-    </ul>
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">
+          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">
+            <i class="devicon-spring-plain" aria-hidden="true"></i>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">1</span>auth-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">Register / login /me con Spring Security y JWT.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">Java · Spring Security · JWT</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">
+          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#0c8fc4,#5dd6ff)">
+            <i class="devicon-java-plain" aria-hidden="true"></i>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">2</span>productos-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">CRUD REST con validación y contrato OpenAPI.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">Spring Boot · OpenAPI · validación</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="fo-card" href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">
+          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#1b4f72,#2e86ab)">
+            <i class="devicon-spring-plain" aria-hidden="true"></i>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h6 class="fw-bold mb-1"><span class="fo-step" aria-hidden="true">3</span>cliente-servicios-remotos</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">Cliente OpenFeign contra auth/productos; stubs con WireMock.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">OpenFeign · WireMock</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4">
+        <a class="fo-card" href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">
+          <div class="fo-thumb fo-thumb-sm" style="background:linear-gradient(135deg,#14532d,#4ade80)">
+            <i class="devicon-mongodb-plain" aria-hidden="true"></i>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h6 class="fw-bold mb-1">catalogo-mongo-api</h6>
+              <i class="bi bi-arrow-up-right text-secondary"></i>
+            </div>
+            <p class="small text-secondary mb-2">Misma idea de CRUD, store NoSQL (MongoDB + Compose). Solo demo.</p>
+            <span class="fo-mono small" style="color:var(--fo-cyan)">MongoDB · Spring · Compose</span>
+          </div>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section id="demos" class="container py-5">
