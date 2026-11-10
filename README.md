@@ -35,7 +35,6 @@ portafolio/
 │   ├── diagrams/   # patrones (png/svg/mmd)
 │   ├── ia/         # logos herramientas IA / docs
 │   └── cv/         # PDF descargable
-├── capturas-apis/  # originales / auxiliares
 └── _archivo/       # md histórico (no es el sitio publicado)
 ```
 
