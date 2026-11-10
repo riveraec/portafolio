@@ -1,0 +1,11 @@
+# SO / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.swp
+*~
+
+.vscode/
+.idea/
+*.code-workspace

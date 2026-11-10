@@ -1,21 +1,48 @@
 # Portafolio — Efrain Rivera Cadena
 
-Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN).
+Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `package.json`.
 
 - **URL:** https://riveraec.github.io/portafolio/
-- **Editar:** `index.html` (textos, links) y `assets/` (capturas)
-- **Borradores md:** `_archivo/` (Jekyll no los publica en Pages)
+- **Repo:** https://github.com/riveraec/portafolio
+- **Editar:** `index.html` (textos, links, CSS embebido) y `assets/` (capturas, marca, iconos IA)
+- **Borradores md:** `_archivo/` (versionados; Jekyll/Pages no los publica como sitio)
+- **Backlog carrera:** `2-Personal/cerebro/20-areas/Carrera/desarrollo/portafolio-mejoras.md`
+
+## Stack y versiones
+
+| Pieza | Versión / origen | Uso |
+|-------|------------------|-----|
+| HTML / CSS / JS | estático en `index.html` | Layout Folio, tema claro/oscuro |
+| Bootstrap | **5.3.3** (jsDelivr CDN) | Grid, utilidades |
+| Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI |
+| Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en chips |
+| Fuentes | DM Sans · IBM Plex Mono (Google Fonts) | UI / mono |
+| Iconos IA / docs | SVG/PNG en `assets/ia/` | Cursor, Copilot, Claude, ChatGPT, Kiro, Obsidian, draw.io |
+| PWA ligera | `site.webmanifest` + favicon/OG | Identidad / compartir |
+
+Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
+
+## Estructura
+
+```text
+portafolio/
+├── index.html          # página única
+├── site.webmanifest
+├── README.md
+├── .gitignore
+├── assets/             # marca, demos, OG, patrones, ia/
+├── capturas-apis/      # capturas auxiliares
+└── _archivo/           # md histórico (no es el sitio publicado)
+```
 
 ## Local
-
-Abre `index.html` en el navegador, o:
 
 ```powershell
 cd "C:\Users\river\Documentos\Base de Conocimiento\3-Codigo\Personal\frontend\portafolio"
 start index.html
 ```
 
-## Publicar
+## Publicar (GitHub Pages)
 
 ```powershell
 git add -A
@@ -23,9 +50,14 @@ git commit -m "mensaje"
 git push origin main
 ```
 
-GitHub Pages tarda 1–2 minutos. Recarga con Ctrl+F5.
+Pages tarda 1–2 minutos. Recarga con Ctrl+F5.
 
-## Ubicación en la base
+## Git ignore
 
-`3-Codigo/Personal/frontend/portafolio` (proyecto de código).  
-Notas de carrera: `2-Personal/cerebro/20-areas/Carrera/`.
+Solo basura de SO/editor (`.DS_Store`, `Thumbs.db`, `.vscode/`, etc.). El contenido del sitio **sí** se versiona.
+
+## Relación con la base
+
+Código: `3-Codigo/Personal/frontend/portafolio` (este repo).  
+Notas de carrera / mejoras: `2-Personal/cerebro/20-areas/Carrera/desarrollo/`.  
+Portada LinkedIn (estilo Folio): `2-Personal/cerebro/.../perfiles/Linkedin/Portada/estilo-y-generacion.md`.
