@@ -54,13 +54,26 @@
     .fo-hero::before {
       content: "";
       position: absolute;
-      inset: -20% 10% auto;
+      inset: -15% -5% auto auto;
+      width: min(520px, 70vw);
       height: 420px;
       background: radial-gradient(ellipse at center, var(--fo-hero-glow), transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
     .fo-hero > * { position: relative; z-index: 1; }
+    .fo-hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+    .fo-hero-copy { max-width: 36rem; }
+    .fo-hero-role { font-weight: 600; }
+    .fo-hero-lead { max-width: 36rem; }
+    .fo-hero-actions { justify-content: center; }
+    .fo-hero-photo { order: -1; }
     .fo-chip {
       display: inline-flex;
       align-items: center;
@@ -75,23 +88,42 @@
     }
     .fo-chip i { font-size: 1rem; line-height: 1; }
     .fo-av {
-      width: 108px;
-      height: 108px;
-      border-radius: 30px;
+      width: min(240px, 70vw);
+      height: min(240px, 70vw);
+      border-radius: 50%;
       overflow: hidden;
       padding: 0;
-      box-shadow: 0 16px 40px rgba(12, 143, 196, .3);
+      border: 3px solid var(--fo-chip-border);
+      box-shadow: 0 18px 48px var(--fo-hero-glow), 0 8px 24px var(--fo-shadow);
     }
     .fo-av img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       display: block;
     }
     .fo-h1 {
       font-weight: 800;
       letter-spacing: -.03em;
       font-size: clamp(2rem, 4.6vw, 3rem);
+    }
+    @media (min-width: 768px) {
+      .fo-hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+        gap: 2.75rem;
+        justify-items: stretch;
+        text-align: left;
+      }
+      .fo-hero-photo {
+        order: 0;
+        justify-self: end;
+      }
+      .fo-hero-actions { justify-content: flex-start; }
+      .fo-av {
+        width: 280px;
+        height: 280px;
+      }
     }
     .btn-fo {
       background: var(--fo-btn-primary-bg);
