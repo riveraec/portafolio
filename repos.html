@@ -54,236 +54,232 @@
     </div>
   </nav>
 
-  <header class="container pt-4 pb-0" style="max-width:900px">
-    <a class="small text-secondary text-decoration-none" href="index.html#proyectos"><i class="bi bi-arrow-left me-1"></i>Volver</a>
-  </header>
-
-  <main class="container py-4" style="max-width:900px">
-    <p class="fo-series-kicker mb-1">Portafolio técnico</p>
-    <h1 class="fw-bold h2 mb-2">Repos</h1>
-    <p class="text-secondary small mb-4" style="max-width:720px">
-      Listado completo. En la home solo aparecen tres destacados.
+  <main class="container py-5" style="max-width:760px">
+    <a class="small text-secondary text-decoration-none d-inline-block mb-3" href="index.html#proyectos">
+      <i class="bi bi-arrow-left me-1"></i>Inicio
+    </a>
+    <h1 class="fw-bold mb-2">Repos</h1>
+    <p class="text-secondary small mb-4" style="max-width:560px">
+      Listado completo. En la home solo están los tres destacados.
     </p>
 
-    <article id="eventos-api" class="fo-repo">
-      <h2><span class="fo-repo-num">01</span> eventos-api <span class="fo-badge" title="GitHub Actions">CI</span></h2>
-      <p>
-        API Express para ingerir webhooks: valida con Zod, guarda en SQLite y no duplica si llega el mismo <code>id</code>
-        (201 la primera vez, 200 al reenviar).
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">CI</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-nodejs-plain"></i> Node.js</span>
-        <span class="fo-chip">Express</span>
-        <span class="fo-chip">Zod</span>
-        <span class="fo-chip">SQLite</span>
-        <span class="fo-chip">Docker</span>
-        <span class="fo-chip">SuperTest</span>
-      </div>
-      <details id="caso">
-        <summary>Caso: por qué importa la idempotencia</summary>
-        <div class="fo-case mt-3 mb-0">
-          <dl>
-            <div>
-              <dt>Problema</dt>
-              <dd>Un emisor puede reenviar el mismo evento. Si insertas otra vez, hay doble efecto.</dd>
-            </div>
-            <div>
-              <dt>Decisión</dt>
-              <dd>Clave <code>id</code> + SQLite: primer POST → 201; el mismo id → 200 con el registro ya guardado.</dd>
-            </div>
-            <div>
-              <dt>Resultado</dt>
-              <dd>Reprocesar es seguro. Misma idea que en el ETL batch. CI corre <code>npm test</code> en cada push.</dd>
-            </div>
-          </dl>
+    <div class="fo-repo-list">
+      <article id="eventos-api" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">01</span>
+            <h2>eventos-api</h2>
+            <span class="fo-badge">CI</span>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">Actions</a>
+          </div>
         </div>
-      </details>
-      <details>
-        <summary>Capturas</summary>
+        <p>
+          Ingesta de webhooks con Express: Zod + SQLite. El mismo <code>id</code> no se procesa dos veces
+          (201 la primera vez, 200 al reenviar).
+        </p>
+        <p class="fo-repo-note">
+          Idempotencia: reprocesar es seguro. Misma idea que en el ETL batch.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-nodejs-plain" aria-hidden="true"></i> Node.js</span>
+          <span>Express</span>
+          <span>Zod</span>
+          <span>SQLite</span>
+          <span>Docker</span>
+          <span>SuperTest</span>
+        </div>
         <div class="fo-repo-shots">
-          <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-health.png" aria-label="Ampliar GET /health">
-            <img src="assets/demos/demo-eventos-api-health.png" alt="GET /health 200" loading="lazy">
-            <figcaption>GET /health · 200</figcaption>
+          <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-health.png" aria-label="Ampliar health">
+            <img src="assets/demos/demo-eventos-api-health.png" alt="GET /health" loading="lazy">
+            <figcaption>/health</figcaption>
           </button>
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-post-201.png" aria-label="Ampliar POST 201">
-            <img src="assets/demos/demo-eventos-api-post-201.png" alt="POST /eventos 201" loading="lazy">
+            <img src="assets/demos/demo-eventos-api-post-201.png" alt="POST 201" loading="lazy">
             <figcaption>POST · 201</figcaption>
           </button>
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-eventos-api-post-200.png" aria-label="Ampliar POST 200">
-            <img src="assets/demos/demo-eventos-api-post-200.png" alt="POST /eventos 200" loading="lazy">
+            <img src="assets/demos/demo-eventos-api-post-200.png" alt="POST 200" loading="lazy">
             <figcaption>mismo id · 200</figcaption>
           </button>
         </div>
-      </details>
-    </article>
+      </article>
 
-    <article id="etl-reportes" class="fo-repo">
-      <h2><span class="fo-repo-num">02</span> etl-reportes + reportes-api</h2>
-      <p>
-        Pipeline en Python (CSV → transform → SQLite) y API FastAPI para disparar corridas y consultar el resumen,
-        con idempotencia por lote.
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-python-plain"></i> Python</span>
-        <span class="fo-chip">pandas</span>
-        <span class="fo-chip">FastAPI</span>
-        <span class="fo-chip">SQLite</span>
-        <span class="fo-chip">pytest</span>
-        <span class="fo-chip">OpenAPI</span>
-      </div>
-      <details>
-        <summary>Capturas · diagrama</summary>
-        <div class="fo-repo-shots fo-repo-shots-2">
+      <article id="etl-reportes" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">02</span>
+            <h2>etl-reportes + reportes-api</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">etl-reportes</a>
+            <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">reportes-api</a>
+          </div>
+        </div>
+        <p>
+          Pipeline Python (CSV → transform → SQLite) y API FastAPI para disparar corridas y leer el resumen, con idempotencia por lote.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-python-plain" aria-hidden="true"></i> Python</span>
+          <span>pandas</span>
+          <span>FastAPI</span>
+          <span>SQLite</span>
+          <span>pytest</span>
+          <span>OpenAPI</span>
+        </div>
+        <div class="fo-repo-shots">
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-reportes-api-docs.png" aria-label="Ampliar OpenAPI">
-            <img src="assets/demos/demo-reportes-api-docs.png" alt="OpenAPI reportes-api" loading="lazy">
+            <img src="assets/demos/demo-reportes-api-docs.png" alt="OpenAPI" loading="lazy">
             <figcaption>OpenAPI</figcaption>
           </button>
-          <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-reportes-api-resumen.png" aria-label="Ampliar GET /resumen">
+          <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-reportes-api-resumen.png" aria-label="Ampliar resumen">
             <img src="assets/demos/demo-reportes-api-resumen.png" alt="GET /resumen" loading="lazy">
-            <figcaption>GET /resumen</figcaption>
+            <figcaption>/resumen</figcaption>
+          </button>
+          <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/diagrams/patron-etl-api.png" aria-label="Ampliar diagrama">
+            <img src="assets/diagrams/patron-etl-api.png" alt="Diagrama ETL" loading="lazy">
+            <figcaption>diagrama</figcaption>
           </button>
         </div>
-        <button type="button" class="fo-diagram mt-3 mb-0 w-100 border-0 p-0 text-start" data-lightbox data-src="assets/diagrams/patron-etl-api.png" aria-label="Ampliar diagrama ETL" style="cursor:zoom-in;background:transparent">
-          <img src="assets/diagrams/patron-etl-api.png" alt="Diagrama ETL + API" loading="lazy">
-          <figcaption>Orquestación ETL + API</figcaption>
-        </button>
-      </details>
-    </article>
+      </article>
 
-    <article id="indicadores-api" class="fo-repo">
-      <h2><span class="fo-repo-num">03</span> indicadores-api</h2>
-      <p>
-        API .NET 8 con filtros, resumen agregado, health checks y pruebas xUnit. Pensada para mostrar CRUD + consulta útil, no solo endpoints vacíos.
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-dotnetcore-plain"></i> .NET 8</span>
-        <span class="fo-chip">EF Core</span>
-        <span class="fo-chip">xUnit</span>
-        <span class="fo-chip">Swagger</span>
-      </div>
-      <details>
-        <summary>Capturas</summary>
-        <div class="fo-repo-shots fo-repo-shots-2">
+      <article id="indicadores-api" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">03</span>
+            <h2>indicadores-api</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <p>
+          API .NET 8 con filtros, resumen, health checks y xUnit.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-dotnetcore-plain" aria-hidden="true"></i> .NET 8</span>
+          <span>EF Core</span>
+          <span>xUnit</span>
+          <span>Swagger</span>
+        </div>
+        <div class="fo-repo-shots">
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-indicadores-api-swagger.png" aria-label="Ampliar Swagger">
-            <img src="assets/demos/demo-indicadores-api-swagger.png" alt="Swagger indicadores-api" loading="lazy">
+            <img src="assets/demos/demo-indicadores-api-swagger.png" alt="Swagger" loading="lazy">
             <figcaption>Swagger</figcaption>
           </button>
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-indicadores-api-resumen.png" aria-label="Ampliar resumen">
-            <img src="assets/demos/demo-indicadores-api-resumen.png" alt="GET resumen" loading="lazy">
-            <figcaption>GET resumen</figcaption>
+            <img src="assets/demos/demo-indicadores-api-resumen.png" alt="resumen" loading="lazy">
+            <figcaption>resumen</figcaption>
           </button>
         </div>
-      </details>
-    </article>
+      </article>
 
-    <article id="auth-api" class="fo-repo">
-      <h2><span class="fo-repo-num">04</span> auth-api</h2>
-      <p>
-        Login y <code>/me</code> con Spring Security y JWT. Primer eslabón de la serie Java (auth → productos → cliente).
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-java-plain"></i> Java</span>
-        <span class="fo-chip"><i class="devicon-spring-plain"></i> Spring Security</span>
-        <span class="fo-chip">JWT</span>
-        <span class="fo-chip">BCrypt</span>
-      </div>
-      <details>
-        <summary>Captura</summary>
-        <div class="fo-repo-shots fo-repo-shots-2">
+      <article id="auth-api" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">04</span>
+            <h2>auth-api</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <p>
+          Login y <code>/me</code> con Spring Security y JWT. Inicio de la serie Java.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-java-plain" aria-hidden="true"></i> Java</span>
+          <span><i class="devicon-spring-plain" aria-hidden="true"></i> Spring Security</span>
+          <span>JWT</span>
+        </div>
+        <div class="fo-repo-shots" style="max-width:280px">
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-auth-api.png" aria-label="Ampliar auth-api">
             <img src="assets/demos/demo-auth-api.png" alt="auth-api" loading="lazy">
             <figcaption>JWT / Security</figcaption>
           </button>
         </div>
-      </details>
-    </article>
+      </article>
 
-    <article id="productos-api" class="fo-repo">
-      <h2><span class="fo-repo-num">05</span> productos-api</h2>
-      <p>
-        CRUD de catálogo con validación Bean Validation y OpenAPI. Segundo paso de la serie Java.
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-java-plain"></i> Java</span>
-        <span class="fo-chip"><i class="devicon-spring-plain"></i> Spring Boot</span>
-        <span class="fo-chip">JPA</span>
-        <span class="fo-chip">OpenAPI</span>
-      </div>
-      <details>
-        <summary>Captura</summary>
-        <div class="fo-repo-shots fo-repo-shots-2">
+      <article id="productos-api" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">05</span>
+            <h2>productos-api</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <p>
+          CRUD con validación y OpenAPI. Segundo paso de la serie Java.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-java-plain" aria-hidden="true"></i> Java</span>
+          <span><i class="devicon-spring-plain" aria-hidden="true"></i> Spring Boot</span>
+          <span>JPA</span>
+          <span>OpenAPI</span>
+        </div>
+        <div class="fo-repo-shots" style="max-width:280px">
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-productos-api.png" aria-label="Ampliar productos-api">
             <img src="assets/demos/demo-productos-api.png" alt="productos-api" loading="lazy">
             <figcaption>CRUD / OpenAPI</figcaption>
           </button>
         </div>
-      </details>
-    </article>
+      </article>
 
-    <article id="cliente-servicios-remotos" class="fo-repo">
-      <h2><span class="fo-repo-num">06</span> cliente-servicios-remotos</h2>
-      <p>
-        Cliente OpenFeign contra auth y productos, con retry/pool y stubs WireMock. Cierra la serie Java.
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-spring-plain"></i> OpenFeign</span>
-        <span class="fo-chip">WireMock</span>
-        <span class="fo-chip">Java</span>
-      </div>
-      <details>
-        <summary>Captura</summary>
-        <div class="fo-repo-shots fo-repo-shots-2">
+      <article id="cliente-servicios-remotos" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">06</span>
+            <h2>cliente-servicios-remotos</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <p>
+          Cliente OpenFeign (retry, pool) contra auth y productos, con WireMock. Cierre de la serie Java.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-spring-plain" aria-hidden="true"></i> OpenFeign</span>
+          <span>WireMock</span>
+          <span>Java</span>
+        </div>
+        <div class="fo-repo-shots" style="max-width:280px">
           <button type="button" class="fo-shot mb-0" data-lightbox data-src="assets/demos/demo-cliente-servicios.png" aria-label="Ampliar cliente">
-            <img src="assets/demos/demo-cliente-servicios.png" alt="cliente-servicios-remotos" loading="lazy">
+            <img src="assets/demos/demo-cliente-servicios.png" alt="cliente" loading="lazy">
             <figcaption>Feign / WireMock</figcaption>
           </button>
         </div>
-      </details>
-    </article>
+      </article>
 
-    <article id="catalogo-mongo-api" class="fo-repo">
-      <h2><span class="fo-repo-num">07</span> catalogo-mongo-api</h2>
-      <p>
-        Misma idea de catálogo CRUD, pero con MongoDB y Docker Compose. Variante NoSQL del patrón productos-api.
-      </p>
-      <div class="fo-repo-actions">
-        <a class="btn btn-fo2 btn-sm" href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="fo-repo-stack">
-        <span class="fo-chip"><i class="devicon-java-plain"></i> Java</span>
-        <span class="fo-chip"><i class="devicon-spring-plain"></i> Spring Boot</span>
-        <span class="fo-chip"><i class="devicon-mongodb-plain"></i> MongoDB</span>
-        <span class="fo-chip">Compose</span>
-      </div>
-    </article>
-
-    <p class="text-center mt-4 mb-0">
-      <a class="btn btn-fo2" href="index.html#proyectos"><i class="bi bi-arrow-left me-1"></i>Volver</a>
-    </p>
+      <article id="catalogo-mongo-api" class="fo-repo">
+        <div class="fo-repo-head">
+          <div class="fo-repo-title">
+            <span class="fo-repo-num">07</span>
+            <h2>catalogo-mongo-api</h2>
+          </div>
+          <div class="fo-repo-links">
+            <a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <p>
+          CRUD equivalente a productos-api, con MongoDB y Docker Compose.
+        </p>
+        <div class="fo-repo-stack">
+          <span><i class="devicon-java-plain" aria-hidden="true"></i> Java</span>
+          <span><i class="devicon-spring-plain" aria-hidden="true"></i> Spring Boot</span>
+          <span><i class="devicon-mongodb-plain" aria-hidden="true"></i> MongoDB</span>
+          <span>Compose</span>
+        </div>
+      </article>
+    </div>
   </main>
 
   <footer class="fo-foot py-4 text-center small text-secondary">
-    <p class="mb-0">Efrain Rivera Cadena · <a href="index.html">Portafolio</a> · Repos</p>
+    <p class="mb-0">Efrain Rivera Cadena · <a href="index.html">Portafolio</a></p>
   </footer>
 
   <div class="fo-lightbox" id="fo-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada">

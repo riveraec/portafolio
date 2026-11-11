@@ -4,7 +4,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 - **URL:** https://riveraec.github.io/portafolio/
 - **Repo:** https://github.com/riveraec/portafolio
-- **Editar:** `index.html` (home), `repos.html` (listado técnico), `assets/css/site.css`, `assets/js/site.js` · `demos.html` redirige a repos
+- **Editar:** `index.html` (home), `repos.html` (listado técnico), `assets/css/site.css`, `assets/js/site.js`
 - **Borradores md:** `_archivo/` (en el repo; **no** se publican en Pages — ver `_config.yml`. No añadir `.nojekyll` o sí quedarían visibles.)
 - **Backup one-page:** rama `backup/one-page` (commit previo al split demos)
 
@@ -28,7 +28,6 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 portafolio/
 ├── index.html          # home (reclutador): pitch, trayectoria, proyectos, stack…
 ├── repos.html          # listado técnico de repos (desde Proyectos; noindex)
-├── demos.html          # redirect → repos.html
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore
