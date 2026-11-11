@@ -670,6 +670,21 @@
       border-radius: 1.25rem;
       padding: 2.5rem 1.5rem;
     }
+    .fo-contact-lead {
+      max-width: 26rem;
+      margin: 0 auto 1.35rem;
+      font-size: .9rem;
+      line-height: 1.45;
+      opacity: .82;
+    }
+    .fo-contact-meta {
+      display: block;
+      margin-top: .35rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .75rem;
+      letter-spacing: .01em;
+      opacity: .72;
+    }
     .fo-contact-panel .btn-mail {
       background: #5dd6ff;
       color: #06121f;
