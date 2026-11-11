@@ -43,7 +43,7 @@
       transition: background .2s ease, color .2s ease;
     }
     .text-secondary { color: var(--fo-muted) !important; }
-    a:not(.btn):not(.fo-card):not(.fo-icon-btn):not(.btn-fo):not(.btn-fo2):not(.btn-mail):not(.btn-ghost) {
+    a:not(.btn):not(.fo-card):not(.fo-icon-btn):not(.fo-cert-btn):not(.btn-fo):not(.btn-fo2):not(.btn-mail):not(.btn-ghost) {
       color: var(--fo-cyan);
     }
     .fo-mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
@@ -206,9 +206,9 @@
     .fo-cert {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       gap: 1rem;
-      padding: .85rem 0;
+      padding: .9rem 0;
       border-bottom: 1px solid var(--fo-line);
     }
     .fo-cert-body {
@@ -216,6 +216,7 @@
       flex-direction: column;
       gap: .15rem;
       min-width: 0;
+      flex: 1;
     }
     .fo-cert-body strong {
       font-size: .95rem;
@@ -226,18 +227,24 @@
       font-size: .82rem;
       color: var(--fo-muted);
     }
-    .fo-cert-link {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .72rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--fo-muted);
-      border-bottom: 1px solid transparent;
-      flex-shrink: 0;
-    }
-    .fo-cert-link:hover {
+    .fo-cert-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1.5px solid var(--fo-chip-border);
+      background: var(--fo-soft);
       color: var(--fo-cyan);
-      border-bottom-color: var(--fo-cyan);
+      display: inline-grid;
+      place-items: center;
+      text-decoration: none;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      transition: .15s;
+    }
+    .fo-cert-btn:hover {
+      border-color: var(--fo-cyan);
+      color: var(--fo-cyan);
+      background: var(--fo-surface);
     }
     .fo-foot { border-top: 1px solid var(--fo-line); }
     .fo-shot {
