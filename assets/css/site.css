@@ -605,3 +605,71 @@
       border-color: #7fdfff;
       color: #7fdfff;
     }
+    .fo-repo {
+      border: 1px solid var(--fo-line);
+      border-radius: 18px;
+      background: var(--fo-surface);
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .fo-repo-num {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--fo-cyan);
+      margin-right: .35rem;
+    }
+    .fo-repo h2 {
+      font-size: 1.05rem;
+      margin: 0 0 .5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .35rem;
+    }
+    .fo-repo > p {
+      font-size: .9rem;
+      color: var(--fo-muted);
+      margin: 0 0 .85rem;
+      max-width: 720px;
+    }
+    .fo-repo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-bottom: .85rem;
+    }
+    .fo-repo-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      align-items: center;
+    }
+    .fo-repo-stack .fo-chip {
+      font-size: .72rem;
+      padding: 4px 10px;
+    }
+    .fo-repo-shots {
+      display: grid;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 768px) {
+      .fo-repo-shots {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .fo-repo-shots.fo-repo-shots-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .fo-repo details {
+      margin-top: .75rem;
+    }
+    .fo-repo summary {
+      cursor: pointer;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--fo-cyan);
+      list-style: none;
+    }
+    .fo-repo summary::-webkit-details-marker { display: none; }
