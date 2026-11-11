@@ -606,22 +606,27 @@
       color: #7fdfff;
     }
     .fo-repo-list {
-      border-top: 1px solid var(--fo-line);
+      border-top: 0;
     }
     .fo-repo {
       border: 0;
       border-bottom: 1px solid var(--fo-line);
       border-radius: 0;
       background: transparent;
-      padding: 1.6rem 0 1.45rem;
+      padding: 1.45rem 0 1.35rem;
       margin: 0;
+      scroll-margin-top: 5.5rem;
+    }
+    .fo-repo.is-featured {
+      padding-left: .9rem;
+      border-left: 2px solid var(--fo-cyan);
     }
     .fo-repo-head {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 1rem;
-      margin-bottom: .45rem;
+      margin-bottom: .4rem;
     }
     .fo-repo-title {
       display: flex;
@@ -662,54 +667,77 @@
       color: var(--fo-cyan);
       border-bottom-color: var(--fo-cyan);
     }
-    .fo-repo > p {
-      font-size: .92rem;
-      line-height: 1.55;
-      color: var(--fo-muted);
-      margin: 0 0 .7rem;
+    .fo-repo-lead {
+      font-size: .98rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--fo-ink);
+      margin: 0 0 .4rem;
       max-width: 640px;
     }
-    .fo-repo-note {
-      font-size: .82rem;
+    .fo-repo > p:not(.fo-repo-lead):not(.fo-repo-rel) {
+      font-size: .9rem;
+      line-height: 1.55;
       color: var(--fo-muted);
-      margin: 0 0 .7rem;
+      margin: 0 0 .55rem;
       max-width: 640px;
-      padding-left: .75rem;
-      border-left: 2px solid var(--fo-chip-border);
+    }
+    .fo-repo-rel {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      line-height: 1.5;
+      color: var(--fo-muted);
+      margin: 0 0 .75rem;
+      max-width: 640px;
+    }
+    .fo-repo-rel a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .fo-repo-rel a:hover {
+      border-bottom-color: var(--fo-cyan);
     }
     .fo-repo-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: .45rem;
+      gap: .4rem;
       align-items: center;
     }
     .fo-repo-stack span {
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .7rem;
+      font-size: .68rem;
       font-weight: 500;
       color: var(--fo-ink);
       background: var(--fo-soft);
       border: 1px solid var(--fo-chip-border);
       border-radius: 999px;
-      padding: .28rem .65rem;
-    }
-    .fo-repo-stack i {
-      font-size: .9rem;
-      line-height: 1;
-      color: var(--fo-cyan);
+      padding: .22rem .55rem;
     }
     .fo-repo-toc {
       display: flex;
-      flex-wrap: wrap;
-      gap: .4rem .75rem;
-      margin: 0 0 1.75rem;
-      padding-bottom: 1.25rem;
+      flex-direction: column;
+      gap: .65rem;
+      margin: 0 0 1.5rem;
+      padding: .85rem 0 1.15rem;
       border-bottom: 1px solid var(--fo-line);
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .72rem;
+    }
+    .fo-repo-toc-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .4rem .7rem;
+    }
+    .fo-repo-toc-label {
+      color: var(--fo-ink);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: .65rem;
+      margin-right: .1rem;
     }
     .fo-repo-toc a {
       text-decoration: none;
@@ -723,44 +751,11 @@
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--fo-cyan);
-      margin: 1.75rem 0 .35rem;
+      margin: 1.85rem 0 .15rem;
+      padding-top: .35rem;
+      scroll-margin-top: 5.5rem;
     }
-    .fo-repo-shots {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: .65rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 575.98px) {
-      .fo-repo-shots { grid-template-columns: 1fr; }
-    }
-    .fo-repo-shots.cols-2 {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 480px;
-    }
-    .fo-repo-shots.cols-1 {
-      grid-template-columns: 1fr;
-      max-width: 280px;
-    }
-    .fo-repo-shots .fo-shot {
-      border-radius: 10px;
-      margin: 0;
-    }
-    .fo-repo-shots .fo-shot-media {
-      aspect-ratio: 16 / 10;
-      background: var(--fo-soft);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .fo-repo-shots .fo-shot-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-    }
-    .fo-repo-shots figcaption {
-      padding: .35rem .55rem;
-      font-size: .68rem;
+    .fo-repo-list > .fo-repo-group:first-child {
+      margin-top: 0;
+      padding-top: 0;
     }
