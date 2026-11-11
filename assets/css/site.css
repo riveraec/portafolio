@@ -373,6 +373,12 @@
       gap: .5rem;
       margin-top: 1rem;
     }
+    .fo-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin: .35rem 0 .65rem;
+    }
     .fo-badge {
       display: inline-flex;
       align-items: center;
@@ -389,6 +395,7 @@
       text-decoration: none;
       vertical-align: middle;
     }
+    .fo-card .fo-badge:hover { color: var(--fo-cyan); border-color: var(--fo-cyan); }
     .fo-badge:hover { color: var(--fo-cyan); border-color: var(--fo-cyan); }
     .fo-diagram {
       border: 1px solid var(--fo-line);
