@@ -38,10 +38,19 @@ portafolio/
 │   ├── demos/          # capturas de APIs
 │   ├── diagrams/       # patrones (png/svg/mmd)
 │   ├── ia/             # logos herramientas IA / docs
-│   └── cv/             # PDF descargable
+│   ├── cv/             # PDF descargable
+│   └── certificados/   # PDFs de certificaciones (Formación)
 ├── _config.yml         # exclude de Pages (Jekyll)
 └── _archivo/           # md histórico — no publicado
 ```
+
+## Certificaciones (Formación)
+
+1. Copia el PDF a `assets/certificados/` (nombre corto, sin espacios).
+2. En `index.html`, dentro de `.fo-cert-list`, añade un bloque `fo-cert` (nombre + emisor + link PDF).
+3. Commit y push. No hace falta página nueva.
+
+Prioriza certs con peso (cloud, emisor serio). Evita saturar con cursos “desde cero” si el empleo ya cubre ese tema.
 
 ## Local
 
