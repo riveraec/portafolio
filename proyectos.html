@@ -67,29 +67,24 @@
     </header>
 
     <nav class="fo-repo-toc" aria-label="Índice">
-      <div class="fo-repo-toc-row">
+      <p class="fo-repo-toc-row">
         <span class="fo-repo-toc-label">Destacados</span>
         <a href="#etl-reportes">etl-reportes</a>
         <a href="#reportes-api">reportes-api</a>
         <a href="#eventos-api">eventos-api</a>
         <a href="#indicadores-api">indicadores-api</a>
-      </div>
-      <div class="fo-repo-toc-row">
-        <span class="fo-repo-toc-label">Python</span>
-        <a href="#g-python">01–02</a>
-        <span class="fo-repo-toc-label">Node</span>
-        <a href="#g-node">03</a>
-        <span class="fo-repo-toc-label">.NET</span>
-        <a href="#g-dotnet">04</a>
-        <span class="fo-repo-toc-label">Java</span>
-        <a href="#g-java">05–07</a>
-        <span class="fo-repo-toc-label">Mongo</span>
-        <a href="#g-mongo">08</a>
-      </div>
+      </p>
+      <p class="fo-repo-toc-row">
+        <a href="#g-python">Python</a>
+        <a href="#g-node">Node</a>
+        <a href="#g-dotnet">.NET</a>
+        <a href="#g-java">Java</a>
+        <a href="#g-mongo">Mongo</a>
+      </p>
     </nav>
 
     <div class="fo-repo-list">
-      <p id="g-python" class="fo-repo-group">Python</p>
+      <h3 id="g-python" class="fo-repo-group">Python</h3>
 
       <article id="etl-reportes" class="fo-repo is-featured">
         <div class="fo-repo-head">
@@ -103,14 +98,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">Pipeline ETL idempotente de movimientos/KPIs.</p>
-        <p>
-          Lee CSV, limpia y valida con pandas, carga a SQLite y genera un resumen diario por fecha y categoría.
-          Cada corrida es idempotente por lote (<code>fuente</code>): reprocesar el mismo archivo no duplica filas.
-        </p>
-        <p class="fo-repo-rel">
-          Relacionado:
-          <a href="#reportes-api">reportes-api</a>
-        </p>
+        <p class="fo-repo-desc">Lee CSV, limpia y valida con pandas, carga a SQLite y genera un resumen diario por fecha y categoría. Cada corrida es idempotente por lote (<code>fuente</code>): reprocesar el mismo archivo no duplica filas.</p>
+        <p class="fo-repo-rel">Relacionado: <a href="#reportes-api">reportes-api</a></p>
         <div class="fo-repo-stack">
           <span>Python</span>
           <span>pandas</span>
@@ -131,14 +120,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">API FastAPI sobre el ETL: dispara corridas y consulta el resumen.</p>
-        <p>
-          Expone <code>POST /runs</code> y <code>GET /resumen</code> (filtros por categoría y fechas) sobre SQLite.
-          Health check, OpenAPI/Swagger y pruebas con TestClient.
-        </p>
-        <p class="fo-repo-rel">
-          Relacionado:
-          <a href="#etl-reportes">etl-reportes</a>
-        </p>
+        <p class="fo-repo-desc">Expone <code>POST /runs</code> y <code>GET /resumen</code> (filtros por categoría y fechas) sobre SQLite. Health check, OpenAPI/Swagger y pruebas con TestClient.</p>
+        <p class="fo-repo-rel">Relacionado: <a href="#etl-reportes">etl-reportes</a></p>
         <div class="fo-repo-stack">
           <span>Python</span>
           <span>FastAPI</span>
@@ -147,7 +130,7 @@
         </div>
       </article>
 
-      <p id="g-node" class="fo-repo-group">Node.js</p>
+      <h3 id="g-node" class="fo-repo-group">Node.js</h3>
 
       <article id="eventos-api" class="fo-repo is-featured">
         <div class="fo-repo-head">
@@ -163,10 +146,7 @@
           </div>
         </div>
         <p class="fo-repo-lead">Ingesta idempotente de webhooks.</p>
-        <p>
-          Valida el JSON con Zod, persiste en SQLite y deja listar o consultar por <code>id</code> / tipo.
-          Si llega el mismo <code>id</code>, responde 201 la primera vez y 200 al reenviar. Docker Compose y CI en GitHub Actions.
-        </p>
+        <p class="fo-repo-desc">Valida el JSON con Zod, persiste en SQLite y deja listar o consultar por <code>id</code> / tipo. Si llega el mismo <code>id</code>, responde 201 la primera vez y 200 al reenviar. Docker Compose y CI en GitHub Actions.</p>
         <div class="fo-repo-stack">
           <span>Node.js</span>
           <span>Express</span>
@@ -176,7 +156,7 @@
         </div>
       </article>
 
-      <p id="g-dotnet" class="fo-repo-group">.NET</p>
+      <h3 id="g-dotnet" class="fo-repo-group">.NET</h3>
 
       <article id="indicadores-api" class="fo-repo is-featured">
         <div class="fo-repo-head">
@@ -190,10 +170,7 @@
           </div>
         </div>
         <p class="fo-repo-lead">API .NET 8 de indicadores con filtros y resumen.</p>
-        <p>
-          CRUD con filtros, endpoint de resumen (cantidad, promedio, mín/máx por categoría) y health checks sobre EF Core.
-          Capas Controller → Service → Repository, ProblemDetails, Swagger y xUnit con EF InMemory.
-        </p>
+        <p class="fo-repo-desc">CRUD con filtros, endpoint de resumen (cantidad, promedio, mín/máx por categoría) y health checks sobre EF Core. Capas Controller → Service → Repository, ProblemDetails, Swagger y xUnit con EF InMemory.</p>
         <div class="fo-repo-stack">
           <span>.NET 8</span>
           <span>EF Core</span>
@@ -202,7 +179,7 @@
         </div>
       </article>
 
-      <p id="g-java" class="fo-repo-group">Serie Java · auth → CRUD → cliente</p>
+      <h3 id="g-java" class="fo-repo-group">Serie Java · auth → CRUD → cliente</h3>
 
       <article id="auth-api" class="fo-repo">
         <div class="fo-repo-head">
@@ -215,15 +192,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">Autenticación JWT con Spring Security.</p>
-        <p>
-          Registro con BCrypt, login que emite JWT y <code>GET /me</code> protegido con Bearer token.
-          Modo stateless, filtro JWT, JPA + H2 y OpenAPI.
-        </p>
-        <p class="fo-repo-rel">
-          Serie:
-          <a href="#productos-api">productos-api</a> →
-          <a href="#cliente-servicios-remotos">cliente-servicios-remotos</a>
-        </p>
+        <p class="fo-repo-desc">Registro con BCrypt, login que emite JWT y <code>GET /me</code> protegido con Bearer token. Modo stateless, filtro JWT, JPA + H2 y OpenAPI.</p>
+        <p class="fo-repo-rel">Serie: <a href="#productos-api">productos-api</a> → <a href="#cliente-servicios-remotos">cliente-servicios-remotos</a></p>
         <div class="fo-repo-stack">
           <span>Java</span>
           <span>Spring Security</span>
@@ -243,17 +213,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">CRUD de catálogo con validación y OpenAPI.</p>
-        <p>
-          Respuesta estándar y manejo centralizado de 404/400.
-          Capas Controller → Service → Repository sobre JPA + H2.
-        </p>
-        <p class="fo-repo-rel">
-          Serie:
-          <a href="#auth-api">auth-api</a> →
-          <a href="#cliente-servicios-remotos">cliente-servicios-remotos</a>
-          · Variante:
-          <a href="#catalogo-mongo-api">catalogo-mongo-api</a>
-        </p>
+        <p class="fo-repo-desc">Respuesta estándar y manejo centralizado de 404/400. Capas Controller → Service → Repository sobre JPA + H2.</p>
+        <p class="fo-repo-rel">Serie: <a href="#auth-api">auth-api</a> → <a href="#cliente-servicios-remotos">cliente-servicios-remotos</a> · Variante: <a href="#catalogo-mongo-api">catalogo-mongo-api</a></p>
         <div class="fo-repo-stack">
           <span>Java</span>
           <span>Spring Boot</span>
@@ -273,15 +234,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">Cliente HTTP reutilizable (OpenFeign) contra auth y productos.</p>
-        <p>
-          Biblioteca con GET/POST/PUT/DELETE, reintentos, pool de conexiones y logging seguro.
-          App demo que integra las APIs de la serie; stubs WireMock en pruebas.
-        </p>
-        <p class="fo-repo-rel">
-          Serie:
-          <a href="#auth-api">auth-api</a> →
-          <a href="#productos-api">productos-api</a>
-        </p>
+        <p class="fo-repo-desc">Biblioteca con GET/POST/PUT/DELETE, reintentos, pool de conexiones y logging seguro. App demo que integra las APIs de la serie; stubs WireMock en pruebas.</p>
+        <p class="fo-repo-rel">Serie: <a href="#auth-api">auth-api</a> → <a href="#productos-api">productos-api</a></p>
         <div class="fo-repo-stack">
           <span>Java</span>
           <span>OpenFeign</span>
@@ -290,7 +244,7 @@
         </div>
       </article>
 
-      <p id="g-mongo" class="fo-repo-group">Mongo · variante NoSQL</p>
+      <h3 id="g-mongo" class="fo-repo-group">Mongo · variante NoSQL</h3>
 
       <article id="catalogo-mongo-api" class="fo-repo">
         <div class="fo-repo-head">
@@ -303,14 +257,8 @@
           </div>
         </div>
         <p class="fo-repo-lead">Mismo catálogo que productos-api, con MongoDB.</p>
-        <p>
-          Mismas capas y dominio, otro almacén (documental).
-          API + Mongo con Docker Compose, OpenAPI y Testcontainers.
-        </p>
-        <p class="fo-repo-rel">
-          Par de:
-          <a href="#productos-api">productos-api</a>
-        </p>
+        <p class="fo-repo-desc">Mismas capas y dominio, otro almacén (documental). API + Mongo con Docker Compose, OpenAPI y Testcontainers.</p>
+        <p class="fo-repo-rel">Par de: <a href="#productos-api">productos-api</a></p>
         <div class="fo-repo-stack">
           <span>Java</span>
           <span>Spring Boot</span>
