@@ -81,7 +81,6 @@
       border-radius: 22px;
       overflow: hidden;
       box-shadow: 0 18px 48px var(--fo-hero-glow), 0 8px 24px var(--fo-shadow);
-      text-align: left;
     }
     .fo-portrait-media {
       aspect-ratio: 4 / 5;
@@ -94,11 +93,8 @@
       object-position: center 18%;
       display: block;
     }
-    .fo-portrait-cap {
-      padding: .9rem 1rem 1.05rem;
-      border-top: 1px solid var(--fo-line);
-      color: var(--fo-muted);
-      background: var(--fo-surface);
+    .fo-hero-seek {
+      opacity: .85;
     }
     .fo-chip {
       display: inline-flex;
