@@ -4,7 +4,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 - **URL:** https://riveraec.github.io/portafolio/
 - **Repo:** https://github.com/riveraec/portafolio
-- **Editar:** `index.html` (home), `repos.html` (listado técnico), `assets/css/site.css`, `assets/js/site.js`
+- **Editar:** `index.html` (home), `proyectos.html` (listado técnico), `assets/css/site.css`, `assets/js/site.js`
 - **Borradores md:** `_archivo/` (en el repo; **no** se publican en Pages — ver `_config.yml`. No añadir `.nojekyll` o sí quedarían visibles.)
 - **Backup one-page:** rama `backup/one-page` (commit previo al split demos)
 
@@ -12,7 +12,7 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 | Pieza | Versión / origen | Uso |
 |-------|------------------|-----|
-| HTML / CSS / JS | `index.html` + `repos.html` · `assets/css` · `assets/js` | Home + listado de repos; tema claro/oscuro |
+| HTML / CSS / JS | `index.html` + `proyectos.html` · `assets/css` · `assets/js` | Home + proyectos técnicos; tema claro/oscuro |
 | Bootstrap | **5.3.3** (jsDelivr CDN) | Grid, utilidades |
 | Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI |
 | Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en chips |
@@ -27,7 +27,7 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 ```text
 portafolio/
 ├── index.html          # home (reclutador): pitch, trayectoria, proyectos, stack…
-├── repos.html          # listado técnico de repos (desde Proyectos; noindex)
+├── proyectos.html      # proyectos técnicos (desde Proyectos; noindex)
 ├── site.webmanifest
 ├── README.md
 ├── .gitignore

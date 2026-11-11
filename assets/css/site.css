@@ -680,35 +680,85 @@
     .fo-repo-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: .55rem .85rem;
+      gap: .45rem;
       align-items: center;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .72rem;
-      color: var(--fo-cyan);
     }
     .fo-repo-stack span {
       display: inline-flex;
       align-items: center;
-      gap: .3rem;
+      gap: .35rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .7rem;
+      font-weight: 500;
+      color: var(--fo-ink);
+      background: var(--fo-soft);
+      border: 1px solid var(--fo-chip-border);
+      border-radius: 999px;
+      padding: .28rem .65rem;
     }
     .fo-repo-stack i {
-      font-size: .95rem;
+      font-size: .9rem;
       line-height: 1;
+      color: var(--fo-cyan);
+    }
+    .fo-repo-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem .75rem;
+      margin: 0 0 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--fo-line);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+    }
+    .fo-repo-toc a {
+      text-decoration: none;
+      color: var(--fo-muted);
+    }
+    .fo-repo-toc a:hover { color: var(--fo-cyan); }
+    .fo-repo-group {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--fo-cyan);
+      margin: 1.75rem 0 .35rem;
     }
     .fo-repo-shots {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: .6rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .65rem;
       margin-top: 1rem;
-      max-width: 720px;
+    }
+    @media (max-width: 575.98px) {
+      .fo-repo-shots { grid-template-columns: 1fr; }
+    }
+    .fo-repo-shots.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 480px;
+    }
+    .fo-repo-shots.cols-1 {
+      grid-template-columns: 1fr;
+      max-width: 280px;
     }
     .fo-repo-shots .fo-shot {
       border-radius: 10px;
+      margin: 0;
     }
-    .fo-repo-shots .fo-shot img {
-      max-height: 110px;
-      object-fit: cover;
-      object-position: top left;
+    .fo-repo-shots .fo-shot-media {
+      aspect-ratio: 16 / 10;
+      background: var(--fo-soft);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .fo-repo-shots .fo-shot-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
     }
     .fo-repo-shots figcaption {
       padding: .35rem .55rem;
