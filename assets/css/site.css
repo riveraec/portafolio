@@ -282,6 +282,12 @@
       color: var(--fo-cyan);
       background: var(--fo-surface);
     }
+    .fo-cert-list-muted {
+      opacity: .72;
+    }
+    .fo-cert-list-muted .fo-cert-body strong {
+      font-weight: 550;
+    }
     .fo-foot { border-top: 1px solid var(--fo-line); }
     .fo-shot {
       border: 1px solid var(--fo-line);
