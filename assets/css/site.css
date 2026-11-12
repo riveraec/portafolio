@@ -54,10 +54,12 @@
     .fo-hero::before {
       content: "";
       position: absolute;
-      inset: -15% -5% auto auto;
-      width: min(520px, 70vw);
-      height: 420px;
-      background: radial-gradient(ellipse at center, var(--fo-hero-glow), transparent 70%);
+      left: 50%;
+      top: -12%;
+      width: min(720px, 92vw);
+      height: 440px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, var(--fo-hero-glow), transparent 72%);
       pointer-events: none;
       z-index: 0;
     }
