@@ -123,16 +123,25 @@
     .fo-chip {
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
-      background: var(--fo-soft);
-      color: var(--fo-cyan);
+      gap: .4rem;
+      background: var(--fo-surface);
+      color: var(--fo-ink);
       border: 1px solid var(--fo-chip-border);
       border-radius: 999px;
-      padding: 5px 12px;
+      padding: 6px 12px;
       font-size: .78rem;
       font-weight: 600;
     }
-    .fo-chip i { font-size: 1rem; line-height: 1; }
+    .fo-chip i {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .fo-chip i:not(.colored) {
+      color: var(--fo-cyan);
+    }
+    html[data-theme="dark"] .fo-chip i.devicon-apachekafka-original.colored {
+      color: #fff;
+    }
     .fo-h1 {
       font-weight: 800;
       letter-spacing: -.03em;
