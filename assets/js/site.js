@@ -88,7 +88,7 @@
     toast.hidden = true;
     toast.innerHTML =
       '<i class="bi bi-check-circle-fill" aria-hidden="true"></i>' +
-      "<span>CV abierto · puedes guardarlo con Ctrl+S</span>";
+      "<span>CV descargado</span>";
     document.body.appendChild(toast);
 
     var hideTimer = null;
@@ -103,14 +103,10 @@
         setTimeout(function () {
           toast.hidden = true;
         }, 280);
-      }, 2800);
+      }, 2200);
     }
 
-    // Abrir en pestaña (sin atributo download) evita la barra de descargas del navegador.
     document.querySelectorAll('a[href*="Efrain_Rivera_CV.pdf"]').forEach(function (a) {
-      a.removeAttribute("download");
-      a.setAttribute("target", "_blank");
-      a.setAttribute("rel", "noopener");
       a.addEventListener("click", function () {
         showToast();
       });
