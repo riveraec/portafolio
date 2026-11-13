@@ -193,14 +193,6 @@
       font-size: 1.15rem;
       transition: .15s;
     }
-    .fo-icon-btn img {
-      width: 18px;
-      height: 18px;
-      display: block;
-    }
-    html[data-theme="dark"] .fo-brand-mono {
-      filter: invert(1) brightness(1.08);
-    }
     .fo-icon-btn:hover {
       border-color: var(--fo-cyan);
       color: var(--fo-cyan);
@@ -812,11 +804,6 @@
       color: var(--fo-cyan);
       font-size: 1rem;
     }
-    .fo-contact-icon img {
-      width: 18px;
-      height: 18px;
-      display: block;
-    }
     .fo-contact-body {
       min-width: 0;
       display: grid;
@@ -872,11 +859,6 @@
     .fo-contact-go i {
       font-size: .82rem;
       line-height: 1;
-    }
-    .fo-contact-go img {
-      width: 14px;
-      height: 14px;
-      display: block;
     }
     .fo-contact-copy:hover,
     .fo-contact-go:hover {
