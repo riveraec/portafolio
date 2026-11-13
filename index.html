@@ -267,7 +267,7 @@
           <strong>Cloud Computing</strong>
           <span>Escuela de Organización Industrial (EOI)</span>
         </div>
-        <a class="fo-cert-btn" href="assets/certificados/google-cloud-computing.pdf" target="_blank" rel="noopener" title="Ver certificado" aria-label="Ver certificado Cloud Computing">
+        <a class="fo-cert-btn" href="assets/certificados/google-cloud-computing.pdf" data-pdf-preview data-pdf-title="Cloud Computing" title="Ver certificado" aria-label="Ver certificado Cloud Computing">
           <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
         </a>
       </div>
@@ -280,7 +280,7 @@
           <strong>Cursor con Python · desarrollo con IA</strong>
           <span>Santander Open Academy</span>
         </div>
-        <a class="fo-cert-btn" href="assets/certificados/santander-cursor-python.pdf" target="_blank" rel="noopener" title="Ver certificado" aria-label="Ver certificado Cursor con Python">
+        <a class="fo-cert-btn" href="assets/certificados/santander-cursor-python.pdf" data-pdf-preview data-pdf-title="Cursor con Python" title="Ver certificado" aria-label="Ver certificado Cursor con Python">
           <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
         </a>
       </div>
@@ -293,7 +293,7 @@
           <strong>Desarrollo de aplicaciones móviles</strong>
           <span>Universidad Complutense de Madrid (UCM)</span>
         </div>
-        <a class="fo-cert-btn" href="assets/certificados/google-apps-moviles.pdf" target="_blank" rel="noopener" title="Ver certificado" aria-label="Ver certificado Desarrollo de aplicaciones móviles">
+        <a class="fo-cert-btn" href="assets/certificados/google-apps-moviles.pdf" data-pdf-preview data-pdf-title="Desarrollo de aplicaciones móviles" title="Ver certificado" aria-label="Ver certificado Desarrollo de aplicaciones móviles">
           <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
         </a>
       </div>
@@ -302,7 +302,7 @@
           <strong>Prompting responsable</strong>
           <span>Santander Open Academy</span>
         </div>
-        <a class="fo-cert-btn" href="assets/certificados/santander-prompting-responsable.pdf" target="_blank" rel="noopener" title="Ver certificado" aria-label="Ver certificado Prompting responsable">
+        <a class="fo-cert-btn" href="assets/certificados/santander-prompting-responsable.pdf" data-pdf-preview data-pdf-title="Prompting responsable" title="Ver certificado" aria-label="Ver certificado Prompting responsable">
           <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
         </a>
       </div>
@@ -420,6 +420,22 @@
       <a href="#contacto">Contacto</a>
     </p>
   </footer>
+
+  <div id="fo-pdf-modal" class="fo-pdf-modal" hidden aria-hidden="true">
+    <div class="fo-pdf-dialog" role="dialog" aria-modal="true" aria-labelledby="fo-pdf-title">
+      <div class="fo-pdf-bar">
+        <h2 id="fo-pdf-title" class="fo-pdf-title">Certificado</h2>
+        <div class="fo-pdf-actions">
+          <a id="fo-pdf-open" class="fo-pdf-open" href="#" target="_blank" rel="noopener">Abrir</a>
+          <button type="button" id="fo-pdf-close" class="fo-pdf-close" aria-label="Cerrar vista previa">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <iframe id="fo-pdf-frame" class="fo-pdf-frame" title="Vista previa del certificado"></iframe>
+      <p class="fo-pdf-hint">Si no se muestra aquí, usa <strong>Abrir</strong>.</p>
+    </div>
+  </div>
 
   <script src="assets/js/site.js"></script>
 </body>

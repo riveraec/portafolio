@@ -73,8 +73,58 @@
       if (e.target === lightbox) closeLightbox();
     });
   }
+  // Vista previa de certificados PDF dentro del sitio (Formación).
+  var pdfModal = document.getElementById("fo-pdf-modal");
+  var pdfFrame = document.getElementById("fo-pdf-frame");
+  var pdfTitle = document.getElementById("fo-pdf-title");
+  var pdfOpen = document.getElementById("fo-pdf-open");
+  var pdfClose = document.getElementById("fo-pdf-close");
+  var pdfLastFocus = null;
+
+  function openPdfPreview(src, title) {
+    if (!pdfModal || !pdfFrame || !src) return;
+    pdfLastFocus = document.activeElement;
+    if (pdfTitle) pdfTitle.textContent = title || "Certificado";
+    if (pdfOpen) pdfOpen.href = src;
+    pdfFrame.src = src;
+    pdfModal.hidden = false;
+    pdfModal.classList.add("is-open");
+    pdfModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (pdfClose) pdfClose.focus();
+  }
+
+  function closePdfPreview() {
+    if (!pdfModal || !pdfFrame) return;
+    pdfModal.classList.remove("is-open");
+    pdfModal.hidden = true;
+    pdfModal.setAttribute("aria-hidden", "true");
+    pdfFrame.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (pdfLastFocus && typeof pdfLastFocus.focus === "function") pdfLastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-pdf-preview]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      openPdfPreview(a.getAttribute("href"), a.getAttribute("data-pdf-title") || a.getAttribute("aria-label"));
+    });
+  });
+
+  if (pdfClose) pdfClose.addEventListener("click", closePdfPreview);
+  if (pdfModal) {
+    pdfModal.addEventListener("click", function (e) {
+      if (e.target === pdfModal) closePdfPreview();
+    });
+  }
+
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && lightbox && lightbox.classList.contains("is-open")) {
+    if (e.key !== "Escape") return;
+    if (pdfModal && pdfModal.classList.contains("is-open")) {
+      closePdfPreview();
+      return;
+    }
+    if (lightbox && lightbox.classList.contains("is-open")) {
       closeLightbox();
     }
   });
