@@ -25,54 +25,6 @@
     setTheme(currentTheme());
   }
 
-  var lightbox = document.getElementById("fo-lightbox");
-  var lightboxImg = document.getElementById("fo-lightbox-img");
-  var lightboxCaption = document.getElementById("fo-lightbox-caption");
-  var lightboxClose = document.getElementById("fo-lightbox-close");
-  var lastFocus = null;
-
-  function openLightbox(src, caption, alt) {
-    if (!lightbox || !lightboxImg || !src) return;
-    lastFocus = document.activeElement;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "";
-    if (lightboxCaption) lightboxCaption.textContent = caption || "";
-    lightbox.hidden = false;
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    if (lightboxClose) lightboxClose.focus();
-  }
-
-  function closeLightbox() {
-    if (!lightbox || !lightboxImg) return;
-    lightbox.classList.remove("is-open");
-    lightbox.hidden = true;
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImg.removeAttribute("src");
-    document.body.style.overflow = "";
-    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-  }
-
-  document.querySelectorAll("[data-lightbox]").forEach(function (el) {
-    el.addEventListener("click", function () {
-      var src = el.getAttribute("data-src");
-      var img = el.querySelector("img");
-      var cap = el.querySelector("figcaption");
-      openLightbox(
-        src || (img && img.getAttribute("src")),
-        cap ? cap.textContent.trim() : "",
-        img ? img.getAttribute("alt") : ""
-      );
-    });
-  });
-
-  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
-  if (lightbox) {
-    lightbox.addEventListener("click", function (e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-  }
   // Vista previa de certificados PDF dentro del sitio (Formación).
   var pdfModal = document.getElementById("fo-pdf-modal");
   var pdfFrame = document.getElementById("fo-pdf-frame");
@@ -115,7 +67,10 @@
   document.querySelectorAll("[data-pdf-preview]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault();
-      openPdfPreview(a.getAttribute("href"), a.getAttribute("data-pdf-title") || a.getAttribute("aria-label"));
+      openPdfPreview(
+        a.getAttribute("href"),
+        a.getAttribute("data-pdf-title") || a.getAttribute("aria-label")
+      );
     });
   });
 
@@ -127,17 +82,12 @@
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
-    if (pdfModal && pdfModal.classList.contains("is-open")) {
+    if (e.key === "Escape" && pdfModal && pdfModal.classList.contains("is-open")) {
       closePdfPreview();
-      return;
-    }
-    if (lightbox && lightbox.classList.contains("is-open")) {
-      closeLightbox();
     }
   });
 
-  // Confirmación visual al descargar el CV (la descarga del navegador sigue igual).
+  // Confirmación visual al descargar el CV.
   (function setupCvToast() {
     var toast = document.createElement("div");
     toast.className = "fo-toast";
@@ -152,7 +102,6 @@
     var hideTimer = null;
     function showToast() {
       toast.hidden = false;
-      // Force reflow so the enter transition runs.
       void toast.offsetWidth;
       toast.classList.add("is-visible");
       if (hideTimer) clearTimeout(hideTimer);
@@ -171,7 +120,9 @@
     });
   })();
 
-  var links = Array.prototype.slice.call(document.querySelectorAll(".fo-nav-scroll a[href^='#']"));
+  var links = Array.prototype.slice.call(
+    document.querySelectorAll(".fo-nav-scroll a[href^='#']")
+  );
   if (!links.length) return;
 
   var sectionById = {};

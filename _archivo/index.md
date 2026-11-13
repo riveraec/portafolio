@@ -44,18 +44,10 @@ Más de 6 años en APIs, microservicios e integración. Experiencia principal en
 
 Pipeline que carga y resume datos; API que dispara corridas y consulta el resultado.
 
-![ETL + API de orquestación](../assets/diagrams/patron-etl-api.png)
-
 | Pieza | Repo | Descripción |
 |-------|------|-------------|
 | Pipeline | [etl-reportes](https://github.com/riveraec/etl-reportes) | CSV → pandas → SQLite, idempotencia por lote, resumen diario, pytest · [sql/](https://github.com/riveraec/etl-reportes/tree/main/sql) |
 | API | [reportes-api](https://github.com/riveraec/reportes-api) | FastAPI: `POST /runs`, `GET /resumen`, health, OpenAPI, tests |
-
-OpenAPI (`/docs`) y respuesta real de `GET /resumen` (total 17):
-
-![OpenAPI reportes-api](../assets/demos/demo-reportes-api-docs.png)
-
-![GET /resumen](../assets/demos/demo-reportes-api-resumen.png)
 
 Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` → `/docs` y `GET /resumen`.
 
@@ -63,15 +55,7 @@ Local: venv + `pip install -e .` → `uvicorn reportes_api.main:app --reload` �
 
 ## Otros proyectos
 
-**Node.js** — [eventos-api](https://github.com/riveraec/eventos-api): Express, Zod, SQLite, idempotencia por `id`, SuperTest, Docker.
-
-`GET /health` (200), `POST /eventos` alta (201) y el mismo `POST` idempotente (200):
-
-![GET /health](../assets/demos/demo-eventos-api-health.png)
-
-![POST /eventos 201](../assets/demos/demo-eventos-api-post-201.png)
-
-![POST /eventos 200 idempotente](../assets/demos/demo-eventos-api-post-200.png)
+**Node.js** — [eventos-api](https://github.com/riveraec/eventos-api): Express, Zod, SQLite, idempotencia por `id`, SuperTest, Docker. `GET /health` (200); `POST /eventos` 201 / 200 idempotente.
 
 **Integración Java** — JWT, CRUD (SQL y Mongo) y cliente HTTP:
 
@@ -88,8 +72,6 @@ Más detalle: [perfil.md](perfil.md).
 ### Capas de una API REST
 
 Controlador → servicio → repositorio → BD.
-
-![Capas API REST](../assets/diagrams/patron-api-rest.png)
 
 Hexagonal, JWT y ETL/API: [patrones.md](patrones.md).
 

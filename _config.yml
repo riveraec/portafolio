@@ -1,5 +1,5 @@
-# GitHub Pages usa Jekyll por defecto (no hay .nojekyll).
-# Carpetas con _ ya se omiten; se lista _archivo por claridad.
+# Reserva por si algún día se usa Jekyll en vez del workflow Actions.
+# Hoy Pages publica el artifact de deploy-pages.yml (sin _archivo).
 exclude:
   - _archivo
   - README.md
