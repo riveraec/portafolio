@@ -12,8 +12,11 @@
       --fo-btn-primary-fg: #ffffff;
       --fo-btn-primary-hover: #1f2c44;
       --fo-hero-glow: rgba(12, 143, 196, .16);
-      --fo-contact-bg: #0e1726;
-      --fo-contact-fg: #ffffff;
+      --fo-contact-bg: #eef6fa;
+      --fo-contact-fg: #0e1726;
+      --fo-contact-accent: #0c8fc4;
+      --fo-contact-accent-fg: #ffffff;
+      --fo-contact-accent-soft: rgba(12, 143, 196, .1);
       --fo-shadow: rgba(14, 23, 38, .1);
     }
     html[data-theme="dark"] {
@@ -32,6 +35,9 @@
       --fo-hero-glow: rgba(93, 214, 255, .14);
       --fo-contact-bg: #152033;
       --fo-contact-fg: #e8eef4;
+      --fo-contact-accent: #5dd6ff;
+      --fo-contact-accent-fg: #06121f;
+      --fo-contact-accent-soft: rgba(93, 214, 255, .1);
       --fo-shadow: rgba(0, 0, 0, .35);
       color-scheme: dark;
     }
@@ -711,30 +717,34 @@
       opacity: .72;
     }
     .fo-contact-panel .btn-mail {
-      background: #5dd6ff;
-      color: #06121f;
+      background: var(--fo-contact-accent);
+      color: var(--fo-contact-accent-fg);
       font-weight: 700;
       border-radius: 12px;
       border: 0;
       padding: .65rem 1.2rem;
     }
     .fo-contact-panel .btn-ghost {
-      border: 1.5px solid #5dd6ff;
-      color: #5dd6ff;
+      border: 1.5px solid var(--fo-contact-accent);
+      color: var(--fo-contact-accent);
       background: transparent;
       border-radius: 12px;
       padding: .65rem 1.2rem;
       font-weight: 600;
     }
-    .fo-contact-panel .btn-ghost:hover { background: rgba(93, 214, 255, .1); color: #5dd6ff; }
+    .fo-contact-panel .btn-ghost:hover {
+      background: var(--fo-contact-accent-soft);
+      color: var(--fo-contact-accent);
+    }
     .fo-contact-panel .fo-icon-btn {
-      border-color: #5dd6ff;
-      color: #5dd6ff;
+      border-color: var(--fo-contact-accent);
+      color: var(--fo-contact-accent);
       background: transparent;
     }
     .fo-contact-panel .fo-icon-btn:hover {
-      border-color: #7fdfff;
-      color: #7fdfff;
+      border-color: var(--fo-contact-accent);
+      color: var(--fo-contact-accent);
+      background: var(--fo-contact-accent-soft);
     }
     .fo-repo-list {
       border-top: 0;
