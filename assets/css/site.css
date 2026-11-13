@@ -656,15 +656,6 @@
       text-align: center;
       margin-bottom: 1.35rem;
     }
-    .fo-contact-kicker {
-      margin: 0 0 .4rem;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--fo-contact-accent);
-    }
     .fo-contact-title {
       margin: 0 0 .45rem;
       font-size: clamp(1.55rem, 4vw, 1.85rem);
