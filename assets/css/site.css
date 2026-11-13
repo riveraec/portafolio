@@ -640,62 +640,30 @@
       filter: invert(1) brightness(1.1);
     }
     .fo-contact-panel {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      color: var(--fo-contact-fg);
-      border: 1px solid color-mix(in srgb, var(--fo-chip-border) 80%, transparent);
-      border-radius: 2rem;
-      padding: 1.75rem 1.25rem 1.45rem;
-      background:
-        radial-gradient(circle at 12% 18%, var(--fo-hero-glow), transparent 42%),
-        radial-gradient(circle at 88% 82%, var(--fo-contact-accent-soft), transparent 46%),
-        linear-gradient(160deg, var(--fo-contact-bg) 0%, var(--fo-surface) 58%, var(--fo-contact-bg) 100%);
-      box-shadow:
-        0 28px 60px -40px var(--fo-shadow),
-        inset 0 1px 0 color-mix(in srgb, #fff 35%, transparent);
-    }
-    .fo-contact-panel::before,
-    .fo-contact-panel::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      filter: blur(2px);
-    }
-    .fo-contact-panel::before {
-      width: 220px;
-      height: 220px;
-      top: -90px;
-      right: -50px;
-      background: radial-gradient(circle, var(--fo-hero-glow), transparent 70%);
-    }
-    .fo-contact-panel::after {
-      width: 180px;
-      height: 180px;
-      left: -60px;
-      bottom: -70px;
-      background: radial-gradient(circle, var(--fo-contact-accent-soft), transparent 72%);
+      color: var(--fo-ink);
+      border: 1px solid var(--fo-line);
+      border-radius: 18px;
+      padding: 1.35rem 1.15rem 1.2rem;
+      background: var(--fo-surface);
     }
     @media (min-width: 768px) {
       .fo-contact-panel {
-        padding: 2.1rem 1.9rem 1.75rem;
+        padding: 1.5rem 1.4rem 1.3rem;
       }
     }
     .fo-contact-head {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.35rem;
+      gap: .85rem;
+      margin-bottom: 1rem;
     }
     @media (min-width: 768px) {
       .fo-contact-head {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 1.5rem;
+        gap: 1rem;
       }
     }
     .fo-contact-intro {
@@ -703,15 +671,15 @@
       min-width: 0;
     }
     .fo-contact-title {
-      margin: 0 0 .35rem;
-      font-size: clamp(1.6rem, 3.8vw, 1.95rem);
+      margin: 0 0 .25rem;
+      font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: -.04em;
-      line-height: 1.1;
+      letter-spacing: -.02em;
+      line-height: 1.2;
     }
     .fo-contact-lead {
       margin: 0;
-      font-size: .95rem;
+      font-size: .9rem;
       line-height: 1.4;
       color: var(--fo-muted);
     }
@@ -719,34 +687,33 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: .7rem;
+      gap: .55rem;
     }
     .fo-contact-meta {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
+      gap: .4rem;
       margin: 0;
-      padding: .48rem 1rem;
+      padding: .3rem .7rem;
       border-radius: 999px;
-      border: 1px solid color-mix(in srgb, #22c55e 28%, var(--fo-chip-border));
-      background: color-mix(in srgb, #22c55e 8%, var(--fo-surface));
-      font-size: .8rem;
+      border: 1px solid var(--fo-chip-border);
+      background: var(--fo-soft);
+      font-size: .76rem;
       line-height: 1.3;
       color: var(--fo-muted);
-      backdrop-filter: blur(8px);
     }
     .fo-contact-dot {
-      width: .48rem;
-      height: .48rem;
+      width: .4rem;
+      height: .4rem;
       border-radius: 50%;
       flex-shrink: 0;
       background: #22c55e;
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, .55);
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, .45);
       animation: fo-pulse 2.2s ease-out infinite;
     }
     @keyframes fo-pulse {
-      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .45); }
-      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .4); }
+      70% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
       100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -754,61 +721,51 @@
     }
     .fo-contact-social {
       display: inline-flex;
-      gap: .45rem;
+      gap: .4rem;
     }
     .fo-contact-panel .fo-icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border-color: transparent;
-      color: var(--fo-contact-accent);
-      background: color-mix(in srgb, var(--fo-surface) 70%, transparent);
-      box-shadow: 0 8px 20px -14px var(--fo-shadow);
-      transition: transform .2s ease, background .18s ease, color .18s ease, box-shadow .2s ease;
+      width: 38px;
+      height: 38px;
+      border-color: var(--fo-chip-border);
+      color: var(--fo-cyan);
+      background: var(--fo-soft);
+      transition: .15s;
     }
     .fo-contact-panel .fo-icon-btn:hover {
-      transform: translateY(-2px);
-      color: var(--fo-contact-accent);
-      background: var(--fo-contact-accent-soft);
-      box-shadow: 0 12px 24px -14px var(--fo-shadow);
+      border-color: var(--fo-cyan);
+      color: var(--fo-cyan);
+      background: var(--fo-surface);
     }
     .fo-contact-list {
       list-style: none;
       margin: 0;
       padding: 0;
       display: grid;
-      gap: .9rem;
-      background: transparent;
-      border: 0;
+      gap: .65rem;
     }
     @media (min-width: 768px) {
       .fo-contact-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
+        gap: .75rem;
       }
     }
     .fo-contact-row {
-      position: relative;
       display: grid;
       grid-template-columns: auto 1fr;
       grid-template-areas:
         "icon body"
         "tools tools";
-      gap: .75rem .9rem;
+      gap: .55rem .7rem;
       align-items: center;
-      padding: 1.1rem 1.05rem 1.05rem;
-      border: 1px solid color-mix(in srgb, var(--fo-line) 85%, transparent);
-      border-radius: 1.45rem;
-      background:
-        linear-gradient(165deg, color-mix(in srgb, var(--fo-surface) 94%, transparent), color-mix(in srgb, var(--fo-soft) 55%, var(--fo-surface)));
-      box-shadow: 0 14px 34px -26px var(--fo-shadow);
-      backdrop-filter: blur(10px);
-      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      padding: .85rem .85rem .8rem;
+      border: 1px solid var(--fo-line);
+      border-radius: 14px;
+      background: var(--fo-soft);
+      transition: .15s;
     }
     .fo-contact-row:hover {
-      transform: translateY(-3px);
-      border-color: color-mix(in srgb, var(--fo-contact-accent) 35%, var(--fo-line));
-      box-shadow: 0 20px 40px -24px var(--fo-shadow);
+      border-color: var(--fo-chip-border);
+      background: var(--fo-surface);
     }
     .fo-contact-icon { grid-area: icon; }
     .fo-contact-body { grid-area: body; }
@@ -820,121 +777,99 @@
           "icon"
           "body"
           "tools";
-        justify-items: center;
-        text-align: center;
-        gap: .95rem;
-        padding: 1.45rem 1.15rem 1.25rem;
+        justify-items: start;
+        align-content: start;
+        gap: .65rem;
+        padding: 1rem .95rem .9rem;
         min-height: 100%;
       }
-      .fo-contact-row:nth-child(2) {
-        transform: translateY(-6px);
-      }
-      .fo-contact-row:nth-child(2):hover {
-        transform: translateY(-9px);
-      }
-      .fo-contact-body { justify-items: center; }
-      .fo-contact-tools { justify-content: center; }
     }
     .fo-contact-icon {
-      width: 3rem;
-      height: 3rem;
+      width: 2.25rem;
+      height: 2.25rem;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background:
-        radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--fo-contact-accent) 22%, transparent), transparent 55%),
-        var(--fo-contact-accent-soft);
-      color: var(--fo-contact-accent);
-      font-size: 1.2rem;
-      box-shadow:
-        inset 0 0 0 1px color-mix(in srgb, var(--fo-contact-accent) 18%, transparent),
-        0 10px 22px -16px var(--fo-contact-accent);
+      background: var(--fo-surface);
+      border: 1px solid var(--fo-chip-border);
+      color: var(--fo-cyan);
+      font-size: 1rem;
     }
     .fo-contact-body {
       min-width: 0;
       display: grid;
-      gap: .22rem;
+      gap: .12rem;
       text-align: left;
     }
     .fo-contact-label {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .62rem;
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--fo-muted);
     }
     .fo-contact-text {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -.02em;
-      color: var(--fo-contact-fg);
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      color: var(--fo-ink);
       text-decoration: none;
       overflow-wrap: anywhere;
       line-height: 1.35;
     }
     .fo-contact-text:hover {
-      color: var(--fo-contact-accent);
+      color: var(--fo-cyan);
     }
     .fo-contact-tools {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: .4rem;
+      gap: .35rem;
     }
     .fo-contact-copy,
     .fo-contact-go {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .35rem;
-      min-height: 2.05rem;
-      padding: .35rem .85rem;
+      gap: .3rem;
+      min-height: 1.9rem;
+      padding: .25rem .65rem;
       border-radius: 999px;
-      border: 1px solid transparent;
-      background: color-mix(in srgb, var(--fo-soft) 80%, var(--fo-surface));
+      border: 1px solid var(--fo-chip-border);
+      background: var(--fo-surface);
       color: var(--fo-muted);
       cursor: pointer;
       text-decoration: none;
-      font-size: .74rem;
+      font-size: .72rem;
       font-weight: 600;
       letter-spacing: -.01em;
-      transition: color .15s ease, background .15s ease, border-color .15s ease, transform .15s ease;
+      transition: .15s;
     }
     .fo-contact-copy i,
     .fo-contact-go i {
-      font-size: .85rem;
+      font-size: .82rem;
       line-height: 1;
     }
     .fo-contact-copy:hover,
     .fo-contact-go:hover {
-      color: var(--fo-contact-accent);
-      border-color: color-mix(in srgb, var(--fo-contact-accent) 30%, transparent);
-      background: var(--fo-surface);
-      transform: translateY(-1px);
+      color: var(--fo-cyan);
+      border-color: var(--fo-cyan);
     }
     .fo-contact-copy.is-copied {
       color: #16a34a;
       border-color: rgba(22, 163, 74, .35);
-      background: rgba(22, 163, 74, .1);
-      transform: none;
+      background: rgba(22, 163, 74, .08);
     }
     .fo-contact-go-wa:hover {
       color: #128c7e;
-      border-color: rgba(18, 140, 126, .35);
-      background: rgba(18, 140, 126, .1);
+      border-color: rgba(18, 140, 126, .4);
     }
     @media (prefers-reduced-motion: reduce) {
       .fo-contact-row,
       .fo-contact-copy,
       .fo-contact-go,
       .fo-contact-panel .fo-icon-btn { transition: none; }
-      .fo-contact-row:hover,
-      .fo-contact-row:nth-child(2),
-      .fo-contact-row:nth-child(2):hover,
-      .fo-contact-copy:hover,
-      .fo-contact-go:hover,
-      .fo-contact-panel .fo-icon-btn:hover { transform: none; }
     }
     .fo-repo-list {
       border-top: 0;
