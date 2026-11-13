@@ -87,6 +87,41 @@
     }
   });
 
+  // Copiar correo / teléfono en Contacto.
+  (function setupContactCopy() {
+    var buttons = document.querySelectorAll(".fo-contact-copy[data-copy]");
+    if (!buttons.length) return;
+
+    function flashCopied(btn) {
+      var icon = btn.querySelector("i");
+      btn.classList.add("is-copied");
+      if (icon) {
+        icon.className = "bi bi-check2";
+      }
+      setTimeout(function () {
+        btn.classList.remove("is-copied");
+        if (icon) icon.className = "bi bi-clipboard";
+      }, 1400);
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var value = btn.getAttribute("data-copy") || "";
+        if (!value) return;
+        var done = function () {
+          flashCopied(btn);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value).then(done).catch(function () {
+            window.prompt("Copia este dato:", value);
+          });
+        } else {
+          window.prompt("Copia este dato:", value);
+        }
+      });
+    });
+  })();
+
   // Confirmación visual al descargar el CV.
   (function setupCvToast() {
     var toast = document.createElement("div");
