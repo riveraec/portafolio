@@ -640,117 +640,202 @@
       filter: invert(1) brightness(1.1);
     }
     .fo-contact-panel {
-      background: var(--fo-contact-bg);
+      position: relative;
+      overflow: hidden;
       color: var(--fo-contact-fg);
       border: 1px solid var(--fo-line);
-      border-radius: 1.25rem;
-      padding: 2.5rem 1.5rem;
+      border-radius: 1.5rem;
+      padding: 2rem 1.25rem 1.5rem;
+      background:
+        radial-gradient(ellipse 90% 70% at 12% -10%, var(--fo-hero-glow), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 100% 100%, var(--fo-contact-accent-soft), transparent 50%),
+        linear-gradient(165deg, var(--fo-contact-bg) 0%, var(--fo-surface) 100%);
+      box-shadow: 0 18px 48px -28px var(--fo-shadow);
     }
-    .fo-contact-lead {
-      max-width: 26rem;
-      margin: 0 auto 1.35rem;
-      font-size: .9rem;
-      line-height: 1.45;
-      opacity: .82;
+    .fo-contact-head {
+      text-align: center;
+      margin-bottom: 1.35rem;
     }
-    .fo-contact-meta {
-      display: block;
-      margin-top: .35rem;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .75rem;
-      letter-spacing: .01em;
-      opacity: .72;
-    }
-    .fo-contact-list {
-      list-style: none;
-      margin: 0 auto 1.35rem;
-      padding: 0;
-      max-width: 26rem;
-      text-align: left;
-      display: grid;
-      gap: .85rem;
-    }
-    .fo-contact-row {
-      padding: .85rem 1rem;
-      border: 1px solid var(--fo-line);
-      border-radius: 14px;
-      background: var(--fo-surface);
-    }
-    .fo-contact-label {
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
+    .fo-contact-kicker {
+      margin: 0 0 .4rem;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .68rem;
       font-weight: 600;
-      letter-spacing: .04em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--fo-contact-accent);
-      margin-bottom: .35rem;
     }
-    .fo-contact-value {
-      display: flex;
+    .fo-contact-title {
+      margin: 0 0 .45rem;
+      font-size: clamp(1.55rem, 4vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .fo-contact-lead {
+      margin: 0 auto .75rem;
+      max-width: 22rem;
+      font-size: .92rem;
+      line-height: 1.45;
+      color: var(--fo-muted);
+    }
+    .fo-contact-meta {
+      display: inline-flex;
       align-items: center;
-      gap: .35rem;
+      gap: .45rem;
+      margin: 0;
+      padding: .28rem .7rem;
+      border-radius: 999px;
+      border: 1px solid var(--fo-chip-border);
+      background: color-mix(in srgb, var(--fo-surface) 70%, transparent);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      letter-spacing: .01em;
+      color: var(--fo-muted);
+    }
+    .fo-contact-dot {
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, .55);
+      animation: fo-pulse 2.2s ease-out infinite;
+    }
+    @keyframes fo-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .45); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fo-contact-dot { animation: none; }
+    }
+    .fo-contact-list {
+      list-style: none;
+      margin: 0 0 1.15rem;
+      padding: 0;
+      border: 1px solid var(--fo-line);
+      border-radius: 1rem;
+      background: color-mix(in srgb, var(--fo-surface) 88%, transparent);
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+    }
+    .fo-contact-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: .75rem;
+      padding: .9rem 1rem;
+      border-bottom: 1px solid var(--fo-line);
+      transition: background .18s ease;
+    }
+    .fo-contact-row:last-child { border-bottom: 0; }
+    .fo-contact-row:hover {
+      background: var(--fo-contact-accent-soft);
+    }
+    .fo-contact-icon {
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--fo-contact-accent-soft);
+      color: var(--fo-contact-accent);
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .fo-contact-body {
       min-width: 0;
+      display: grid;
+      gap: .12rem;
+      text-align: left;
+    }
+    .fo-contact-label {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--fo-muted);
     }
     .fo-contact-text {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .95rem;
+      font-size: .92rem;
       font-weight: 600;
       color: var(--fo-contact-fg);
       text-decoration: none;
       word-break: break-all;
-      min-width: 0;
+      line-height: 1.3;
     }
     .fo-contact-text:hover {
       color: var(--fo-contact-accent);
     }
-    .fo-contact-copy {
+    .fo-contact-tools {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
       flex-shrink: 0;
-      width: 34px;
-      height: 34px;
+    }
+    .fo-contact-copy,
+    .fo-contact-go {
+      width: 2.1rem;
+      height: 2.1rem;
       border-radius: 10px;
-      border: 1px solid var(--fo-line);
+      border: 1px solid transparent;
       background: transparent;
-      color: var(--fo-contact-accent);
+      color: var(--fo-muted);
       display: grid;
       place-items: center;
       cursor: pointer;
       padding: 0;
+      text-decoration: none;
+      transition: color .15s ease, background .15s ease, border-color .15s ease, transform .15s ease;
     }
     .fo-contact-copy:hover,
+    .fo-contact-go:hover {
+      color: var(--fo-contact-accent);
+      border-color: var(--fo-chip-border);
+      background: var(--fo-surface);
+      transform: translateY(-1px);
+    }
     .fo-contact-copy.is-copied {
-      border-color: var(--fo-contact-accent);
-      background: var(--fo-contact-accent-soft);
+      color: #16a34a;
+      border-color: rgba(22, 163, 74, .35);
+      background: rgba(22, 163, 74, .1);
+      transform: none;
     }
-    .fo-contact-actions {
+    .fo-contact-go-wa:hover {
+      color: #128c7e;
+      border-color: rgba(18, 140, 126, .35);
+      background: rgba(18, 140, 126, .1);
+    }
+    .fo-contact-social {
       display: flex;
-      flex-wrap: wrap;
-      gap: .45rem;
-      margin-top: .7rem;
-    }
-    .fo-contact-panel .btn-ghost {
-      border: 1.5px solid var(--fo-contact-accent);
-      color: var(--fo-contact-accent);
-      background: transparent;
-      border-radius: 12px;
-      padding: .45rem .9rem;
-      font-weight: 600;
-    }
-    .fo-contact-panel .btn-ghost:hover {
-      background: var(--fo-contact-accent-soft);
-      color: var(--fo-contact-accent);
+      justify-content: center;
+      gap: .55rem;
+      padding-top: .15rem;
     }
     .fo-contact-panel .fo-icon-btn {
-      border-color: var(--fo-contact-accent);
+      border-color: var(--fo-chip-border);
       color: var(--fo-contact-accent);
-      background: transparent;
+      background: color-mix(in srgb, var(--fo-surface) 75%, transparent);
     }
     .fo-contact-panel .fo-icon-btn:hover {
       border-color: var(--fo-contact-accent);
       color: var(--fo-contact-accent);
       background: var(--fo-contact-accent-soft);
+      transform: translateY(-2px);
+    }
+    .fo-contact-panel .fo-icon-btn {
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fo-contact-row,
+      .fo-contact-copy,
+      .fo-contact-go,
+      .fo-contact-panel .fo-icon-btn { transition: none; }
+      .fo-contact-copy:hover,
+      .fo-contact-go:hover,
+      .fo-contact-panel .fo-icon-btn:hover { transform: none; }
     }
     .fo-repo-list {
       border-top: 0;
