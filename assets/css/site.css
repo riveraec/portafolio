@@ -641,19 +641,46 @@
     }
     .fo-contact-panel {
       position: relative;
+      isolation: isolate;
       overflow: hidden;
       color: var(--fo-contact-fg);
-      border: 1px solid var(--fo-line);
-      border-radius: 1.5rem;
-      padding: 1.6rem 1.2rem 1.35rem;
+      border: 1px solid color-mix(in srgb, var(--fo-chip-border) 80%, transparent);
+      border-radius: 2rem;
+      padding: 1.75rem 1.25rem 1.45rem;
       background:
-        radial-gradient(ellipse 80% 55% at 8% 0%, var(--fo-hero-glow), transparent 58%),
-        linear-gradient(180deg, var(--fo-contact-bg) 0%, var(--fo-surface) 72%);
-      box-shadow: 0 20px 50px -34px var(--fo-shadow);
+        radial-gradient(circle at 12% 18%, var(--fo-hero-glow), transparent 42%),
+        radial-gradient(circle at 88% 82%, var(--fo-contact-accent-soft), transparent 46%),
+        linear-gradient(160deg, var(--fo-contact-bg) 0%, var(--fo-surface) 58%, var(--fo-contact-bg) 100%);
+      box-shadow:
+        0 28px 60px -40px var(--fo-shadow),
+        inset 0 1px 0 color-mix(in srgb, #fff 35%, transparent);
+    }
+    .fo-contact-panel::before,
+    .fo-contact-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(2px);
+    }
+    .fo-contact-panel::before {
+      width: 220px;
+      height: 220px;
+      top: -90px;
+      right: -50px;
+      background: radial-gradient(circle, var(--fo-hero-glow), transparent 70%);
+    }
+    .fo-contact-panel::after {
+      width: 180px;
+      height: 180px;
+      left: -60px;
+      bottom: -70px;
+      background: radial-gradient(circle, var(--fo-contact-accent-soft), transparent 72%);
     }
     @media (min-width: 768px) {
       .fo-contact-panel {
-        padding: 1.85rem 1.75rem 1.55rem;
+        padding: 2.1rem 1.9rem 1.75rem;
       }
     }
     .fo-contact-head {
@@ -661,7 +688,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 1.15rem;
+      margin-bottom: 1.35rem;
     }
     @media (min-width: 768px) {
       .fo-contact-head {
@@ -676,15 +703,15 @@
       min-width: 0;
     }
     .fo-contact-title {
-      margin: 0 0 .3rem;
-      font-size: clamp(1.5rem, 3.5vw, 1.75rem);
+      margin: 0 0 .35rem;
+      font-size: clamp(1.6rem, 3.8vw, 1.95rem);
       font-weight: 800;
-      letter-spacing: -.03em;
-      line-height: 1.15;
+      letter-spacing: -.04em;
+      line-height: 1.1;
     }
     .fo-contact-lead {
       margin: 0;
-      font-size: .92rem;
+      font-size: .95rem;
       line-height: 1.4;
       color: var(--fo-muted);
     }
@@ -692,24 +719,25 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: .65rem .75rem;
+      gap: .7rem;
     }
     .fo-contact-meta {
       display: inline-flex;
       align-items: center;
-      gap: .45rem;
+      gap: .5rem;
       margin: 0;
-      padding: .42rem .8rem;
-      border-radius: 12px;
-      border: 1px solid var(--fo-chip-border);
-      background: color-mix(in srgb, var(--fo-surface) 78%, transparent);
+      padding: .48rem 1rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, #22c55e 28%, var(--fo-chip-border));
+      background: color-mix(in srgb, #22c55e 8%, var(--fo-surface));
       font-size: .8rem;
       line-height: 1.3;
       color: var(--fo-muted);
+      backdrop-filter: blur(8px);
     }
     .fo-contact-dot {
-      width: .42rem;
-      height: .42rem;
+      width: .48rem;
+      height: .48rem;
       border-radius: 50%;
       flex-shrink: 0;
       background: #22c55e;
@@ -718,7 +746,7 @@
     }
     @keyframes fo-pulse {
       0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .45); }
-      70% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
       100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -726,51 +754,61 @@
     }
     .fo-contact-social {
       display: inline-flex;
-      gap: .4rem;
+      gap: .45rem;
     }
     .fo-contact-panel .fo-icon-btn {
-      width: 38px;
-      height: 38px;
-      border-color: var(--fo-chip-border);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border-color: transparent;
       color: var(--fo-contact-accent);
-      background: color-mix(in srgb, var(--fo-surface) 80%, transparent);
-      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      background: color-mix(in srgb, var(--fo-surface) 70%, transparent);
+      box-shadow: 0 8px 20px -14px var(--fo-shadow);
+      transition: transform .2s ease, background .18s ease, color .18s ease, box-shadow .2s ease;
     }
     .fo-contact-panel .fo-icon-btn:hover {
-      border-color: var(--fo-contact-accent);
+      transform: translateY(-2px);
       color: var(--fo-contact-accent);
       background: var(--fo-contact-accent-soft);
+      box-shadow: 0 12px 24px -14px var(--fo-shadow);
     }
     .fo-contact-list {
       list-style: none;
       margin: 0;
       padding: 0;
       display: grid;
-      border: 1px solid var(--fo-line);
-      border-radius: 1.1rem;
-      overflow: hidden;
-      background: color-mix(in srgb, var(--fo-surface) 92%, transparent);
+      gap: .9rem;
+      background: transparent;
+      border: 0;
     }
     @media (min-width: 768px) {
       .fo-contact-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
       }
     }
     .fo-contact-row {
+      position: relative;
       display: grid;
       grid-template-columns: auto 1fr;
       grid-template-areas:
         "icon body"
         "tools tools";
-      gap: .7rem .85rem;
+      gap: .75rem .9rem;
       align-items: center;
-      padding: 1.05rem 1rem 1rem;
-      border-bottom: 1px solid var(--fo-line);
-      transition: background .18s ease;
+      padding: 1.1rem 1.05rem 1.05rem;
+      border: 1px solid color-mix(in srgb, var(--fo-line) 85%, transparent);
+      border-radius: 1.45rem;
+      background:
+        linear-gradient(165deg, color-mix(in srgb, var(--fo-surface) 94%, transparent), color-mix(in srgb, var(--fo-soft) 55%, var(--fo-surface)));
+      box-shadow: 0 14px 34px -26px var(--fo-shadow);
+      backdrop-filter: blur(10px);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
-    .fo-contact-row:last-child { border-bottom: 0; }
     .fo-contact-row:hover {
-      background: var(--fo-contact-accent-soft);
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--fo-contact-accent) 35%, var(--fo-line));
+      box-shadow: 0 20px 40px -24px var(--fo-shadow);
     }
     .fo-contact-icon { grid-area: icon; }
     .fo-contact-body { grid-area: body; }
@@ -782,43 +820,54 @@
           "icon"
           "body"
           "tools";
-        align-items: start;
-        gap: .85rem;
-        padding: 1.2rem 1.15rem 1.15rem;
-        border-bottom: 0;
-        border-right: 1px solid var(--fo-line);
+        justify-items: center;
+        text-align: center;
+        gap: .95rem;
+        padding: 1.45rem 1.15rem 1.25rem;
         min-height: 100%;
       }
-      .fo-contact-row:last-child { border-right: 0; }
+      .fo-contact-row:nth-child(2) {
+        transform: translateY(-6px);
+      }
+      .fo-contact-row:nth-child(2):hover {
+        transform: translateY(-9px);
+      }
+      .fo-contact-body { justify-items: center; }
+      .fo-contact-tools { justify-content: center; }
     }
     .fo-contact-icon {
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 11px;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--fo-contact-accent-soft);
+      background:
+        radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--fo-contact-accent) 22%, transparent), transparent 55%),
+        var(--fo-contact-accent-soft);
       color: var(--fo-contact-accent);
-      font-size: 1.05rem;
+      font-size: 1.2rem;
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--fo-contact-accent) 18%, transparent),
+        0 10px 22px -16px var(--fo-contact-accent);
     }
     .fo-contact-body {
       min-width: 0;
       display: grid;
-      gap: .18rem;
+      gap: .22rem;
       text-align: left;
     }
     .fo-contact-label {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .62rem;
       font-weight: 600;
-      letter-spacing: .06em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--fo-muted);
     }
     .fo-contact-text {
-      font-size: .98rem;
-      font-weight: 600;
-      letter-spacing: -.01em;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
       color: var(--fo-contact-fg);
       text-decoration: none;
       overflow-wrap: anywhere;
@@ -839,18 +888,18 @@
       align-items: center;
       justify-content: center;
       gap: .35rem;
-      min-height: 2rem;
-      padding: .3rem .7rem;
-      border-radius: 10px;
-      border: 1px solid var(--fo-chip-border);
-      background: color-mix(in srgb, var(--fo-surface) 88%, transparent);
+      min-height: 2.05rem;
+      padding: .35rem .85rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: color-mix(in srgb, var(--fo-soft) 80%, var(--fo-surface));
       color: var(--fo-muted);
       cursor: pointer;
       text-decoration: none;
       font-size: .74rem;
       font-weight: 600;
       letter-spacing: -.01em;
-      transition: color .15s ease, background .15s ease, border-color .15s ease;
+      transition: color .15s ease, background .15s ease, border-color .15s ease, transform .15s ease;
     }
     .fo-contact-copy i,
     .fo-contact-go i {
@@ -860,17 +909,19 @@
     .fo-contact-copy:hover,
     .fo-contact-go:hover {
       color: var(--fo-contact-accent);
-      border-color: var(--fo-contact-accent);
+      border-color: color-mix(in srgb, var(--fo-contact-accent) 30%, transparent);
       background: var(--fo-surface);
+      transform: translateY(-1px);
     }
     .fo-contact-copy.is-copied {
       color: #16a34a;
       border-color: rgba(22, 163, 74, .35);
       background: rgba(22, 163, 74, .1);
+      transform: none;
     }
     .fo-contact-go-wa:hover {
       color: #128c7e;
-      border-color: rgba(18, 140, 126, .4);
+      border-color: rgba(18, 140, 126, .35);
       background: rgba(18, 140, 126, .1);
     }
     @media (prefers-reduced-motion: reduce) {
@@ -878,6 +929,12 @@
       .fo-contact-copy,
       .fo-contact-go,
       .fo-contact-panel .fo-icon-btn { transition: none; }
+      .fo-contact-row:hover,
+      .fo-contact-row:nth-child(2),
+      .fo-contact-row:nth-child(2):hover,
+      .fo-contact-copy:hover,
+      .fo-contact-go:hover,
+      .fo-contact-panel .fo-icon-btn:hover { transform: none; }
     }
     .fo-repo-list {
       border-top: 0;
