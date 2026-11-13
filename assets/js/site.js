@@ -88,6 +88,7 @@
     if (pdfOpen) pdfOpen.href = src;
     pdfFrame.src = src;
     pdfModal.hidden = false;
+    void pdfModal.offsetWidth;
     pdfModal.classList.add("is-open");
     pdfModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -97,11 +98,18 @@
   function closePdfPreview() {
     if (!pdfModal || !pdfFrame) return;
     pdfModal.classList.remove("is-open");
-    pdfModal.hidden = true;
     pdfModal.setAttribute("aria-hidden", "true");
-    pdfFrame.removeAttribute("src");
     document.body.style.overflow = "";
-    if (pdfLastFocus && typeof pdfLastFocus.focus === "function") pdfLastFocus.focus();
+    var finish = function () {
+      pdfModal.hidden = true;
+      pdfFrame.removeAttribute("src");
+      if (pdfLastFocus && typeof pdfLastFocus.focus === "function") pdfLastFocus.focus();
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      finish();
+      return;
+    }
+    setTimeout(finish, 240);
   }
 
   document.querySelectorAll("[data-pdf-preview]").forEach(function (a) {

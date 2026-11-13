@@ -479,14 +479,22 @@
       position: fixed;
       inset: 0;
       z-index: 2100;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       padding: .75rem;
       background: rgba(6, 12, 20, .78);
       backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .22s ease, visibility .22s ease;
     }
-    .fo-pdf-modal.is-open { display: flex; }
+    .fo-pdf-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
     .fo-pdf-dialog {
       width: min(920px, 100%);
       height: min(88vh, 920px);
@@ -498,6 +506,18 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 24px 64px rgba(0, 0, 0, .35);
+      transform: translateY(14px) scale(.98);
+      opacity: 0;
+      transition: transform .26s ease, opacity .26s ease;
+    }
+    .fo-pdf-modal.is-open .fo-pdf-dialog {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fo-pdf-modal,
+      .fo-pdf-dialog { transition: none; }
+      .fo-pdf-dialog { transform: none; }
     }
     .fo-pdf-bar {
       display: flex;
