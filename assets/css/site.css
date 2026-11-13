@@ -537,6 +537,40 @@
       align-items: center;
       gap: .45rem;
     }
+    .fo-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1.35rem;
+      z-index: 1200;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      max-width: calc(100vw - 2rem);
+      padding: .75rem 1.05rem;
+      border-radius: 999px;
+      border: 1px solid var(--fo-chip-border);
+      background: var(--fo-surface);
+      color: var(--fo-ink);
+      box-shadow: 0 12px 36px var(--fo-shadow);
+      font-size: .88rem;
+      font-weight: 600;
+      transform: translate(-50%, 1rem);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .fo-toast i {
+      color: var(--fo-cyan);
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+    .fo-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fo-toast { transition: opacity .15s ease; transform: translate(-50%, 0); }
+    }
     .fo-cv-btn {
       display: inline-flex;
       align-items: center;

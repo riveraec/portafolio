@@ -79,6 +79,40 @@
     }
   });
 
+  // Confirmación visual al descargar el CV (la descarga del navegador sigue igual).
+  (function setupCvToast() {
+    var toast = document.createElement("div");
+    toast.className = "fo-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    toast.hidden = true;
+    toast.innerHTML =
+      '<i class="bi bi-check-circle-fill" aria-hidden="true"></i>' +
+      "<span>CV descargado · revisa tus descargas</span>";
+    document.body.appendChild(toast);
+
+    var hideTimer = null;
+    function showToast() {
+      toast.hidden = false;
+      // Force reflow so the enter transition runs.
+      void toast.offsetWidth;
+      toast.classList.add("is-visible");
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        toast.classList.remove("is-visible");
+        setTimeout(function () {
+          toast.hidden = true;
+        }, 280);
+      }, 2800);
+    }
+
+    document.querySelectorAll('a[href*="Efrain_Rivera_CV.pdf"]').forEach(function (a) {
+      a.addEventListener("click", function () {
+        showToast();
+      });
+    });
+  })();
+
   var links = Array.prototype.slice.call(document.querySelectorAll(".fo-nav-scroll a[href^='#']"));
   if (!links.length) return;
 
