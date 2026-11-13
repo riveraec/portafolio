@@ -94,13 +94,15 @@
 
     function flashCopied(btn) {
       var icon = btn.querySelector("i");
+      var label = btn.querySelector("span");
+      var prevLabel = label ? label.textContent : "";
       btn.classList.add("is-copied");
-      if (icon) {
-        icon.className = "bi bi-check2";
-      }
+      if (icon) icon.className = "bi bi-check2";
+      if (label) label.textContent = "Copiado";
       setTimeout(function () {
         btn.classList.remove("is-copied");
         if (icon) icon.className = "bi bi-clipboard";
+        if (label) label.textContent = prevLabel || "Copiar";
       }, 1400);
     }
 
