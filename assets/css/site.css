@@ -688,6 +688,13 @@
       line-height: 1.4;
       color: var(--fo-muted);
     }
+    .fo-contact-note {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.4;
+      color: var(--fo-muted);
+      opacity: .92;
+    }
     .fo-contact-meta {
       display: inline-flex;
       align-items: center;
