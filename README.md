@@ -13,12 +13,13 @@ Sitio estático (plantilla **Folio** + Bootstrap 5 por CDN). Sin build, sin `pac
 
 | Pieza | Versión / origen | Uso |
 |-------|------------------|-----|
-| HTML / CSS / JS | `index.html` + `proyectos.html` · `assets/css` · `assets/js` | Home + proyectos; tema claro/oscuro; modal PDF |
+| HTML / CSS / JS | `index.html` + `proyectos.html` · `assets/css` · `assets/js` | Home + proyectos; tema; modal PDF; copiar contacto |
 | Bootstrap | **5.3.3** (jsDelivr CDN) | Grid, utilidades |
-| Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI |
-| Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en chips (home) |
+| Bootstrap Icons | **1.11.3** (jsDelivr CDN) | Iconos UI (nav, contacto, acciones) |
+| Devicon | **2.16.0** (jsDelivr CDN) | Logos de stack en hero, home y `proyectos.html` |
 | Fuentes | DM Sans · IBM Plex Mono (Google Fonts) | UI / mono |
 | Iconos IA | `assets/ia/` (SVG) | Cursor, Copilot, Claude, ChatGPT, Kiro |
+| Iconos stack extra | `assets/brand/stack/` | JWT, Zod, H2, OpenFeign, WireMock, xUnit, Testcontainers |
 | PWA ligera | `site.webmanifest` + `assets/brand/` | Identidad / compartir |
 
 Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
@@ -32,18 +33,18 @@ Requisitos: navegador moderno. No hace falta Node, npm ni bundler.
 
 ### Home (`index.html`) — orden
 
-1. Hero + bridge de stack
+1. Hero + bridge de stack (Devicon coloreado)
 2. Trayectoria
 3. Proyectos (3 cards → anclas en `proyectos.html`)
 4. Formación (licenciatura · certificaciones · cursos; vista previa PDF en modal)
 5. Stack (+ franja IA)
-6. Contacto · footer
+6. Contacto (correo / teléfono / Telegram visibles y copiables · WhatsApp · LinkedIn / GitHub)
 
 CV: `assets/cv/Efrain_Rivera_CV.pdf` (download + toast).
 
 ### Proyectos técnicos (`proyectos.html`)
 
-Formato: **número + nombre** → lead → descripción → stack → GitHub (+ badge CI si aplica).
+Formato: **número + nombre** → lead → descripción → stack (chips con iconos) → GitHub (+ badge CI si aplica).
 
 | Badge CI | Repo |
 |----------|------|
@@ -58,12 +59,14 @@ portafolio/
 ├── proyectos.html
 ├── site.webmanifest
 ├── README.md
+├── .htmlvalidate.json
 ├── .github/workflows/deploy-pages.yml
 ├── assets/
 │   ├── css/site.css
-│   ├── js/site.js          # tema, modal PDF, toast CV, nav activa
+│   ├── js/site.js          # tema, modal PDF, toast CV, copiar contacto, nav activa
 │   ├── brand/
-│   ├── ia/                 # solo SVG usados en home
+│   │   └── stack/          # SVG de herramientas sin Devicon
+│   ├── ia/
 │   ├── cv/
 │   └── certificados/
 └── _archivo/               # borradores (no se publican)
@@ -80,6 +83,12 @@ portafolio/
 ```powershell
 cd <ruta-del-repo>
 start index.html
+```
+
+Validar HTML (opcional):
+
+```powershell
+npx html-validate index.html proyectos.html
 ```
 
 ## Publicar (GitHub Pages)
