@@ -980,20 +980,28 @@
     .fo-repo-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: .35rem;
+      gap: .4rem;
       align-items: center;
     }
-    .fo-repo-stack span {
+    .fo-repo-stack .fo-repo-chip {
       display: inline-flex;
       align-items: center;
+      gap: .3rem;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .68rem;
       font-weight: 500;
       color: var(--fo-ink);
-      background: var(--fo-soft);
+      background: var(--fo-surface);
       border: 1px solid var(--fo-chip-border);
       border-radius: 999px;
-      padding: .2rem .5rem;
+      padding: .22rem .55rem;
+    }
+    .fo-repo-stack .fo-repo-chip i {
+      font-size: .95rem;
+      line-height: 1;
+    }
+    html[data-theme="dark"] .fo-repo-stack .fo-repo-chip i.devicon-express-original.colored {
+      color: #fff;
     }
     .fo-repo-toc {
       margin: 0 0 1.25rem;
