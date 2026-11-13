@@ -1,502 +1,621 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio de Efrain Rivera Cadena — desarrollador backend (Java, C#, Python, Node.js). APIs, SQL e integración. CDMX o remoto.">
-  <meta name="theme-color" content="#0c8fc4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b121c" media="(prefers-color-scheme: dark)">
-  <meta name="author" content="Efrain Rivera Cadena">
-  <title>Efrain Rivera Cadena — Portafolio</title>
-  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.jpg">
-  <link rel="manifest" href="site.webmanifest">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_MX">
-  <meta property="og:url" content="https://riveraec.github.io/portafolio/">
-  <meta property="og:title" content="Efrain Rivera Cadena — Portafolio">
-  <meta property="og:description" content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración. CDMX o remoto.">
-  <meta property="og:image" content="https://riveraec.github.io/portafolio/assets/brand/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Efrain Rivera Cadena — Portafolio">
-  <meta name="twitter:description" content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración.">
-  <meta name="twitter:image" content="https://riveraec.github.io/portafolio/assets/brand/og-image.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
-  <script>
-    (function () {
-      var key = "fo-theme";
-      var saved = localStorage.getItem(key);
-      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="assets/css/site.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portafolio de Efrain Rivera Cadena — desarrollador backend (Java, C#, Python, Node.js). APIs, SQL e integración. CDMX o remoto."
+    />
+    <meta name="theme-color" content="#0c8fc4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b121c" media="(prefers-color-scheme: dark)" />
+    <meta name="author" content="Efrain Rivera Cadena" />
+    <title>Efrain Rivera Cadena — Portafolio</title>
+    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.jpg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:url" content="https://riveraec.github.io/portafolio/" />
+    <meta property="og:title" content="Efrain Rivera Cadena — Portafolio" />
+    <meta
+      property="og:description"
+      content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración. CDMX o remoto."
+    />
+    <meta property="og:image" content="https://riveraec.github.io/portafolio/assets/brand/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Efrain Rivera Cadena — Portafolio" />
+    <meta
+      name="twitter:description"
+      content="Desarrollador backend · Java · .NET · Python · Node. APIs, SQL e integración."
+    />
+    <meta name="twitter:image" content="https://riveraec.github.io/portafolio/assets/brand/og-image.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet" />
+    <script>
+      (function () {
+        var key = "fo-theme";
+        var saved = localStorage.getItem(key);
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+  <body>
+    <a class="fo-skip visually-hidden-focusable btn btn-fo position-absolute top-0 start-0 m-2" href="#contenido"
+      >Saltar al contenido</a
+    >
 
-  <a class="visually-hidden-focusable btn btn-fo position-absolute top-0 start-0 m-2" href="#contenido">Saltar al contenido</a>
-
-  <nav class="fo-nav" aria-label="Secciones">
-    <div class="container fo-nav-inner">
-      <a class="fo-brand" href="index.html" title="Inicio">
-        <img src="assets/brand/brand-mark.svg" width="32" height="32" alt="">
-        <span class="fo-brand-name">Efrain Rivera</span>
-      </a>
-      <div class="fo-nav-scroll">
-        <a href="#trayectoria">Trayectoria</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#formacion">Formación</a>
-        <a href="#stack">Stack</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <div class="fo-nav-actions">
-        <a class="fo-cv-btn" href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf" title="Descargar CV (PDF)">
-          <i class="bi bi-download" aria-hidden="true"></i>
-          <span class="fo-cv-short">CV</span>
-          <span class="fo-cv-long">Descargar CV</span>
+    <nav class="fo-nav" aria-label="Secciones">
+      <div class="container fo-nav-inner">
+        <a class="fo-brand" href="index.html" title="Inicio">
+          <img src="assets/brand/brand-mark.svg" width="32" height="32" alt="" />
+          <span class="fo-brand-name">Efrain Rivera</span>
         </a>
-        <button type="button" class="fo-theme-btn" id="fo-theme-toggle" aria-label="Cambiar tema claro u oscuro" title="Tema">
-          <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
-          <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <main id="contenido">
-  <header class="fo-hero container py-5">
-    <div class="fo-hero-grid">
-      <div class="fo-hero-copy">
-        <span class="fo-chip"><i class="bi bi-geo-alt"></i> CDMX · híbrido / remoto</span>
-        <h1 class="fo-h1 mt-3 mb-2">Efrain Rivera Cadena</h1>
-        <p class="fo-hero-role text-secondary mb-2">
-          Desarrollador backend · Java · .NET · Python · Node
-        </p>
-        <p class="fo-hero-lead text-secondary mb-3">
-          Más de 6 años en APIs e integración en sector financiero.
-          Foco reciente: Java 21 / Spring Boot.
-        </p>
-        <div class="fo-hero-actions d-flex gap-2 mb-3 flex-wrap align-items-center">
-          <a class="btn btn-fo" href="#proyectos">Proyectos</a>
-          <a class="btn btn-fo2" href="#contacto">Contacto</a>
+        <div class="fo-nav-scroll">
+          <a href="#trayectoria">Trayectoria</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#formacion">Formación</a>
+          <a href="#stack">Stack</a>
+          <a href="#contacto">Contacto</a>
         </div>
-        <div class="fo-hero-actions d-flex gap-2 mb-3">
-          <a class="fo-icon-btn" href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-            <i class="bi bi-linkedin"></i>
+        <div class="fo-nav-actions">
+          <a
+            class="fo-cv-btn"
+            href="assets/cv/Efrain_Rivera_CV.pdf"
+            download="Efrain_Rivera_CV.pdf"
+            title="Descargar CV (PDF)"
+          >
+            <i class="bi bi-download" aria-hidden="true"></i>
+            <span class="fo-cv-short">CV</span>
+            <span class="fo-cv-long">Descargar CV</span>
           </a>
-          <a class="fo-icon-btn" href="https://github.com/riveraec" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-            <i class="bi bi-github"></i>
-          </a>
-          <a class="fo-icon-btn" href="https://t.me/riveraec" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
-            <i class="bi bi-telegram"></i>
-          </a>
-        </div>
-        <p class="fo-mono small text-secondary mb-0 fo-hero-seek">Busco rol de desarrollador backend · APIs, SQL y procesos de datos</p>
-      </div>
-      <div class="fo-hero-photo">
-        <figure class="fo-portrait">
-          <div class="fo-portrait-media">
-            <img src="assets/brand/avatar.jpg" width="320" height="400" alt="Efrain Rivera Cadena">
-          </div>
-        </figure>
-      </div>
-    </div>
-  </header>
-
-  <div class="container fo-hero-bridge" aria-label="Stack principal">
-    <div class="fo-hero-bridge-inner">
-      <span class="fo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java 21</span>
-      <span class="fo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
-      <span class="fo-chip"><i class="devicon-csharp-plain colored" aria-hidden="true"></i> C# / .NET</span>
-      <span class="fo-chip"><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i> SQL Server</span>
-      <span class="fo-chip"><i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i> AWS</span>
-      <span class="fo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
-      <span class="fo-chip"><i class="devicon-apachekafka-original colored" aria-hidden="true"></i> Kafka</span>
-      <span class="fo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
-      <span class="fo-chip"><i class="devicon-gitlab-plain colored" aria-hidden="true"></i> GitLab</span>
-    </div>
-  </div>
-
-  <section id="trayectoria" class="container pt-5 pb-3" style="max-width:720px">
-    <h2 class="fw-bold mb-2">Trayectoria</h2>
-    <p class="text-secondary small mb-4">
-      Detalle reciente en grupo financiero retail · experiencia desde 2019.
-    </p>
-
-    <div class="fo-tl pb-4">
-      <div class="d-flex justify-content-between flex-wrap gap-2">
-        <h6 class="fw-bold mb-0">Desarrollador Backend Senior</h6>
-        <span class="fo-mono small text-secondary">Jun 2025 — presente</span>
-      </div>
-      <span class="small" style="color:var(--fo-cyan)">Java 21 · Spring Boot · AWS · Terraform · OpenFeign</span>
-      <ul class="small text-secondary mt-2 mb-0">
-        <li>Arquetipos y bibliotecas Java/Spring (Gradle, OpenFeign) para microservicios REST/SOAP.</li>
-        <li>Despliegue en AWS (ECS Fargate, Lambda, RDS) e infraestructura con Terraform.</li>
-      </ul>
-    </div>
-
-    <div class="fo-tl pb-4">
-      <div class="d-flex justify-content-between flex-wrap gap-2">
-        <h6 class="fw-bold mb-0">Jefe de desarrollo</h6>
-        <span class="fo-mono small text-secondary">Jun 2024 — May 2025</span>
-      </div>
-      <span class="small" style="color:var(--fo-cyan)">C# · .NET Core · Java / Spring Boot · Kafka · IIS</span>
-      <ul class="small text-secondary mt-2 mb-0">
-        <li>Equipo de 5 en APIs REST y microservicios (.NET y Java).</li>
-        <li>API de afiliación Afore (web y móvil); Kafka (CECOS / Algorithia) para contrastar con Afore.</li>
-      </ul>
-    </div>
-
-    <div class="fo-tl pb-4">
-      <div class="d-flex justify-content-between flex-wrap gap-2">
-        <h6 class="fw-bold mb-0">Desarrollador Backend</h6>
-        <span class="fo-mono small text-secondary">Ago 2021 — May 2024</span>
-      </div>
-      <span class="small" style="color:var(--fo-cyan)">ASP.NET Web API · Java · SQL Server · SSIS · Tableau</span>
-      <ul class="small text-secondary mt-2 mb-0">
-        <li>APIs REST en C# / ASP.NET Web API e integración en Java / Spring Boot.</li>
-        <li>SQL Server (SP, CTE, MERGE), ETL con SSIS y tableros Tableau.</li>
-      </ul>
-    </div>
-
-    <div class="fo-tl">
-      <div class="d-flex justify-content-between flex-wrap gap-2">
-        <h6 class="fw-bold mb-0">Desarrollador .NET</h6>
-        <span class="fo-mono small text-secondary">Ene 2019 — Mar 2021</span>
-      </div>
-      <span class="small" style="color:var(--fo-cyan)">C# · ASP.NET · SQL Server · WCF</span>
-      <p class="small text-secondary mt-2 mb-0">
-        Roles previos (MADISA, Embotelladora Las Margaritas, Olefin): APIs y sistemas .NET.
-        Detalle en el <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>.
-      </p>
-    </div>
-  </section>
-
-  <section id="proyectos" class="container pt-3 pb-4">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
-      <div style="max-width:640px">
-        <h2 class="fw-bold mb-1">Proyectos</h2>
-        <p class="text-secondary small mb-0">
-          Repos públicos en GitHub.
-        </p>
-      </div>
-      <a class="btn btn-fo2 btn-sm flex-shrink-0" href="proyectos.html">Ver todos</a>
-    </div>
-
-    <div class="row g-3">
-      <div class="col-md-4">
-        <a class="fo-card" href="proyectos.html#etl-reportes">
-          <div class="fo-thumb" style="background:linear-gradient(135deg,#0c8fc4,#5dd6ff)">
-            <i class="devicon-python-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between">
-              <h6 class="fw-bold mb-1">etl-reportes + reportes-api</h6>
-              <i class="bi bi-arrow-right text-secondary"></i>
-            </div>
-            <div class="fo-badge-row">
-              <span class="fo-badge" title="pytest">tests</span>
-              <span class="fo-badge" title="OpenAPI / FastAPI docs">OpenAPI</span>
-            </div>
-            <p class="small text-secondary mb-2">
-              ETL en Python y API FastAPI para disparar corridas y consultar el resumen (idempotencia incluida).
-            </p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">Python · FastAPI · SQL · idempotencia</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="fo-card" href="proyectos.html#eventos-api">
-          <div class="fo-thumb" style="background:linear-gradient(135deg,#0f5132,#52b788)">
-            <i class="devicon-nodejs-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1">eventos-api</h6>
-              <i class="bi bi-arrow-right text-secondary"></i>
-            </div>
-            <div class="fo-badge-row">
-              <span class="fo-badge" title="GitHub Actions">CI</span>
-              <span class="fo-badge" title="Docker">Docker</span>
-              <span class="fo-badge" title="SuperTest">tests</span>
-            </div>
-            <p class="small text-secondary mb-2">Webhooks con Express: el mismo <code>id</code> no se procesa dos veces.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">Node.js · Express · Docker · CI</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="fo-card" href="proyectos.html#indicadores-api">
-          <div class="fo-thumb" style="background:linear-gradient(135deg,#1b4f72,#2e86ab)">
-            <i class="devicon-dotnetcore-plain" aria-hidden="true"></i>
-          </div>
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h6 class="fw-bold mb-1">indicadores-api</h6>
-              <i class="bi bi-arrow-right text-secondary"></i>
-            </div>
-            <div class="fo-badge-row">
-              <span class="fo-badge" title="GitHub Actions">CI</span>
-              <span class="fo-badge" title="Dockerfile">Docker</span>
-              <span class="fo-badge" title="xUnit">tests</span>
-            </div>
-            <p class="small text-secondary mb-2">API .NET 8 con filtros, resumen, health checks y pruebas xUnit.</p>
-            <span class="fo-mono small" style="color:var(--fo-cyan)">.NET 8 · EF Core · xUnit · CI</span>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <p class="fo-mono small text-secondary text-center mt-4 mb-0">
-      <a href="proyectos.html#g-java">Serie Java</a> (auth → productos → cliente)
-      ·
-      <a href="proyectos.html">Ver todos</a>
-    </p>
-  </section>
-
-  <section id="formacion" class="container py-4" style="max-width:720px">
-    <h2 class="fw-bold mb-3">Formación</h2>
-
-    <div class="fo-tl pb-4">
-      <div class="d-flex justify-content-between flex-wrap gap-2">
-        <h6 class="fw-bold mb-0">Licenciatura en Ciencias Computacionales</h6>
-        <span class="fo-mono small text-secondary">2015 — 2019</span>
-      </div>
-      <span class="small text-secondary">Universidad Autónoma del Estado de Hidalgo · Titulado</span>
-    </div>
-
-    <h3 class="fo-stack-kicker mb-3">Certificaciones</h3>
-    <div class="fo-cert-list">
-      <div class="fo-cert">
-        <div class="fo-cert-body">
-          <strong>Cloud Computing</strong>
-          <span>Escuela de Organización Industrial (EOI)</span>
-        </div>
-        <a class="fo-cert-btn" href="assets/certificados/google-cloud-computing.pdf" data-pdf-preview data-pdf-title="Cloud Computing" title="Ver certificado" aria-label="Ver certificado Cloud Computing">
-          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <h3 class="fo-stack-kicker mb-3 mt-4">Cursos</h3>
-    <div class="fo-cert-list">
-      <div class="fo-cert">
-        <div class="fo-cert-body">
-          <strong>Cursor con Python · desarrollo con IA</strong>
-          <span>Santander Open Academy</span>
-        </div>
-        <a class="fo-cert-btn" href="assets/certificados/santander-cursor-python.pdf" data-pdf-preview data-pdf-title="Cursor con Python" title="Ver certificado" aria-label="Ver certificado Cursor con Python">
-          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <p class="text-secondary small mt-4 mb-2">Otros</p>
-    <div class="fo-cert-list fo-cert-list-muted">
-      <div class="fo-cert">
-        <div class="fo-cert-body">
-          <strong>Desarrollo de aplicaciones móviles</strong>
-          <span>Universidad Complutense de Madrid (UCM)</span>
-        </div>
-        <a class="fo-cert-btn" href="assets/certificados/google-apps-moviles.pdf" data-pdf-preview data-pdf-title="Desarrollo de aplicaciones móviles" title="Ver certificado" aria-label="Ver certificado Desarrollo de aplicaciones móviles">
-          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="fo-cert">
-        <div class="fo-cert-body">
-          <strong>Prompting responsable</strong>
-          <span>Santander Open Academy</span>
-        </div>
-        <a class="fo-cert-btn" href="assets/certificados/santander-prompting-responsable.pdf" data-pdf-preview data-pdf-title="Prompting responsable" title="Ver certificado" aria-label="Ver certificado Prompting responsable">
-          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="stack" class="container pt-4 pb-3" style="max-width:900px">
-    <h2 class="fw-bold mb-3">Stack</h2>
-    <div class="row g-3">
-      <div class="col-12"><div class="fo-stack-kicker">Código</div></div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="devicon-java-plain" aria-hidden="true"></i>
-          <div>
-            <strong>Lenguajes</strong>
-            <span>Java 21, C#, Python, JavaScript, SQL</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="devicon-spring-plain" aria-hidden="true"></i>
-          <div>
-            <strong>Frameworks</strong>
-            <span>Spring Boot, .NET / ASP.NET, FastAPI, Express</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="devicon-azuresqldatabase-plain" aria-hidden="true"></i>
-          <div>
-            <strong>Datos</strong>
-            <span>SQL Server, Oracle, SQLite, MongoDB, EF Core, SSIS, Tableau</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="devicon-apachekafka-original" aria-hidden="true"></i>
-          <div>
-            <strong>Integración</strong>
-            <span>REST, Kafka, JWT, OpenAPI, OpenFeign, Okta / SSO</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-12"><div class="fo-stack-kicker">Plataforma</div></div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="devicon-amazonwebservices-plain-wordmark" aria-hidden="true"></i>
-          <div>
-            <strong>Cloud y entrega</strong>
-            <span>AWS (ECS, Lambda, RDS…), Docker, Terraform, Git / GitLab</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="fo-stack-item">
-          <i class="bi bi-shield-check" aria-hidden="true"></i>
-          <div>
-            <strong>Calidad y método</strong>
-            <span>xUnit, pytest, SuperTest, WireMock · Scrum / Kanban · Obsidian</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="text-secondary small mt-4 mb-4">
-      IA en el día a día (yo valido lo que sale a producción): Cursor, Copilot, Claude, ChatGPT y Kiro.
-    </p>
-    <div class="fo-ai-tools">
-      <span class="fo-ai-tool"><img src="assets/ia/cursor.svg" alt=""> Cursor</span>
-      <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/githubcopilot.svg" alt=""> Copilot</span>
-      <span class="fo-ai-tool"><img src="assets/ia/claude.svg" alt=""> Claude</span>
-      <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/openai.svg" alt=""> ChatGPT</span>
-      <span class="fo-ai-tool"><img src="assets/ia/kiro.svg" alt=""> Kiro</span>
-    </div>
-  </section>
-
-  <section id="contacto" class="container pt-3 pb-5" style="max-width:820px">
-    <div class="fo-contact-panel">
-      <header class="fo-contact-head">
-        <div class="fo-contact-status">
-          <p class="fo-contact-meta">
-            <span class="fo-contact-dot" aria-hidden="true"></span>
-            Disponible para entrevistas · respuesta en 1 o 2 días
-          </p>
-          <div class="fo-contact-social">
-            <a class="fo-icon-btn" href="https://www.linkedin.com/in/riveraec/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a class="fo-icon-btn" href="https://github.com/riveraec" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-              <i class="bi bi-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3 class="fo-contact-title">Contacto</h3>
-        <p class="fo-contact-lead">CDMX híbrido o remoto · horario Ciudad de México.</p>
-        <p class="fo-contact-note">Preferencia: correo o LinkedIn.</p>
-      </header>
-
-      <ul class="fo-contact-list">
-        <li class="fo-contact-row">
-          <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
-          <div class="fo-contact-body">
-            <span class="fo-contact-label">Correo</span>
-            <a class="fo-contact-text" href="mailto:river28.er@gmail.com">river28.er@gmail.com</a>
-          </div>
-          <div class="fo-contact-tools">
-            <button type="button" class="fo-contact-copy" data-copy="river28.er@gmail.com" aria-label="Copiar correo" title="Copiar">
-              <i class="bi bi-clipboard" aria-hidden="true"></i>
-              <span>Copiar</span>
-            </button>
-            <a class="fo-contact-go" href="mailto:river28.er@gmail.com" aria-label="Abrir correo" title="Abrir">
-              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-              <span>Abrir</span>
-            </a>
-          </div>
-        </li>
-        <li class="fo-contact-row">
-          <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-telephone"></i></span>
-          <div class="fo-contact-body">
-            <span class="fo-contact-label">Teléfono</span>
-            <a class="fo-contact-text" href="tel:+525582548242">(55) 8254-8242</a>
-          </div>
-          <div class="fo-contact-tools">
-            <button type="button" class="fo-contact-copy" data-copy="+525582548242" aria-label="Copiar teléfono" title="Copiar">
-              <i class="bi bi-clipboard" aria-hidden="true"></i>
-              <span>Copiar</span>
-            </button>
-            <a class="fo-contact-go fo-contact-go-wa" href="https://wa.me/525582548242" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
-              <i class="bi bi-whatsapp" aria-hidden="true"></i>
-              <span>WhatsApp</span>
-            </a>
-          </div>
-        </li>
-        <li class="fo-contact-row">
-          <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-telegram"></i></span>
-          <div class="fo-contact-body">
-            <span class="fo-contact-label">Telegram</span>
-            <a class="fo-contact-text" href="https://t.me/riveraec" target="_blank" rel="noopener">@riveraec</a>
-          </div>
-          <div class="fo-contact-tools">
-            <button type="button" class="fo-contact-copy" data-copy="@riveraec" aria-label="Copiar usuario de Telegram" title="Copiar">
-              <i class="bi bi-clipboard" aria-hidden="true"></i>
-              <span>Copiar</span>
-            </button>
-            <a class="fo-contact-go" href="https://t.me/riveraec" target="_blank" rel="noopener" aria-label="Abrir Telegram" title="Abrir">
-              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-              <span>Abrir</span>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-  </main>
-
-  <footer class="fo-foot py-4 text-center small text-secondary">
-    <p class="mb-1">Efrain Rivera Cadena</p>
-    <p class="fo-mono mb-0">
-      <a href="proyectos.html">Proyectos técnicos</a>
-      ·
-      <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>
-      ·
-      <a href="#contacto">Contacto</a>
-    </p>
-  </footer>
-
-  <div id="fo-pdf-modal" class="fo-pdf-modal" hidden aria-hidden="true">
-    <div class="fo-pdf-dialog" role="dialog" aria-modal="true" aria-labelledby="fo-pdf-title">
-      <div class="fo-pdf-bar">
-        <h2 id="fo-pdf-title" class="fo-pdf-title">Certificado</h2>
-        <div class="fo-pdf-actions">
-          <a id="fo-pdf-open" class="fo-pdf-open" href="#" target="_blank" rel="noopener">Abrir</a>
-          <button type="button" id="fo-pdf-close" class="fo-pdf-close" aria-label="Cerrar vista previa">
-            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          <button
+            type="button"
+            class="fo-theme-btn"
+            id="fo-theme-toggle"
+            aria-label="Cambiar tema claro u oscuro"
+            title="Tema"
+          >
+            <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
+            <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
           </button>
         </div>
       </div>
-      <iframe id="fo-pdf-frame" class="fo-pdf-frame" title="Vista previa del certificado"></iframe>
-      <p class="fo-pdf-hint">Si no se muestra aquí, usa <strong>Abrir</strong>.</p>
-    </div>
-  </div>
+    </nav>
 
-  <script src="assets/js/site.js"></script>
-</body>
+    <main id="contenido">
+      <header class="fo-hero container py-5">
+        <div class="fo-hero-grid">
+          <div class="fo-hero-copy">
+            <span class="fo-chip"><i class="bi bi-geo-alt" aria-hidden="true"></i> CDMX · híbrido / remoto</span>
+            <h1 class="fo-h1 mt-3 mb-2">Efrain Rivera Cadena</h1>
+            <p class="fo-hero-role text-secondary mb-2">Desarrollador backend · Java · .NET · Python · Node</p>
+            <p class="fo-hero-lead text-secondary mb-3">
+              Más de 6 años en APIs e integración en sector financiero. Foco reciente: Java 21 / Spring Boot.
+            </p>
+            <div class="fo-hero-actions d-flex gap-2 mb-3 flex-wrap align-items-center">
+              <a class="btn btn-fo" href="#proyectos">Proyectos</a>
+              <a class="btn btn-fo2" href="#contacto">Contacto</a>
+            </div>
+            <div class="fo-hero-actions d-flex gap-2 mb-3">
+              <a
+                class="fo-icon-btn"
+                href="https://www.linkedin.com/in/riveraec/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a
+                class="fo-icon-btn"
+                href="https://github.com/riveraec"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <i class="bi bi-github" aria-hidden="true"></i>
+              </a>
+              <a
+                class="fo-icon-btn"
+                href="https://t.me/riveraec"
+                target="_blank"
+                rel="noopener"
+                aria-label="Telegram"
+                title="Telegram"
+              >
+                <i class="bi bi-telegram" aria-hidden="true"></i>
+              </a>
+            </div>
+            <p class="fo-mono small text-secondary mb-0 fo-hero-seek">
+              Busco rol de desarrollador backend · APIs, SQL y procesos de datos
+            </p>
+          </div>
+          <div class="fo-hero-photo">
+            <figure class="fo-portrait">
+              <div class="fo-portrait-media">
+                <img src="assets/brand/avatar.jpg" width="320" height="400" alt="Efrain Rivera Cadena" />
+              </div>
+            </figure>
+          </div>
+        </div>
+      </header>
+
+      <div class="container fo-hero-bridge" role="group" aria-label="Stack principal">
+        <div class="fo-hero-bridge-inner">
+          <span class="fo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java 21</span>
+          <span class="fo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
+          <span class="fo-chip"><i class="devicon-csharp-plain colored" aria-hidden="true"></i> C# / .NET</span>
+          <span class="fo-chip"
+            ><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i> SQL Server</span
+          >
+          <span class="fo-chip"
+            ><i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i> AWS</span
+          >
+          <span class="fo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+          <span class="fo-chip"><i class="devicon-apachekafka-original colored" aria-hidden="true"></i> Kafka</span>
+          <span class="fo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
+          <span class="fo-chip"><i class="devicon-gitlab-plain colored" aria-hidden="true"></i> GitLab</span>
+        </div>
+      </div>
+
+      <section id="trayectoria" class="container fo-narrow pt-5 pb-3">
+        <h2 class="fw-bold mb-2">Trayectoria</h2>
+        <p class="text-secondary small mb-4">Detalle reciente en grupo financiero retail · experiencia desde 2019.</p>
+
+        <div class="fo-tl pb-4">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
+            <h6 class="fw-bold mb-0">Desarrollador Backend Senior</h6>
+            <span class="fo-mono small text-secondary">Jun 2025 — presente</span>
+          </div>
+          <span class="small fo-accent">Java 21 · Spring Boot · AWS · Terraform · OpenFeign</span>
+          <ul class="small text-secondary mt-2 mb-0">
+            <li>Arquetipos y bibliotecas Java/Spring (Gradle, OpenFeign) para microservicios REST/SOAP.</li>
+            <li>Despliegue en AWS (ECS Fargate, Lambda, RDS) e infraestructura con Terraform.</li>
+          </ul>
+        </div>
+
+        <div class="fo-tl pb-4">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
+            <h6 class="fw-bold mb-0">Jefe de desarrollo</h6>
+            <span class="fo-mono small text-secondary">Jun 2024 — May 2025</span>
+          </div>
+          <span class="small fo-accent">C# · .NET Core · Java / Spring Boot · Kafka · IIS</span>
+          <ul class="small text-secondary mt-2 mb-0">
+            <li>Equipo de 5 en APIs REST y microservicios (.NET y Java).</li>
+            <li>API de afiliación Afore (web y móvil); Kafka (CECOS / Algorithia) para contrastar con Afore.</li>
+          </ul>
+        </div>
+
+        <div class="fo-tl pb-4">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
+            <h6 class="fw-bold mb-0">Desarrollador Backend</h6>
+            <span class="fo-mono small text-secondary">Ago 2021 — May 2024</span>
+          </div>
+          <span class="small fo-accent">ASP.NET Web API · Java · SQL Server · SSIS · Tableau</span>
+          <ul class="small text-secondary mt-2 mb-0">
+            <li>APIs REST en C# / ASP.NET Web API e integración en Java / Spring Boot.</li>
+            <li>SQL Server (SP, CTE, MERGE), ETL con SSIS y tableros Tableau.</li>
+          </ul>
+        </div>
+
+        <div class="fo-tl">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
+            <h6 class="fw-bold mb-0">Desarrollador .NET</h6>
+            <span class="fo-mono small text-secondary">Ene 2019 — Mar 2021</span>
+          </div>
+          <span class="small fo-accent">C# · ASP.NET · SQL Server · WCF</span>
+          <p class="small text-secondary mt-2 mb-0">
+            Roles previos (MADISA, Embotelladora Las Margaritas, Olefin): APIs y sistemas .NET. Detalle en el
+            <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="proyectos" class="container pt-3 pb-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+          <div class="fo-narrow">
+            <h2 class="fw-bold mb-1">Proyectos</h2>
+            <p class="text-secondary small mb-0">Repos públicos en GitHub.</p>
+          </div>
+          <a class="btn btn-fo2 btn-sm flex-shrink-0" href="proyectos.html">Ver todos</a>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <a class="fo-card" href="proyectos.html#etl-reportes">
+              <div class="fo-thumb fo-thumb-python">
+                <i class="devicon-python-plain" aria-hidden="true"></i>
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between">
+                  <h6 class="fw-bold mb-1">etl-reportes + reportes-api</h6>
+                  <i class="bi bi-arrow-right text-secondary" aria-hidden="true"></i>
+                </div>
+                <div class="fo-badge-row">
+                  <span class="fo-badge" title="pytest">tests</span>
+                  <span class="fo-badge" title="OpenAPI / FastAPI docs">OpenAPI</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  ETL en Python y API FastAPI para disparar corridas y consultar el resumen (idempotencia incluida).
+                </p>
+                <span class="fo-mono small fo-accent">Python · FastAPI · SQL · idempotencia</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="fo-card" href="proyectos.html#eventos-api">
+              <div class="fo-thumb fo-thumb-node">
+                <i class="devicon-nodejs-plain" aria-hidden="true"></i>
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-start gap-2">
+                  <h6 class="fw-bold mb-1">eventos-api</h6>
+                  <i class="bi bi-arrow-right text-secondary" aria-hidden="true"></i>
+                </div>
+                <div class="fo-badge-row">
+                  <span class="fo-badge" title="GitHub Actions">CI</span>
+                  <span class="fo-badge" title="Docker">Docker</span>
+                  <span class="fo-badge" title="SuperTest">tests</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  Webhooks con Express: el mismo <code>id</code> no se procesa dos veces.
+                </p>
+                <span class="fo-mono small fo-accent">Node.js · Express · Docker · CI</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="fo-card" href="proyectos.html#indicadores-api">
+              <div class="fo-thumb fo-thumb-dotnet">
+                <i class="devicon-dotnetcore-plain" aria-hidden="true"></i>
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-start gap-2">
+                  <h6 class="fw-bold mb-1">indicadores-api</h6>
+                  <i class="bi bi-arrow-right text-secondary" aria-hidden="true"></i>
+                </div>
+                <div class="fo-badge-row">
+                  <span class="fo-badge" title="GitHub Actions">CI</span>
+                  <span class="fo-badge" title="Dockerfile">Docker</span>
+                  <span class="fo-badge" title="xUnit">tests</span>
+                </div>
+                <p class="small text-secondary mb-2">API .NET 8 con filtros, resumen, health checks y pruebas xUnit.</p>
+                <span class="fo-mono small fo-accent">.NET 8 · EF Core · xUnit · CI</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <p class="fo-mono small text-secondary text-center mt-4 mb-0">
+          <a href="proyectos.html#g-java">Serie Java</a> (auth → productos → cliente) ·
+          <a href="proyectos.html">Ver todos</a>
+        </p>
+      </section>
+
+      <section id="formacion" class="container fo-narrow py-4">
+        <h2 class="fw-bold mb-3">Formación</h2>
+
+        <div class="fo-tl pb-4">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
+            <h6 class="fw-bold mb-0">Licenciatura en Ciencias Computacionales</h6>
+            <span class="fo-mono small text-secondary">2015 — 2019</span>
+          </div>
+          <span class="small text-secondary">Universidad Autónoma del Estado de Hidalgo · Titulado</span>
+        </div>
+
+        <h3 class="fo-stack-kicker mb-3">Certificaciones</h3>
+        <div class="fo-cert-list">
+          <div class="fo-cert">
+            <div class="fo-cert-body">
+              <strong>Cloud Computing</strong>
+              <span>Escuela de Organización Industrial (EOI)</span>
+            </div>
+            <a
+              class="fo-cert-btn"
+              href="assets/certificados/google-cloud-computing.pdf"
+              data-pdf-preview
+              data-pdf-title="Cloud Computing"
+              title="Ver certificado"
+              aria-label="Ver certificado Cloud Computing"
+            >
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <h3 class="fo-stack-kicker mb-3 mt-4">Cursos</h3>
+        <div class="fo-cert-list">
+          <div class="fo-cert">
+            <div class="fo-cert-body">
+              <strong>Cursor con Python · desarrollo con IA</strong>
+              <span>Santander Open Academy</span>
+            </div>
+            <a
+              class="fo-cert-btn"
+              href="assets/certificados/santander-cursor-python.pdf"
+              data-pdf-preview
+              data-pdf-title="Cursor con Python"
+              title="Ver certificado"
+              aria-label="Ver certificado Cursor con Python"
+            >
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-secondary small mt-4 mb-2">Otros</p>
+        <div class="fo-cert-list fo-cert-list-muted">
+          <div class="fo-cert">
+            <div class="fo-cert-body">
+              <strong>Desarrollo de aplicaciones móviles</strong>
+              <span>Universidad Complutense de Madrid (UCM)</span>
+            </div>
+            <a
+              class="fo-cert-btn"
+              href="assets/certificados/google-apps-moviles.pdf"
+              data-pdf-preview
+              data-pdf-title="Desarrollo de aplicaciones móviles"
+              title="Ver certificado"
+              aria-label="Ver certificado Desarrollo de aplicaciones móviles"
+            >
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="fo-cert">
+            <div class="fo-cert-body">
+              <strong>Prompting responsable</strong>
+              <span>Santander Open Academy</span>
+            </div>
+            <a
+              class="fo-cert-btn"
+              href="assets/certificados/santander-prompting-responsable.pdf"
+              data-pdf-preview
+              data-pdf-title="Prompting responsable"
+              title="Ver certificado"
+              aria-label="Ver certificado Prompting responsable"
+            >
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="container fo-wide pt-4 pb-3">
+        <h2 class="fw-bold mb-3">Stack</h2>
+        <div class="row g-3">
+          <div class="col-12"><div class="fo-stack-kicker">Código</div></div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="devicon-java-plain" aria-hidden="true"></i>
+              <div>
+                <strong>Lenguajes</strong>
+                <span>Java 21, C#, Python, JavaScript, SQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="devicon-spring-plain" aria-hidden="true"></i>
+              <div>
+                <strong>Frameworks</strong>
+                <span>Spring Boot, .NET / ASP.NET, FastAPI, Express</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="devicon-azuresqldatabase-plain" aria-hidden="true"></i>
+              <div>
+                <strong>Datos</strong>
+                <span>SQL Server, Oracle, SQLite, MongoDB, EF Core, SSIS, Tableau</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="devicon-apachekafka-original" aria-hidden="true"></i>
+              <div>
+                <strong>Integración</strong>
+                <span>REST, Kafka, JWT, OpenAPI, OpenFeign, Okta / SSO</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12"><div class="fo-stack-kicker">Plataforma</div></div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="devicon-amazonwebservices-plain-wordmark" aria-hidden="true"></i>
+              <div>
+                <strong>Cloud y entrega</strong>
+                <span>AWS (ECS, Lambda, RDS…), Docker, Terraform, Git / GitLab</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="fo-stack-item">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <div>
+                <strong>Calidad y método</strong>
+                <span>xUnit, pytest, SuperTest, WireMock · Scrum / Kanban · Obsidian</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-secondary small mt-4 mb-4">
+          IA en el día a día (yo valido lo que sale a producción): Cursor, Copilot, Claude, ChatGPT y Kiro.
+        </p>
+        <div class="fo-ai-tools">
+          <span class="fo-ai-tool"><img src="assets/ia/cursor.svg" alt="" /> Cursor</span>
+          <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/githubcopilot.svg" alt="" /> Copilot</span>
+          <span class="fo-ai-tool"><img src="assets/ia/claude.svg" alt="" /> Claude</span>
+          <span class="fo-ai-tool"><img class="fo-ai-mono" src="assets/ia/openai.svg" alt="" /> ChatGPT</span>
+          <span class="fo-ai-tool"><img src="assets/ia/kiro.svg" alt="" /> Kiro</span>
+        </div>
+      </section>
+
+      <section id="contacto" class="container fo-mid pt-3 pb-5">
+        <div class="fo-contact-panel">
+          <header class="fo-contact-head">
+            <div class="fo-contact-status">
+              <p class="fo-contact-meta">
+                <span class="fo-contact-dot" aria-hidden="true"></span>
+                Disponible para entrevistas · respuesta en 1 o 2 días
+              </p>
+              <div class="fo-contact-social">
+                <a
+                  class="fo-icon-btn"
+                  href="https://www.linkedin.com/in/riveraec/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  class="fo-icon-btn"
+                  href="https://github.com/riveraec"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <h2 class="fo-contact-title">Contacto</h2>
+            <p class="fo-contact-lead">CDMX híbrido o remoto · horario Ciudad de México.</p>
+            <p class="fo-contact-note">Preferencia: correo o LinkedIn.</p>
+          </header>
+
+          <ul class="fo-contact-list">
+            <li class="fo-contact-row">
+              <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+              <div class="fo-contact-body">
+                <span class="fo-contact-label">Correo</span>
+                <a class="fo-contact-text" href="mailto:river28.er@gmail.com">river28.er@gmail.com</a>
+              </div>
+              <div class="fo-contact-tools">
+                <button
+                  type="button"
+                  class="fo-contact-copy"
+                  data-copy="river28.er@gmail.com"
+                  aria-label="Copiar correo"
+                  title="Copiar"
+                >
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  <span>Copiar</span>
+                </button>
+                <a class="fo-contact-go" href="mailto:river28.er@gmail.com" aria-label="Abrir correo" title="Abrir">
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <span>Abrir</span>
+                </a>
+              </div>
+            </li>
+            <li class="fo-contact-row">
+              <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-telephone"></i></span>
+              <div class="fo-contact-body">
+                <span class="fo-contact-label">Teléfono</span>
+                <a class="fo-contact-text" href="tel:+525582548242">(55)&nbsp;8254&#8209;8242</a>
+              </div>
+              <div class="fo-contact-tools">
+                <button
+                  type="button"
+                  class="fo-contact-copy"
+                  data-copy="+525582548242"
+                  aria-label="Copiar teléfono"
+                  title="Copiar"
+                >
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  <span>Copiar</span>
+                </button>
+                <a
+                  class="fo-contact-go fo-contact-go-wa"
+                  href="https://wa.me/525582548242"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="WhatsApp"
+                  title="WhatsApp"
+                >
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </li>
+            <li class="fo-contact-row">
+              <span class="fo-contact-icon" aria-hidden="true"><i class="bi bi-telegram"></i></span>
+              <div class="fo-contact-body">
+                <span class="fo-contact-label">Telegram</span>
+                <a class="fo-contact-text" href="https://t.me/riveraec" target="_blank" rel="noopener">@riveraec</a>
+              </div>
+              <div class="fo-contact-tools">
+                <button
+                  type="button"
+                  class="fo-contact-copy"
+                  data-copy="@riveraec"
+                  aria-label="Copiar usuario de Telegram"
+                  title="Copiar"
+                >
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  <span>Copiar</span>
+                </button>
+                <a
+                  class="fo-contact-go"
+                  href="https://t.me/riveraec"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Abrir Telegram"
+                  title="Abrir"
+                >
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <span>Abrir</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="fo-foot py-4 text-center small text-secondary">
+      <p class="mb-1">Efrain Rivera Cadena</p>
+      <p class="fo-mono mb-0">
+        <a href="proyectos.html">Proyectos técnicos</a>
+        ·
+        <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>
+        ·
+        <a href="#contacto">Contacto</a>
+      </p>
+    </footer>
+
+    <div id="fo-pdf-modal" class="fo-pdf-modal" hidden aria-hidden="true">
+      <div class="fo-pdf-dialog" role="dialog" aria-modal="true" aria-labelledby="fo-pdf-title">
+        <div class="fo-pdf-bar">
+          <h2 id="fo-pdf-title" class="fo-pdf-title">Certificado</h2>
+          <div class="fo-pdf-actions">
+            <a id="fo-pdf-open" class="fo-pdf-open" href="#" target="_blank" rel="noopener">Abrir</a>
+            <button type="button" id="fo-pdf-close" class="fo-pdf-close" aria-label="Cerrar vista previa">
+              <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <iframe id="fo-pdf-frame" class="fo-pdf-frame" title="Vista previa del certificado"></iframe>
+        <p class="fo-pdf-hint">Si no se muestra aquí, usa <strong>Abrir</strong>.</p>
+      </div>
+    </div>
+
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>

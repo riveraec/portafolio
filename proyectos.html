@@ -1,286 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Proyectos técnicos de Efrain Rivera Cadena — APIs, ETL e integración (Java, .NET, Python, Node).">
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#0c8fc4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b121c" media="(prefers-color-scheme: dark)">
-  <meta name="author" content="Efrain Rivera Cadena">
-  <title>Proyectos técnicos — Efrain Rivera</title>
-  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.jpg">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
-  <script>
-    (function () {
-      var key = "fo-theme";
-      var saved = localStorage.getItem(key);
-      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="assets/css/site.css">
-</head>
-<body>
-  <nav class="fo-nav" aria-label="Navegación">
-    <div class="container fo-nav-inner">
-      <a class="fo-brand" href="index.html" title="Inicio">
-        <img src="assets/brand/brand-mark.svg" width="32" height="32" alt="">
-        <span class="fo-brand-name">Efrain Rivera</span>
-      </a>
-      <div class="fo-nav-scroll">
-        <a href="index.html">Inicio</a>
-        <a class="active" href="proyectos.html" aria-current="page">Proyectos</a>
-        <a href="index.html#contacto">Contacto</a>
-      </div>
-      <div class="fo-nav-actions">
-        <a class="fo-cv-btn" href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf" title="Descargar CV (PDF)">
-          <i class="bi bi-download" aria-hidden="true"></i>
-          <span class="fo-cv-short">CV</span>
-          <span class="fo-cv-long">Descargar CV</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Proyectos técnicos de Efrain Rivera Cadena — APIs, ETL e integración (Java, .NET, Python, Node)."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0c8fc4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b121c" media="(prefers-color-scheme: dark)" />
+    <meta name="author" content="Efrain Rivera Cadena" />
+    <title>Proyectos técnicos — Efrain Rivera</title>
+    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.jpg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet" />
+    <script>
+      (function () {
+        var key = "fo-theme";
+        var saved = localStorage.getItem(key);
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+  <body>
+    <a class="fo-skip visually-hidden-focusable btn btn-fo position-absolute top-0 start-0 m-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+
+    <nav class="fo-nav" aria-label="Navegación">
+      <div class="container fo-nav-inner">
+        <a class="fo-brand" href="index.html" title="Inicio">
+          <img src="assets/brand/brand-mark.svg" width="32" height="32" alt="" />
+          <span class="fo-brand-name">Efrain Rivera</span>
         </a>
-        <button type="button" class="fo-theme-btn" id="fo-theme-toggle" aria-label="Cambiar tema claro u oscuro" title="Tema">
-          <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
-          <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
-        </button>
+        <div class="fo-nav-scroll">
+          <a href="index.html">Inicio</a>
+          <a class="active" href="proyectos.html" aria-current="page">Proyectos</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+        <div class="fo-nav-actions">
+          <a
+            class="fo-cv-btn"
+            href="assets/cv/Efrain_Rivera_CV.pdf"
+            download="Efrain_Rivera_CV.pdf"
+            title="Descargar CV (PDF)"
+          >
+            <i class="bi bi-download" aria-hidden="true"></i>
+            <span class="fo-cv-short">CV</span>
+            <span class="fo-cv-long">Descargar CV</span>
+          </a>
+          <button
+            type="button"
+            class="fo-theme-btn"
+            id="fo-theme-toggle"
+            aria-label="Cambiar tema claro u oscuro"
+            title="Tema"
+          >
+            <i class="bi bi-moon-stars icon-moon" aria-hidden="true"></i>
+            <i class="bi bi-sun icon-sun" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <main class="container py-5" style="max-width:720px">
-    <a class="small text-secondary text-decoration-none d-inline-block mb-3" href="index.html#proyectos">
-      <i class="bi bi-arrow-left me-1"></i>Inicio
-    </a>
-
-    <header class="mb-4">
-      <h1 class="fw-bold mb-2">Proyectos técnicos</h1>
-      <p class="text-secondary small mb-0">Nombre, descripción y stack de cada repo.</p>
-    </header>
-
-    <nav class="fo-repo-toc" aria-label="Índice">
-      <p class="fo-repo-toc-row">
-        <span class="fo-repo-toc-label">Destacados</span>
-        <a href="#etl-reportes">etl-reportes</a>
-        <a href="#reportes-api">reportes-api</a>
-        <a href="#eventos-api">eventos-api</a>
-        <a href="#indicadores-api">indicadores-api</a>
-      </p>
     </nav>
 
-    <div class="fo-repo-list">
-      <h3 id="g-python" class="fo-repo-group">Python</h3>
+    <main id="contenido" class="container fo-narrow py-5">
+      <a class="small text-secondary text-decoration-none d-inline-block mb-3" href="index.html#proyectos">
+        <i class="bi bi-arrow-left me-1"></i>Inicio
+      </a>
 
-      <article id="etl-reportes" class="fo-repo is-featured">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">01</span>
-            <h2>etl-reportes</h2>
-          </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-        <p class="fo-repo-lead">Pipeline ETL de movimientos/KPIs.</p>
-        <p class="fo-repo-desc">Lee CSV, limpia y valida con pandas, carga a SQLite y genera un resumen diario por fecha y categoría. Idempotente por lote (<code>fuente</code>): reprocesar el mismo archivo no duplica filas.</p>
-        <p class="fo-repo-rel">Con <a href="#reportes-api">reportes-api</a></p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
-          <span class="fo-repo-chip"><i class="devicon-pandas-plain colored" aria-hidden="true"></i> pandas</span>
-          <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
-          <span class="fo-repo-chip"><i class="devicon-pytest-plain colored" aria-hidden="true"></i> pytest</span>
-          <span class="fo-repo-chip"><i class="devicon-azuresqldatabase-plain colored" aria-hidden="true"></i> SQL</span>
-        </div>
-      </article>
+      <header class="mb-4">
+        <h1 class="fw-bold mb-2">Proyectos técnicos</h1>
+        <p class="text-secondary small mb-0">Nombre, descripción y stack de cada repo.</p>
+      </header>
 
-      <article id="reportes-api" class="fo-repo is-featured">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">02</span>
-            <h2>reportes-api</h2>
-          </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-        <p class="fo-repo-lead">Capa HTTP sobre el ETL.</p>
-        <p class="fo-repo-desc">Dispara corridas (<code>POST /runs</code>) y consulta el resumen (<code>GET /resumen</code>) con filtros por categoría y fechas. Health check, OpenAPI y TestClient.</p>
-        <p class="fo-repo-rel">Usa <a href="#etl-reportes">etl-reportes</a></p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
-          <span class="fo-repo-chip"><i class="devicon-fastapi-plain colored" aria-hidden="true"></i> FastAPI</span>
-          <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
-          <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
-          <span class="fo-repo-chip"><i class="devicon-pytest-plain colored" aria-hidden="true"></i> pytest</span>
-        </div>
-      </article>
+      <nav class="fo-repo-toc" aria-label="Índice">
+        <p class="fo-repo-toc-row">
+          <span class="fo-repo-toc-label">Destacados</span>
+          <a href="#etl-reportes">etl-reportes</a>
+          <a href="#reportes-api">reportes-api</a>
+          <a href="#eventos-api">eventos-api</a>
+          <a href="#indicadores-api">indicadores-api</a>
+        </p>
+      </nav>
 
-      <h3 id="g-node" class="fo-repo-group">Node.js</h3>
+      <div class="fo-repo-list">
+        <h3 id="g-python" class="fo-repo-group">Python</h3>
 
-      <article id="eventos-api" class="fo-repo is-featured">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">03</span>
-            <h2>eventos-api</h2>
-            <span class="fo-badge">CI</span>
+        <article id="etl-reportes" class="fo-repo is-featured">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">01</span>
+              <h2>etl-reportes</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/etl-reportes" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">Actions</a>
+          <p class="fo-repo-lead">Pipeline ETL de movimientos/KPIs.</p>
+          <p class="fo-repo-desc">
+            Lee CSV, limpia y valida con pandas, carga a SQLite y genera un resumen diario por fecha y categoría.
+            Idempotente por lote (<code>fuente</code>): reprocesar el mismo archivo no duplica filas.
+          </p>
+          <p class="fo-repo-rel">Con <a href="#reportes-api">reportes-api</a></p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
+            <span class="fo-repo-chip"><i class="devicon-pandas-plain colored" aria-hidden="true"></i> pandas</span>
+            <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
+            <span class="fo-repo-chip"><i class="devicon-pytest-plain colored" aria-hidden="true"></i> pytest</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-azuresqldatabase-plain colored" aria-hidden="true"></i> SQL</span
+            >
           </div>
-        </div>
-        <p class="fo-repo-lead">Ingesta de webhooks sin duplicar.</p>
-        <p class="fo-repo-desc">Valida el JSON con Zod, persiste en SQLite y permite listar o consultar por <code>id</code> / tipo. Mismo <code>id</code> → 201 la primera vez, 200 al reenviar. Docker Compose y GitHub Actions.</p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i> Node.js</span>
-          <span class="fo-repo-chip"><i class="devicon-express-original colored" aria-hidden="true"></i> Express</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/zod.svg" width="14" height="14" alt=""> Zod</span>
-          <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
-          <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
-          <span class="fo-repo-chip"><i class="devicon-githubactions-plain colored" aria-hidden="true"></i> Actions</span>
-        </div>
-      </article>
+        </article>
 
-      <h3 id="g-dotnet" class="fo-repo-group">.NET</h3>
-
-      <article id="indicadores-api" class="fo-repo is-featured">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">04</span>
-            <h2>indicadores-api</h2>
-            <span class="fo-badge">CI</span>
+        <article id="reportes-api" class="fo-repo is-featured">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">02</span>
+              <h2>reportes-api</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/reportes-api" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/riveraec/indicadores-api/actions" target="_blank" rel="noopener">Actions</a>
+          <p class="fo-repo-lead">Capa HTTP sobre el ETL.</p>
+          <p class="fo-repo-desc">
+            Dispara corridas (<code>POST /runs</code>) y consulta el resumen (<code>GET /resumen</code>) con filtros por
+            categoría y fechas. Health check, OpenAPI y TestClient.
+          </p>
+          <p class="fo-repo-rel">Usa <a href="#etl-reportes">etl-reportes</a></p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i> Python</span>
+            <span class="fo-repo-chip"><i class="devicon-fastapi-plain colored" aria-hidden="true"></i> FastAPI</span>
+            <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
+            <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
+            <span class="fo-repo-chip"><i class="devicon-pytest-plain colored" aria-hidden="true"></i> pytest</span>
           </div>
-        </div>
-        <p class="fo-repo-lead">API de indicadores de desempeño.</p>
-        <p class="fo-repo-desc">CRUD con filtros, resumen (cantidad, promedio, mín/máx por categoría) y health checks. Capas Controller → Service → Repository, ProblemDetails, Swagger y xUnit con EF InMemory. CI en GitHub Actions.</p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-dotnetcore-plain colored" aria-hidden="true"></i> .NET 8</span>
-          <span class="fo-repo-chip"><i class="devicon-csharp-plain colored" aria-hidden="true"></i> C#</span>
-          <span class="fo-repo-chip"><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i> EF Core</span>
-          <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> Swagger</span>
-          <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
-          <span class="fo-repo-chip"><i class="devicon-githubactions-plain colored" aria-hidden="true"></i> Actions</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/xunit.svg" width="14" height="14" alt=""> xUnit</span>
-        </div>
-      </article>
+        </article>
 
-      <h3 id="g-java" class="fo-repo-group">Serie Java · auth → CRUD → cliente</h3>
+        <h3 id="g-node" class="fo-repo-group">Node.js</h3>
 
-      <article id="auth-api" class="fo-repo">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">05</span>
-            <h2>auth-api</h2>
+        <article id="eventos-api" class="fo-repo is-featured">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">03</span>
+              <h2>eventos-api</h2>
+              <span class="fo-badge">CI</span>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/eventos-api" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/riveraec/eventos-api/actions" target="_blank" rel="noopener">Actions</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">GitHub</a>
+          <p class="fo-repo-lead">Ingesta de webhooks sin duplicar.</p>
+          <p class="fo-repo-desc">
+            Valida el JSON con Zod, persiste en SQLite y permite listar o consultar por <code>id</code> / tipo. Mismo
+            <code>id</code> → 201 la primera vez, 200 al reenviar. Docker Compose y GitHub Actions.
+          </p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i> Node.js</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-express-original colored" aria-hidden="true"></i> Express</span
+            >
+            <span class="fo-repo-chip"><img src="assets/brand/stack/zod.svg" width="14" height="14" alt="" /> Zod</span>
+            <span class="fo-repo-chip"><i class="devicon-sqlite-plain colored" aria-hidden="true"></i> SQLite</span>
+            <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-githubactions-plain colored" aria-hidden="true"></i> Actions</span
+            >
           </div>
-        </div>
-        <p class="fo-repo-lead">Login y perfil con JWT.</p>
-        <p class="fo-repo-desc">Registro con BCrypt, login que emite token y <code>GET /me</code> con Bearer. Spring Security stateless, filtro JWT, JPA + H2 y OpenAPI.</p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
-          <span class="fo-repo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
-          <span class="fo-repo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Security</span>
-          <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
-          <span class="fo-repo-chip"><i class="devicon-hibernate-plain colored" aria-hidden="true"></i> JPA</span>
-          <span class="fo-repo-chip"><img class="fo-brand-mono" src="assets/brand/stack/jwt.svg" width="14" height="14" alt=""> JWT</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/h2.svg" width="14" height="14" alt=""> H2</span>
-        </div>
-      </article>
+        </article>
 
-      <article id="productos-api" class="fo-repo">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">06</span>
-            <h2>productos-api</h2>
+        <h3 id="g-dotnet" class="fo-repo-group">.NET</h3>
+
+        <article id="indicadores-api" class="fo-repo is-featured">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">04</span>
+              <h2>indicadores-api</h2>
+              <span class="fo-badge">CI</span>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/indicadores-api" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://github.com/riveraec/indicadores-api/actions" target="_blank" rel="noopener">Actions</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">GitHub</a>
+          <p class="fo-repo-lead">API de indicadores de desempeño.</p>
+          <p class="fo-repo-desc">
+            CRUD con filtros, resumen (cantidad, promedio, mín/máx por categoría) y health checks. Capas Controller →
+            Service → Repository, ProblemDetails, Swagger y xUnit con EF InMemory. CI en GitHub Actions.
+          </p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-dotnetcore-plain colored" aria-hidden="true"></i> .NET 8</span>
+            <span class="fo-repo-chip"><i class="devicon-csharp-plain colored" aria-hidden="true"></i> C#</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i> EF Core</span
+            >
+            <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> Swagger</span>
+            <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-githubactions-plain colored" aria-hidden="true"></i> Actions</span
+            >
+            <span class="fo-repo-chip"
+              ><img src="assets/brand/stack/xunit.svg" width="14" height="14" alt="" /> xUnit</span
+            >
           </div>
-        </div>
-        <p class="fo-repo-lead">CRUD de catálogo.</p>
-        <p class="fo-repo-desc">Validación de entrada, respuesta estándar y manejo centralizado de 404/400. Capas Controller → Service → Repository sobre JPA + H2, con OpenAPI.</p>
-        <p class="fo-repo-rel">Variante NoSQL: <a href="#catalogo-mongo-api">catalogo-mongo-api</a></p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
-          <span class="fo-repo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
-          <span class="fo-repo-chip"><i class="devicon-hibernate-plain colored" aria-hidden="true"></i> JPA</span>
-          <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/h2.svg" width="14" height="14" alt=""> H2</span>
-        </div>
-      </article>
+        </article>
 
-      <article id="cliente-servicios-remotos" class="fo-repo">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">07</span>
-            <h2>cliente-servicios-remotos</h2>
+        <h3 id="g-java" class="fo-repo-group">Serie Java · auth → CRUD → cliente</h3>
+
+        <article id="auth-api" class="fo-repo">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">05</span>
+              <h2>auth-api</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/auth-api" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">GitHub</a>
+          <p class="fo-repo-lead">Login y perfil con JWT.</p>
+          <p class="fo-repo-desc">
+            Registro con BCrypt, login que emite token y <code>GET /me</code> con Bearer. Spring Security stateless,
+            filtro JWT, JPA + H2 y OpenAPI.
+          </p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span
+            >
+            <span class="fo-repo-chip"
+              ><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Security</span
+            >
+            <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
+            <span class="fo-repo-chip"><i class="devicon-hibernate-plain colored" aria-hidden="true"></i> JPA</span>
+            <span class="fo-repo-chip"
+              ><img class="fo-brand-mono" src="assets/brand/stack/jwt.svg" width="14" height="14" alt="" /> JWT</span
+            >
+            <span class="fo-repo-chip"><img src="assets/brand/stack/h2.svg" width="14" height="14" alt="" /> H2</span>
           </div>
-        </div>
-        <p class="fo-repo-lead">Cliente HTTP reutilizable (OpenFeign).</p>
-        <p class="fo-repo-desc">Biblioteca con GET/POST/PUT/DELETE, reintentos, pool de conexiones y logging seguro. Demo contra <a href="#auth-api">auth-api</a> y <a href="#productos-api">productos-api</a>; stubs WireMock en pruebas.</p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
-          <span class="fo-repo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
-          <span class="fo-repo-chip"><i class="devicon-apache-plain colored" aria-hidden="true"></i> HttpClient 5</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/openfeign.svg" width="14" height="14" alt=""> OpenFeign</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/wiremock.svg" width="14" height="14" alt=""> WireMock</span>
-          <span class="fo-repo-chip"><i class="devicon-junit-plain colored" aria-hidden="true"></i> JUnit</span>
-        </div>
-      </article>
+        </article>
 
-      <h3 id="g-mongo" class="fo-repo-group">Mongo · variante NoSQL</h3>
-
-      <article id="catalogo-mongo-api" class="fo-repo">
-        <div class="fo-repo-head">
-          <div class="fo-repo-title">
-            <span class="fo-repo-num">08</span>
-            <h2>catalogo-mongo-api</h2>
+        <article id="productos-api" class="fo-repo">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">06</span>
+              <h2>productos-api</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/productos-api" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
-          <div class="fo-repo-links">
-            <a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">GitHub</a>
+          <p class="fo-repo-lead">CRUD de catálogo.</p>
+          <p class="fo-repo-desc">
+            Validación de entrada, respuesta estándar y manejo centralizado de 404/400. Capas Controller → Service →
+            Repository sobre JPA + H2, con OpenAPI.
+          </p>
+          <p class="fo-repo-rel">Variante NoSQL: <a href="#catalogo-mongo-api">catalogo-mongo-api</a></p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span
+            >
+            <span class="fo-repo-chip"><i class="devicon-hibernate-plain colored" aria-hidden="true"></i> JPA</span>
+            <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
+            <span class="fo-repo-chip"><img src="assets/brand/stack/h2.svg" width="14" height="14" alt="" /> H2</span>
           </div>
-        </div>
-        <p class="fo-repo-lead">Mismo catálogo, otro almacén.</p>
-        <p class="fo-repo-desc">Dominio y capas iguales a <a href="#productos-api">productos-api</a>, con MongoDB documental. Docker Compose, OpenAPI y Testcontainers.</p>
-        <div class="fo-repo-stack">
-          <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
-          <span class="fo-repo-chip"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
-          <span class="fo-repo-chip"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i> MongoDB</span>
-          <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
-          <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
-          <span class="fo-repo-chip"><img src="assets/brand/stack/testcontainers.svg" width="14" height="14" alt=""> Testcontainers</span>
-        </div>
-      </article>
-    </div>
+        </article>
 
-  </main>
+        <article id="cliente-servicios-remotos" class="fo-repo">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">07</span>
+              <h2>cliente-servicios-remotos</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/cliente-servicios-remotos" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <p class="fo-repo-lead">Cliente HTTP reutilizable (OpenFeign).</p>
+          <p class="fo-repo-desc">
+            Biblioteca con GET/POST/PUT/DELETE, reintentos, pool de conexiones y logging seguro. Demo contra
+            <a href="#auth-api">auth-api</a> y <a href="#productos-api">productos-api</a>; stubs WireMock en pruebas.
+          </p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span
+            >
+            <span class="fo-repo-chip"
+              ><i class="devicon-apache-plain colored" aria-hidden="true"></i> HttpClient 5</span
+            >
+            <span class="fo-repo-chip"
+              ><img src="assets/brand/stack/openfeign.svg" width="14" height="14" alt="" /> OpenFeign</span
+            >
+            <span class="fo-repo-chip"
+              ><img src="assets/brand/stack/wiremock.svg" width="14" height="14" alt="" /> WireMock</span
+            >
+            <span class="fo-repo-chip"><i class="devicon-junit-plain colored" aria-hidden="true"></i> JUnit</span>
+          </div>
+        </article>
 
-  <footer class="fo-foot py-4 text-center small text-secondary">
-    <p class="mb-1">Efrain Rivera Cadena</p>
-    <p class="fo-mono mb-0">
-      <a href="index.html">Inicio</a>
-      ·
-      <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>
-      ·
-      <a href="index.html#contacto">Contacto</a>
-    </p>
-  </footer>
+        <h3 id="g-mongo" class="fo-repo-group">Mongo · variante NoSQL</h3>
 
-  <script src="assets/js/site.js"></script>
-</body>
+        <article id="catalogo-mongo-api" class="fo-repo">
+          <div class="fo-repo-head">
+            <div class="fo-repo-title">
+              <span class="fo-repo-num">08</span>
+              <h2>catalogo-mongo-api</h2>
+            </div>
+            <div class="fo-repo-links">
+              <a href="https://github.com/riveraec/catalogo-mongo-api" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <p class="fo-repo-lead">Mismo catálogo, otro almacén.</p>
+          <p class="fo-repo-desc">
+            Dominio y capas iguales a <a href="#productos-api">productos-api</a>, con MongoDB documental. Docker
+            Compose, OpenAPI y Testcontainers.
+          </p>
+          <div class="fo-repo-stack">
+            <span class="fo-repo-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+            <span class="fo-repo-chip"
+              ><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span
+            >
+            <span class="fo-repo-chip"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i> MongoDB</span>
+            <span class="fo-repo-chip"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+            <span class="fo-repo-chip"><i class="devicon-swagger-plain colored" aria-hidden="true"></i> OpenAPI</span>
+            <span class="fo-repo-chip"
+              ><img src="assets/brand/stack/testcontainers.svg" width="14" height="14" alt="" /> Testcontainers</span
+            >
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="fo-foot py-4 text-center small text-secondary">
+      <p class="mb-1">Efrain Rivera Cadena</p>
+      <p class="fo-mono mb-0">
+        <a href="index.html">Inicio</a>
+        ·
+        <a href="assets/cv/Efrain_Rivera_CV.pdf" download="Efrain_Rivera_CV.pdf">CV</a>
+        ·
+        <a href="index.html#contacto">Contacto</a>
+      </p>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>
