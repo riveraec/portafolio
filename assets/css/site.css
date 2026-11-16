@@ -202,15 +202,16 @@
       border: 1px solid var(--fo-line);
       border-radius: 18px;
       overflow: hidden;
-      transition: .18s;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
       text-decoration: none;
       color: inherit;
       display: block;
       height: 100%;
     }
     .fo-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       box-shadow: 0 18px 46px var(--fo-shadow);
+      border-color: var(--fo-chip-border);
       color: inherit;
     }
     .fo-thumb {
@@ -219,6 +220,10 @@
       place-items: center;
       color: #fff;
       font-size: 3rem;
+      transition: transform .28s ease;
+    }
+    .fo-card:hover .fo-thumb {
+      transform: scale(1.04);
     }
     .fo-tl {
       border-left: 2px solid var(--fo-line);
@@ -413,6 +418,41 @@
       width: 100%;
       border: 0;
       background: #111;
+    }
+    .fo-pdf-fallback {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .85rem;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      background: var(--fo-soft);
+    }
+    .fo-pdf-fallback i {
+      font-size: 2.4rem;
+      color: var(--fo-cyan);
+      line-height: 1;
+    }
+    .fo-pdf-fallback-text {
+      margin: 0;
+      max-width: 18rem;
+      font-size: .92rem;
+      line-height: 1.45;
+      color: var(--fo-muted);
+    }
+    .fo-pdf-modal.is-fallback .fo-pdf-frame,
+    .fo-pdf-modal.is-fallback .fo-pdf-hint {
+      display: none;
+    }
+    .fo-pdf-modal.is-fallback .fo-pdf-fallback {
+      display: flex;
+    }
+    .fo-pdf-modal.is-fallback .fo-pdf-dialog {
+      height: auto;
+      min-height: 0;
+      max-height: min(88vh, 420px);
     }
     .fo-pdf-hint {
       margin: 0;
@@ -1058,6 +1098,30 @@
       margin-top: .25rem;
     }
 
+    /* Scroll / load reveals */
+    .fo-reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition:
+        opacity .45s ease,
+        transform .45s ease;
+      transition-delay: var(--fo-reveal-delay, 0ms);
+    }
+    .fo-reveal.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fo-hero-copy.fo-reveal,
+    .fo-hero-photo.fo-reveal {
+      transform: translateY(10px);
+    }
+    .fo-hero-bridge.fo-reveal {
+      transform: translateY(8px);
+    }
+    .fo-card.fo-reveal.is-in:hover {
+      transform: translateY(-5px);
+    }
+
     /* Floating contact widget */
     .fo-fab {
       position: fixed;
@@ -1282,4 +1346,13 @@
       .fo-fab-launcher,
       .fo-fab-minimize,
       .fo-fab-submit { transition: none; }
+      .fo-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .fo-card,
+      .fo-card:hover .fo-thumb,
+      .fo-thumb { transition: none; }
+      .fo-card:hover { transform: none; }
     }

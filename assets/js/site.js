@@ -25,36 +25,154 @@
     setTheme(currentTheme());
   }
 
+  // Entrada suave al scroll / carga (respeta reduced-motion).
+  (function setupReveal() {
+    var reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nodes = document.querySelectorAll(
+      [
+        ".fo-hero-copy",
+        ".fo-hero-photo",
+        ".fo-hero-bridge",
+        "#trayectoria .fo-tl",
+        "#proyectos .fo-card",
+        "#formacion .fo-tl",
+        "#formacion .fo-cert",
+        "#stack .fo-stack-item",
+        "#stack .fo-ai-tool",
+        "#contacto .fo-contact-panel",
+        ".fo-repo",
+      ].join(",")
+    );
+    if (!nodes.length) return;
+
+    if (reduce) {
+      nodes.forEach(function (el) {
+        el.classList.add("fo-reveal", "is-in");
+      });
+      return;
+    }
+
+    var staggerGroups = {
+      "#proyectos .fo-card": 70,
+      "#trayectoria .fo-tl": 55,
+      "#formacion .fo-cert": 45,
+      "#stack .fo-stack-item": 40,
+      "#stack .fo-ai-tool": 35,
+      ".fo-repo": 50,
+    };
+
+    Object.keys(staggerGroups).forEach(function (sel) {
+      var step = staggerGroups[sel];
+      document.querySelectorAll(sel).forEach(function (el, i) {
+        el.style.setProperty("--fo-reveal-delay", i * step + "ms");
+      });
+    });
+
+    var heroCopy = document.querySelector(".fo-hero-copy");
+    var heroPhoto = document.querySelector(".fo-hero-photo");
+    var heroBridge = document.querySelector(".fo-hero-bridge");
+    if (heroCopy) heroCopy.style.setProperty("--fo-reveal-delay", "0ms");
+    if (heroPhoto) heroPhoto.style.setProperty("--fo-reveal-delay", "90ms");
+    if (heroBridge) heroBridge.style.setProperty("--fo-reveal-delay", "160ms");
+
+    nodes.forEach(function (el) {
+      el.classList.add("fo-reveal");
+    });
+
+    function reveal(el) {
+      el.classList.add("is-in");
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach(reveal);
+      return;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          reveal(entry.target);
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+    );
+
+    nodes.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+
   // Vista previa de certificados PDF dentro del sitio (Formación).
   var pdfModal = document.getElementById("fo-pdf-modal");
   var pdfFrame = document.getElementById("fo-pdf-frame");
   var pdfTitle = document.getElementById("fo-pdf-title");
   var pdfOpen = document.getElementById("fo-pdf-open");
+  var pdfFallback = document.getElementById("fo-pdf-fallback");
+  var pdfFallbackOpen = document.getElementById("fo-pdf-fallback-open");
   var pdfClose = document.getElementById("fo-pdf-close");
   var pdfLastFocus = null;
 
-  function openPdfPreview(src, title) {
-    if (!pdfModal || !pdfFrame || !src) return;
+  // iOS / Android móvil: el PDF en iframe casi nunca se renderiza.
+  function prefersExternalPdf() {
+    try {
+      var ua = navigator.userAgent || "";
+      if (/iPhone|iPad|iPod/i.test(ua)) return true;
+      if (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) return true;
+      if (/Android/i.test(ua) && window.matchMedia("(max-width: 900px)").matches) return true;
+      if (window.matchMedia("(max-width: 820px) and (pointer: coarse)").matches) return true;
+    } catch (err) {}
+    return false;
+  }
+
+  function openPdfExternal(src) {
+    if (!src) return false;
+    var win = window.open(src, "_blank", "noopener,noreferrer");
+    return !!win;
+  }
+
+  function openPdfPreview(src, title, forceFallback) {
+    if (!pdfModal || !src) return;
     pdfLastFocus = document.activeElement;
     if (pdfTitle) pdfTitle.textContent = title || "Certificado";
     if (pdfOpen) pdfOpen.href = src;
-    pdfFrame.src = src;
+    if (pdfFallbackOpen) pdfFallbackOpen.href = src;
+
+    var useFallback = !!forceFallback || !pdfFrame;
+    pdfModal.classList.toggle("is-fallback", useFallback);
+    if (pdfFallback) pdfFallback.hidden = !useFallback;
+
+    if (!useFallback && pdfFrame) {
+      pdfFrame.src = src;
+    } else if (pdfFrame) {
+      pdfFrame.removeAttribute("src");
+    }
+
     pdfModal.hidden = false;
     void pdfModal.offsetWidth;
     pdfModal.classList.add("is-open");
     pdfModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    if (pdfClose) pdfClose.focus();
+    if (useFallback && pdfFallbackOpen) {
+      pdfFallbackOpen.focus();
+    } else if (pdfClose) {
+      pdfClose.focus();
+    }
   }
 
   function closePdfPreview() {
-    if (!pdfModal || !pdfFrame) return;
+    if (!pdfModal) return;
     pdfModal.classList.remove("is-open");
     pdfModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     var finish = function () {
       pdfModal.hidden = true;
-      pdfFrame.removeAttribute("src");
+      pdfModal.classList.remove("is-fallback");
+      if (pdfFrame) pdfFrame.removeAttribute("src");
+      if (pdfFallback) pdfFallback.hidden = true;
       if (pdfLastFocus && typeof pdfLastFocus.focus === "function") pdfLastFocus.focus();
     };
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -67,10 +185,15 @@
   document.querySelectorAll("[data-pdf-preview]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault();
-      openPdfPreview(
-        a.getAttribute("href"),
-        a.getAttribute("data-pdf-title") || a.getAttribute("aria-label")
-      );
+      var src = a.getAttribute("href");
+      var title = a.getAttribute("data-pdf-title") || a.getAttribute("aria-label");
+      if (prefersExternalPdf()) {
+        if (!openPdfExternal(src)) {
+          openPdfPreview(src, title, true);
+        }
+        return;
+      }
+      openPdfPreview(src, title, false);
     });
   });
 
