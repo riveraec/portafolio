@@ -123,7 +123,15 @@ El workflow genera `_site` (HTML + assets + `.nojekyll`) y despliega. Recarga co
 
 ### Web3Forms (formulario)
 
+| Recurso | Link |
+|---------|------|
+| Sitio live | https://riveraec.github.io/portafolio/ |
+| Repo | https://github.com/riveraec/portafolio |
+| Web3Forms | https://web3forms.com/ |
+| Docs | https://docs.web3forms.com/ |
+| Backlog cerebro | `2-Personal/cerebro/20-areas/Carrera/desarrollo/portafolio-mejoras.md` |
+
 1. Cuenta en [web3forms.com](https://web3forms.com/) con el Gmail de destino.
 2. Form → Website URL: `https://riveraec.github.io/portafolio/` (local: `localhost`).
-3. Pegar la Access Key en `index.html` y `proyectos.html` (`input[name="access_key"]`).
+3. Pegar la Access Key en `index.html` y `proyectos.html` (`input[name="access_key"]`). No documentar el UUID en markdown.
 4. Plan free: 250 envíos/mes. Regenerar la key en el dashboard si se filtra de más.
