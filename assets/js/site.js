@@ -129,9 +129,17 @@
   }
 
   function openPdfExternal(src) {
-    if (!src) return false;
-    var win = window.open(src, "_blank", "noopener,noreferrer");
-    return !!win;
+    if (!src) return;
+    // Preferir <a> click: en móvil window.open(..., "noopener") suele devolver null
+    // aunque la pestaña sí abra, y eso disparaba el modal de fallback por error.
+    var a = document.createElement("a");
+    a.href = src;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
 
   function openPdfPreview(src, title, forceFallback) {
@@ -188,9 +196,7 @@
       var src = a.getAttribute("href");
       var title = a.getAttribute("data-pdf-title") || a.getAttribute("aria-label");
       if (prefersExternalPdf()) {
-        if (!openPdfExternal(src)) {
-          openPdfPreview(src, title, true);
-        }
+        openPdfExternal(src);
         return;
       }
       openPdfPreview(src, title, false);
