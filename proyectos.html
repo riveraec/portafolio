@@ -357,6 +357,93 @@
       </p>
     </footer>
 
+    <div class="fo-fab" data-fo-fab>
+      <div
+        id="fo-fab-panel"
+        class="fo-fab-panel"
+        role="dialog"
+        aria-modal="false"
+        aria-labelledby="fo-fab-title"
+        hidden
+      >
+        <header class="fo-fab-head">
+          <div>
+            <p class="fo-fab-status">
+              <span class="fo-contact-dot" aria-hidden="true"></span>
+              Disponible · Respuesta en 1 o 2 días
+            </p>
+            <h2 id="fo-fab-title" class="fo-fab-title">Hablemos</h2>
+          </div>
+          <button type="button" class="fo-fab-minimize" data-fo-fab-close aria-label="Minimizar contacto" title="Minimizar">
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+        </header>
+
+        <form class="fo-fab-form" data-fo-fab-form novalidate>
+          <input type="hidden" name="access_key" value="2d159419-b5e0-4ef9-a1bb-7104713c7cfb" />
+          <input type="hidden" name="subject" value="Contacto portafolio — Efrain Rivera" />
+          <input type="checkbox" name="botcheck" class="fo-fab-honeypot" tabindex="-1" aria-hidden="true" />
+
+          <label class="fo-fab-field">
+            <span>Nombre</span>
+            <input
+              type="text"
+              name="name"
+              autocomplete="name"
+              placeholder="Ana López"
+              required
+              minlength="2"
+              maxlength="80"
+              spellcheck="false"
+              aria-describedby="fo-fab-err-name"
+            />
+            <span id="fo-fab-err-name" class="fo-fab-error" data-fo-fab-error="name" hidden></span>
+          </label>
+          <label class="fo-fab-field">
+            <span>Correo</span>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="ana@empresa.com"
+              required
+              maxlength="160"
+              inputmode="email"
+              aria-describedby="fo-fab-err-email"
+            />
+            <span id="fo-fab-err-email" class="fo-fab-error" data-fo-fab-error="email" hidden></span>
+          </label>
+          <label class="fo-fab-field">
+            <span>Mensaje</span>
+            <textarea
+              name="message"
+              rows="3"
+              placeholder="Cuéntame el contexto: empresa, rol u oportunidad, y cómo podemos hablar…"
+              required
+              minlength="20"
+              maxlength="2000"
+              aria-describedby="fo-fab-err-message"
+            ></textarea>
+            <span id="fo-fab-err-message" class="fo-fab-error" data-fo-fab-error="message" hidden></span>
+          </label>
+
+          <p class="fo-fab-feedback" data-fo-fab-feedback role="status" aria-live="polite" hidden></p>
+          <button type="submit" class="fo-fab-submit">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <button
+        type="button"
+        class="fo-fab-launcher"
+        data-fo-fab-toggle
+        aria-expanded="false"
+        aria-controls="fo-fab-panel"
+      >
+        <i class="bi bi-chat-dots" aria-hidden="true"></i>
+        <span data-fo-fab-label>Contacto</span>
+      </button>
+    </div>
+
     <script src="assets/js/site.js"></script>
   </body>
 </html>
